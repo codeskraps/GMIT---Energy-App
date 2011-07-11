@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">GMIT - EnergyApp</string>
+    <string name="solar_activity">GMIT - Solar</string>
+    <string name="wind_activity">GMIT - Wind</string>
+    <string name="heatpump_activity">GMIT - Heat Pump</string>
+    <string name="biomass_activity">GMIT - Biomass Boiler</string>
+    <string name="hrvu_activity">GMIT - HRVU</string>
+    <string name="about_activity">GMIT - About</string>
+    
+    <!-- MENU -->
+    <string name="menuHome">Home</string>
+    <string name="menuSolar">Solar</string>
+    <string name="menuHeatPump">Heat Pump</string>
+    <string name="menuHRVU">HRVU</string>
+    <string name="menuGasBoiler">Gas Boiler</string>
+    <string name="menuHeatTransfer">HeatTransfer</string>
+    <string name="menuQuit">Quit</string>
+    <string name="menuWind">Wind</string>
+</resources>

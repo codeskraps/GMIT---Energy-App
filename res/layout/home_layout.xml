@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+    <LinearLayout android:layout_height="wrap_content" android:id="@+id/linearLayout1" android:layout_width="fill_parent" android:layout_weight="1">
+        <ImageView android:layout_height="wrap_content" android:layout_width="wrap_content" android:src="@drawable/solar" android:layout_weight="1" android:layout_gravity="center_vertical" android:id="@+id/img_solar"></ImageView>
+        <ImageView android:layout_height="wrap_content" android:layout_width="wrap_content" android:src="@drawable/wind" android:id="@+id/img_wind" android:layout_weight="1" android:layout_gravity="center_vertical"></ImageView>
+        <ImageView android:layout_height="wrap_content" android:layout_width="wrap_content" android:src="@drawable/heatpump" android:layout_weight="1" android:layout_gravity="center_vertical" android:id="@+id/img_heatpump"></ImageView>
+    </LinearLayout>
+    <LinearLayout android:layout_height="wrap_content" android:id="@+id/linearLayout2" android:layout_width="fill_parent" android:layout_weight="1">
+        <ImageView android:layout_height="wrap_content" android:layout_width="wrap_content" android:src="@drawable/biomassboiler" android:id="@+id/img_biomass" android:layout_weight="1" android:layout_gravity="center_vertical"></ImageView>
+        <ImageView android:layout_height="wrap_content" android:layout_width="wrap_content" android:src="@drawable/hrvu" android:id="@+id/img_hrvu" android:layout_weight="1" android:layout_gravity="center_vertical"></ImageView>
+        <ImageView android:layout_height="wrap_content" android:layout_width="wrap_content" android:src="@drawable/about" android:id="@+id/img_about" android:layout_weight="1" android:layout_gravity="center_vertical"></ImageView>
+    </LinearLayout>
+</LinearLayout>
