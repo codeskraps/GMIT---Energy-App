@@ -1,58 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <!-- 
-/**
- * GMIT - Energy app
- * Copyright (C) Carles Sentis 2011 <carlesentis@gmail.com>
- *
- * GMIT - Energy app is free software: you can
- * redistribute it and/or modify it under the terms
- * of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of
- * the License, or (at your option) any later
- * version.
- *  
- * GMIT - Energy app is distributed in the hope that it
- * will be useful, but WITHOUT ANY WARRANTY; without
- * even the implied warranty of MERCHANTABILITY or
- * FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- *  
- * You should have received a copy of the GNU
- * General Public License along with this program.
- * If not, see <http://www.gnu.org/licenses/>.
- */
+		GMIT - Energy app
+		Copyright (C) Carles Sentis 2011 <carlesentis@gmail.com>
+		
+		GMIT - Energy app is free software: you can
+		redistribute it and/or modify it under the terms
+		of the GNU General Public License as published by
+		the Free Software Foundation, either version 3 of
+		the License, or (at your option) any later
+		version.
+		
+		GMIT - Energy app is distributed in the hope that it
+		will be useful, but WITHOUT ANY WARRANTY; without
+		even the implied warranty of MERCHANTABILITY or
+		FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+		General Public License for more details.
+		
+		You should have received a copy of the GNU
+		General Public License along with this program.
+		If not, see <http://www.gnu.org/licenses/>.
 -->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
       package="com.gmit.energyapp"
       android:versionCode="1"
       android:versionName="1.0">
+      
     <uses-sdk android:minSdkVersion="8" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application android:icon="@drawable/icon" 
     			 android:label="@string/app_name" 
-    			 android:theme="@android:style/Theme.Light"
-    			 android:screenOrientation="landscape">
+    			 android:theme="@android:style/Theme.Light">
     			 
         <activity android:name=".SplashActivity" 
-                  android:label="@string/app_name">
+                  android:label="@string/app_name"
+                  android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        
+        <activity android:name=".HomeActivity"
+            	  android:label="@string/app_name"
+            	  android:screenOrientation="landscape" />
+            	  
+       	<activity android:name=".MechanicalEngineeringDepartmentWebView" 
+       			  android:label="@string/app_name" />
 		
-		<activity android:name=".HomeActivity"
+		<activity android:name=".LauncherActivity"
             	  android:label="@string/app_name"
             	  android:screenOrientation="landscape" />
        	
        	<activity android:name=".SolarActivity"
        			  android:label="@string/solar_activity"
-       			  android:screenOrientation="landscape" />
-      	
-      	<activity android:name=".WindActivity"
-       			  android:label="@string/wind_activity"
        			  android:screenOrientation="landscape" />
      	
      	<activity android:name=".HeatPumpActivity"
@@ -63,8 +66,12 @@
        			  android:label="@string/biomass_activity"
        			  android:screenOrientation="landscape" />
      	
-     	<activity android:name=".HrvuActivity"
-       			  android:label="@string/hrvu_activity"
+     	<activity android:name=".GasBoilerActivity"
+       			  android:label="@string/gasboiler_activity"
+       			  android:screenOrientation="landscape" />
+       			  
+      	<activity android:name=".HeatTransferActivity"
+       			  android:label="@string/heattransfer_activity"
        			  android:screenOrientation="landscape" />
       	
       	<activity android:name=".AboutActivity"

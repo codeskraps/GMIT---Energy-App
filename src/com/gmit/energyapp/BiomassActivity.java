@@ -24,13 +24,28 @@ package com.gmit.energyapp;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 
-public class BiomassActivity extends Activity {
+public class BiomassActivity extends Activity implements OnClickListener {
+	
+	private Button btnBiomassOne = null;
+	private Button btnBiomassTwo = null;
+	private Button btnBiomassThree = null;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.biomass_layout);
+		setContentView(R.layout.biomass);
+		
+		btnBiomassOne = (Button) findViewById(R.id.btnBiomassOne);
+		btnBiomassTwo = (Button) findViewById(R.id.btnBiomassTwo);
+		btnBiomassThree = (Button) findViewById(R.id.btnBiomassThree);
+		
+		btnBiomassOne.setOnClickListener(this);
+		btnBiomassTwo.setOnClickListener(this);
+		btnBiomassThree.setOnClickListener(this);
 	}
 	
 	@Override
@@ -39,4 +54,15 @@ public class BiomassActivity extends Activity {
 		overridePendingTransition(R.anim.fadein, R.anim.fadeout);
 	}
 
+	@Override
+	public void onClick(View v) {
+		switch (v.getId()) {
+		case R.id.btnBiomassOne:
+			break;
+		case R.id.btnBiomassTwo:
+			break;
+		case R.id.btnBiomassThree:
+			break;
+		}
+	}
 }

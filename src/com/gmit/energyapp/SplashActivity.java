@@ -34,7 +34,7 @@ public class SplashActivity extends Activity {
 	@Override
 	public void onCreate(Bundle icicle) {
 		super.onCreate(icicle);
-		setContentView(R.layout.splash_layout);
+		setContentView(R.layout.splash);
 
 		new Handler().postDelayed(new Runnable() {
 

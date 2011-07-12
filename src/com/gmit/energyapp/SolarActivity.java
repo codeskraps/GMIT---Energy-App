@@ -24,19 +24,47 @@ package com.gmit.energyapp;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 
-public class SolarActivity extends Activity{
+public class SolarActivity extends Activity implements OnClickListener{
+	private static final String TAG = SolarActivity.class.getSimpleName();
+	
+	private Button btnSolarOne = null;
+	private Button btnSolarTwo = null;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.solar_layout);
+		
+		Log.d(TAG, "SolarActivity started");
+		
+		setContentView(R.layout.solar);
+		
+		btnSolarOne = (Button) findViewById(R.id.btnSolarOne);
+		btnSolarTwo = (Button) findViewById(R.id.btnSolarTwo);
+		
+		btnSolarOne.setOnClickListener(this);
+		btnSolarTwo.setOnClickListener(this);
 	}
 
 	@Override
 	public void onBackPressed() {
 		super.onBackPressed();
 		overridePendingTransition(R.anim.fadein, R.anim.fadeout);
+	}
+
+	@Override
+	public void onClick(View v) {
+		switch (v.getId()){
+		case R.id.btnSolarOne:
+			break;
+		case R.id.btnSolarTwo:
+			break;
+		}
+		
 	}
 
 }

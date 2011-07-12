@@ -1,11 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!-- 
+		GMIT - Energy app
+		Copyright (C) Carles Sentis 2011 <carlesentis@gmail.com>
+		
+		GMIT - Energy app is free software: you can
+		redistribute it and/or modify it under the terms
+		of the GNU General Public License as published by
+		the Free Software Foundation, either version 3 of
+		the License, or (at your option) any later
+		version.
+		
+		GMIT - Energy app is distributed in the hope that it
+		will be useful, but WITHOUT ANY WARRANTY; without
+		even the implied warranty of MERCHANTABILITY or
+		FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+		General Public License for more details.
+		
+		You should have received a copy of the GNU
+		General Public License along with this program.
+		If not, see <http://www.gnu.org/licenses/>.
+-->
+
 <resources>
     <string name="app_name">GMIT - EnergyApp</string>
     <string name="solar_activity">GMIT - Solar</string>
-    <string name="wind_activity">GMIT - Wind</string>
     <string name="heatpump_activity">GMIT - Heat Pump</string>
     <string name="biomass_activity">GMIT - Biomass Boiler</string>
-    <string name="hrvu_activity">GMIT - HRVU</string>
+    <string name="gasboiler_activity">GMIT - Condensing Gas Boiler</string>
+    <string name="heattransfer_activity">GMIT - Heat Transfer</string>
     <string name="about_activity">GMIT - About</string>
     
     <!-- MENU -->
@@ -17,4 +40,37 @@
     <string name="menuHeatTransfer">HeatTransfer</string>
     <string name="menuQuit">Quit</string>
     <string name="menuWind">Wind</string>
+    
+    <!-- HOME -->
+    <string name="homeText">This app provides an introduction to the renewable energy technologies available in the Energy Lab in the Mechanical Engineering Department in GMIT. You can visit the lab and interact with state-of-the-art energy technology and/or you can find out more about the Department and what we can offer to our students.</string>
+    <string name="btnHomeOne">Mechanical Engineering Department in GMIT</string>
+    <string name="btnHomeTwo">Energy Lab</string>
+    
+    <!-- Solar -->
+    <string name="solarLevel2Text">Solar panels transfer the sun’s energy, which is in the form of electromagnetic radiation, into thermal energy to heat water for domestic and industrial purposes.</string>
+    <string name="btnSolarOne">See video of solar panel</string>
+    <string name="btnSolarTwo">System overview</string>
+    
+    <!-- HeatPump -->
+    <string name="heatpumpLevel2Text">An air source heat pump extracts heat from the surrounding air.  A fan draws the air over a heat exchanger coil known as an Evaporator.  The coil is filled with a cold refrigerant liquid. As the air flows over this coil, the cool liquid inside the coil draws heat from the air, and begins to heat up. This heat is later passed into a hot water storage tank located within the building, via a second heat exchanger known as a Condenser.</string>
+    <string name="btnHeatOne">See video of heat pump</string>
+    <string name="btnHeatTwo">System overview and operation</string>
+    <string name="btnHeatThree">Efficiency and cost of ownership</string>
+    
+    <!-- Biomass -->
+    <string name="biomassLevel2Text">Biomass is a term used to identify fuels used in the renewable energy sector. These fuels include agricultural residues, energy crops and wood based crops.\n\nA wood pellet boiler (see left image from the GMIT Energy Lab) is fired on biological material (wood pellets) and is used to heat water. A gasification boiler (see right image from the GMIT Energy Lab) uses a syngas which is generated through the chemical reaction of burning wood and is also used to heat water.</string>
+    <string name="btnBiomassOne">See video of biomass boiler</string>
+    <string name="btnBiomassTwo">Wood gasification</string>
+    <string name="btnBiomassThree">Wood pellet</string>
+    
+    <!-- Gas Boiler -->
+    <string name="gasboilerLevel2Text">Condensing gas boilers use less fuel and have lower running costs than other boilers. Higher efficiency levels are made possible by extracting heat contained in the combustion gases, which would otherwise have been lost to the atmosphere.</string>
+    <string name="btnGasBoilerOne">See video of gas boiler</string>
+    <string name="btnGasBoilerTwo">System overview</string>
+    
+    <!-- Heat Transfer -->
+    <string name="heattransferLevel2Text">The radiator system and the underfloor heating systems represent an excellent example of heat transfer. Heat transfer can occur through conduction, convection and radiation. All three systems are represented in the GMIT Energy lab. Heat transfer only occurs when there is a temperature gradient, i.e. heat energy flows from a high temperature region to a low temperature region.</string>
+    <string name="btnHeatTransferOne">See video of heat transfer through underfloor heating</string>
+    <string name="btnHeatTransferTwo">Radiator system</string>
+    <string name="btnHeatTransferThree">Underfloor heating system</string>
 </resources>

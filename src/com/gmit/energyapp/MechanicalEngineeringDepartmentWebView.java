@@ -24,19 +24,18 @@ package com.gmit.energyapp;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.webkit.WebView;
 
-public class HrvuActivity extends Activity {
+public class MechanicalEngineeringDepartmentWebView extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.hrvu_layout);
-	}
-	
-	@Override
-	public void onBackPressed() {
-		super.onBackPressed();
-		overridePendingTransition(R.anim.fadein, R.anim.fadeout);
+		
+		WebView webview = new WebView(this);
+		setContentView(webview);
+		
+		webview.loadUrl("http://www.gmit.ie/engineering/mechanical-industrial/index.html ");
 	}
 
 }
