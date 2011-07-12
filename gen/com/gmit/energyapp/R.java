@@ -130,6 +130,7 @@ public final class R {
         public static final int menuQuit=0x7f05000d;
         public static final int menuSolar=0x7f050008;
         public static final int menuWind=0x7f05000e;
+        public static final int ok=0x7f050024;
         /**  Solar 
          */
         public static final int solarLevel2Text=0x7f050012;

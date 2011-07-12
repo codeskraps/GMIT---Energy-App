@@ -23,6 +23,7 @@
 package com.gmit.energyapp;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -31,10 +32,11 @@ import android.widget.Button;
 
 public class SolarActivity extends Activity implements OnClickListener{
 	private static final String TAG = SolarActivity.class.getSimpleName();
+	private static final String YOUTUBEVIDEO = "http://www.youtube.com/watch?v=sqTGm60wP4g";
 	
 	private Button btnSolarOne = null;
 	private Button btnSolarTwo = null;
-
+		
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -59,8 +61,18 @@ public class SolarActivity extends Activity implements OnClickListener{
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()){
+		
 		case R.id.btnSolarOne:
-			break;
+			
+			EnergyApplication energyApp = (EnergyApplication) getApplication();
+	        energyApp.setYouTubeVideo(YOUTUBEVIDEO);
+			
+	        Log.d(TAG, "OnClick youTubeVideo set");
+	        
+	        SolarActivity.this.startActivity(new Intent(SolarActivity.this, YouTubeActivity.class));
+			
+	        break;
+		
 		case R.id.btnSolarTwo:
 			break;
 		}

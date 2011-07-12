@@ -73,4 +73,6 @@
     <string name="btnHeatTransferOne">See video of heat transfer through underfloor heating</string>
     <string name="btnHeatTransferTwo">Radiator system</string>
     <string name="btnHeatTransferThree">Underfloor heating system</string>
+    
+    <string name="ok">Ok</string>
 </resources>
