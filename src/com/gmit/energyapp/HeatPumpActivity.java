@@ -23,12 +23,14 @@
 package com.gmit.energyapp;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
 public class HeatPumpActivity extends Activity implements OnClickListener {
+	private static final String YOUTUBEVIDEO = "http://www.youtube.com/watch?v=g9U1xtW-TEo&playnext=1&list=PL4F286D120FAD18B1";
 	
 	private Button btnHeatOne = null;
 	private Button btnHeatTwo = null;
@@ -58,7 +60,14 @@ public class HeatPumpActivity extends Activity implements OnClickListener {
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.btnHeatOne:
+			
+			EnergyApplication energyApp = (EnergyApplication) getApplication();
+	        energyApp.setYouTubeVideo(YOUTUBEVIDEO);
+			
+	        HeatPumpActivity.this.startActivity(new Intent(HeatPumpActivity.this, YouTubeActivity.class));
+	        
 			break;
+			
 		case R.id.btnHeatTwo:
 			break;
 		case R.id.btnHeatThree:

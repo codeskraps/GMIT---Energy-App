@@ -25,6 +25,7 @@
 <resources>
     <string name="app_name">GMIT - EnergyApp</string>
     <string name="solar_activity">GMIT - Solar</string>
+    <string name="solar_overview_activity">GMIT - Solar Overview</string>
     <string name="heatpump_activity">GMIT - Heat Pump</string>
     <string name="biomass_activity">GMIT - Biomass Boiler</string>
     <string name="gasboiler_activity">GMIT - Condensing Gas Boiler</string>

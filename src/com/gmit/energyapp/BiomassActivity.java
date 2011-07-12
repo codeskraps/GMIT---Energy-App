@@ -23,12 +23,14 @@
 package com.gmit.energyapp;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
 public class BiomassActivity extends Activity implements OnClickListener {
+	private static final String YOUTUBEVIDEO = "http://www.youtube.com/watch?v=B-pmbUSZsK4&feature=related";
 	
 	private Button btnBiomassOne = null;
 	private Button btnBiomassTwo = null;
@@ -58,6 +60,12 @@ public class BiomassActivity extends Activity implements OnClickListener {
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.btnBiomassOne:
+			
+			EnergyApplication energyApp = (EnergyApplication) getApplication();
+	        energyApp.setYouTubeVideo(YOUTUBEVIDEO);
+			
+	        BiomassActivity.this.startActivity(new Intent(BiomassActivity.this, YouTubeActivity.class));
+	        
 			break;
 		case R.id.btnBiomassTwo:
 			break;

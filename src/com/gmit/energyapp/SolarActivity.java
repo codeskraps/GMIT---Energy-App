@@ -67,13 +67,14 @@ public class SolarActivity extends Activity implements OnClickListener{
 			EnergyApplication energyApp = (EnergyApplication) getApplication();
 	        energyApp.setYouTubeVideo(YOUTUBEVIDEO);
 			
-	        Log.d(TAG, "OnClick youTubeVideo set");
-	        
 	        SolarActivity.this.startActivity(new Intent(SolarActivity.this, YouTubeActivity.class));
 			
 	        break;
 		
 		case R.id.btnSolarTwo:
+			
+			SolarActivity.this.startActivity(new Intent(SolarActivity.this, SolarOverviewActivity.class));
+			
 			break;
 		}
 		
