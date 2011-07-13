@@ -22,16 +22,32 @@
 		If not, see <http://www.gnu.org/licenses/>.
 -->
 
-<LinearLayout
+<ScrollView 
 	xmlns:android="http://schemas.android.com/apk/res/android"
-	android:orientation="vertical"
-	android:layout_width="match_parent"
-	android:layout_height="match_parent">
-    
-    <ImageView android:id="@+id/imageView1" 
-    	android:layout_width="match_parent"
-    	android:layout_height="match_parent" 
-    	android:src="@drawable/solar_panels_system_overview_lvl_3"
-    	android:layout_margin="10dp" />
-    
-</LinearLayout>
+	android:scrollbars="vertical"
+	android:layout_width="fill_parent" 
+	android:layout_height="fill_parent">
+	
+	<HorizontalScrollView 
+		android:layout_width="fill_parent" 
+		android:layout_height="wrap_content" >
+<!--		
+		<LinearLayout 
+			android:layout_width="fill_parent" 
+			android:layout_height="fill_parent" 
+			android:gravity="center|center_horizontal">
+ 		
+			<FrameLayout
+				android:layout_width="match_parent" 
+			    android:layout_height="wrap_content" >
+ -->			    
+			    <ImageView 
+			    	android:id="@+id/img_solar_overview"
+			    	android:src="@drawable/solar_panels_system_overview_lvl_3"
+			    	android:layout_width="673dp" 
+			    	android:layout_height="481dp" />
+
+<!-- 		</FrameLayout>	-->
+<!--		</LinearLayout>-->
+	</HorizontalScrollView>
+</ScrollView>

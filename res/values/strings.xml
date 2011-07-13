@@ -23,7 +23,7 @@
 -->
 
 <resources>
-    <string name="app_name">GMIT - EnergyApp</string>
+    <string name="app_name">GMIT - Energy App</string>
     <string name="solar_activity">GMIT - Solar</string>
     <string name="solar_overview_activity">GMIT - Solar Overview</string>
     <string name="heatpump_activity">GMIT - Heat Pump</string>
@@ -52,6 +52,28 @@
     <string name="btnSolarOne">See video of solar panel</string>
     <string name="btnSolarTwo">System overview</string>
     
+    <string name="solarTitlePin1">pin1</string>
+    <string name="solarTitlePin2">pin2</string>
+    <string name="solarTitlePin3">pin3</string>
+    <string name="solarTitlePin4">pin4</string>
+    <string name="solarTitlePin5">pin5</string>
+    <string name="solarTitlePin6">pin6</string>
+    <string name="solarTitlePin7">pin7</string>
+    <string name="solarTitlePin8">pin8</string>
+    <string name="solarTitlePin9">pin9</string>
+    <string name="solarTitlePin10">pin10</string>
+    
+    <string name="solarMessagePin1">pin1</string>
+    <string name="solarMessagePin2">pin2</string>
+    <string name="solarMessagePin3">pin3</string>
+    <string name="solarMessagePin4">pin4</string>
+    <string name="solarMessagePin5">pin5</string>
+    <string name="solarMessagePin6">pin6</string>
+    <string name="solarMessagePin7">pin7</string>
+    <string name="solarMessagePin8">pin8</string>
+    <string name="solarMessagePin9">pin9</string>
+    <string name="solarMessagePin10">pin10</string>
+        
     <!-- HeatPump -->
     <string name="heatpumpLevel2Text">An air source heat pump extracts heat from the surrounding air.  A fan draws the air over a heat exchanger coil known as an Evaporator.  The coil is filled with a cold refrigerant liquid. As the air flows over this coil, the cool liquid inside the coil draws heat from the air, and begins to heat up. This heat is later passed into a hot water storage tank located within the building, via a second heat exchanger known as a Condenser.</string>
     <string name="btnHeatOne">See video of heat pump</string>
