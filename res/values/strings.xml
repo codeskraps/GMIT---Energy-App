@@ -33,14 +33,13 @@
     <string name="about_activity">GMIT - About</string>
     
     <!-- MENU -->
-    <string name="menuHome">Home</string>
-    <string name="menuSolar">Solar</string>
+    <string name="menuSolar">Solar Panels</string>
     <string name="menuHeatPump">Heat Pump</string>
-    <string name="menuHRVU">HRVU</string>
+    <string name="menuBiomass">Biomass Boiler</string>
     <string name="menuGasBoiler">Gas Boiler</string>
-    <string name="menuHeatTransfer">HeatTransfer</string>
+    <string name="menuHeatTransfer">Heat Transfer</string>
+    <string name="menuHome">Home</string>
     <string name="menuQuit">Quit</string>
-    <string name="menuWind">Wind</string>
     
     <!-- HOME -->
     <string name="homeText">This app provides an introduction to the renewable energy technologies available in the Energy Lab in the Mechanical Engineering Department in GMIT. You can visit the lab and interact with state-of-the-art energy technology and/or you can find out more about the Department and what we can offer to our students.</string>

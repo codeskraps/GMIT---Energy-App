@@ -26,6 +26,9 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -77,7 +80,50 @@ public class SolarActivity extends Activity implements OnClickListener{
 			
 			break;
 		}
+	}
+	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		MenuInflater inflater = getMenuInflater();
+		inflater.inflate(R.menu.main, menu);
+		return true;
+	}
+
+    @Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+					
+		switch (item.getItemId()) {
+		case R.id.itemSolar:
+			
+			return true;
 		
+		case R.id.itemHeatPump:
+			
+			return true;
+			
+		case R.id.itemBiomass:
+			
+			return true;
+		
+		case R.id.itemGasBoiler:
+			
+			return true;
+			
+		case R.id.itemHeatTransfer:
+			
+			return true;
+		
+		case R.id.itemHome:
+			
+			return true;
+			
+		case R.id.itemQuit:
+			
+			return true;
+		
+		default:
+			return super.onOptionsItemSelected(item);
+		}
 	}
 
 }

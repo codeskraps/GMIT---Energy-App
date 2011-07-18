@@ -37,6 +37,7 @@ public class YouTubeActivity extends Activity {
 		
 		if (list.size() == 0) {
 			YouTubeActivity.this.startActivity(new Intent(Intent.ACTION_VIEW, uri));
+			YouTubeActivity.this.finish();
 		 }
 		
 		YouTubeActivity.this.startActivity(i);
