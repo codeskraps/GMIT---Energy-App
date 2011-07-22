@@ -26,23 +26,23 @@
     <item 
     	android:id="@+id/itemSolar" 
     	android:title="@string/menuSolar"
-    	android:icon="@android:drawable/ic_menu_close_clear_cancel" />
+    	android:icon="@drawable/solar_bw" />
     <item 
     	android:id="@+id/itemHeatPump" 
     	android:title="@string/menuHeatPump" 
-    	android:icon="@android:drawable/ic_menu_close_clear_cancel" />
+    	android:icon="@drawable/heatpump_bw" />
     <item 
     	android:id="@+id/itemBiomass" 
     	android:title="@string/menuBiomass"
-    	android:icon="@android:drawable/ic_menu_close_clear_cancel" />
+    	android:icon="@drawable/biomassboiler_bw" />
     <item 
     	android:id="@+id/itemGasBoiler" 
     	android:title="@string/menuGasBoiler"
-    	android:icon="@android:drawable/ic_menu_close_clear_cancel" />
+    	android:icon="@drawable/gas_boiler_bw" />
     <item 
     	android:id="@+id/itemHeatTransfer" 
     	android:title="@string/menuHeatTransfer"
-    	android:icon="@android:drawable/ic_menu_close_clear_cancel" />
+    	android:icon="@drawable/heat_transfer_bw" />
     <item 
     	android:id="@+id/itemHome" 
     	android:title="@string/menuHome"
