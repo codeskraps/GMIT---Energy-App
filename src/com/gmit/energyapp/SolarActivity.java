@@ -90,34 +90,62 @@ public class SolarActivity extends Activity implements OnClickListener{
 	}
 
     @Override
+	public boolean onPrepareOptionsMenu(Menu menu) {
+    	
+    	menu.findItem(R.id.itemSolar).setEnabled(false);
+
+		return super.onPrepareOptionsMenu(menu);
+	}
+
+	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 					
 		switch (item.getItemId()) {
 		case R.id.itemSolar:
 			
+			SolarActivity.this.startActivity(new Intent(SolarActivity.this, SolarActivity.class));
+			overridePendingTransition(R.anim.fadein, R.anim.fadeout);
+			
 			return true;
 		
 		case R.id.itemHeatPump:
+			
+			SolarActivity.this.startActivity(new Intent(SolarActivity.this, HeatPumpActivity.class));
+			overridePendingTransition(R.anim.fadein, R.anim.fadeout);
 			
 			return true;
 			
 		case R.id.itemBiomass:
 			
+			SolarActivity.this.startActivity(new Intent(SolarActivity.this, BiomassActivity.class));
+			overridePendingTransition(R.anim.fadein, R.anim.fadeout);
+			
 			return true;
 		
 		case R.id.itemGasBoiler:
+			
+			SolarActivity.this.startActivity(new Intent(SolarActivity.this, GasBoilerActivity.class));
+			overridePendingTransition(R.anim.fadein, R.anim.fadeout);
 			
 			return true;
 			
 		case R.id.itemHeatTransfer:
 			
+			SolarActivity.this.startActivity(new Intent(SolarActivity.this, HeatTransferActivity.class));
+			overridePendingTransition(R.anim.fadein, R.anim.fadeout);
+			
 			return true;
 		
 		case R.id.itemHome:
 			
+			SolarActivity.this.startActivity(new Intent(SolarActivity.this, HomeActivity.class));
+			overridePendingTransition(R.anim.fadein, R.anim.fadeout);
+			
 			return true;
 			
 		case R.id.itemQuit:
+			
+			finish();
 			
 			return true;
 		

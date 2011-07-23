@@ -1,0 +1,28 @@
+*************************************************
+	GMIT - Energy App
+		By
+	Carles Sentis
+*************************************************
+
+Possible Changes/Issues:
+
+1.- Context menu on launcherActivity ?
+
+My launcherActivity is the one that Aurora called
+"About lvl 1", I renamed it for consistency.
+
+Will I add a menu on this Activity ? This activity
+is the only one that doesn't have a menu at the 
+moment. It didn't seem that it needed one because
+the avility to launch all other menu option from
+that activity but perhaps would be better adding
+it for consistency through out the app
+
+2.- About option in Context menu ?
+
+In Aurora's document she didn't add the about
+option in the menu but I think there should be
+the option to launch the aboutActivity from
+the menu.
+
+

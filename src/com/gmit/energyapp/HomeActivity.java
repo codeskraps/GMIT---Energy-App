@@ -25,6 +25,9 @@ package com.gmit.energyapp;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -57,6 +60,78 @@ public class HomeActivity extends Activity implements OnClickListener {
 			HomeActivity.this.startActivity(new Intent(HomeActivity.this, LauncherActivity.class));
 			overridePendingTransition(R.anim.fadein, R.anim.fadeout);
 			break;
+		}
+	}
+	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		MenuInflater inflater = getMenuInflater();
+		inflater.inflate(R.menu.main, menu);
+		return true;
+	}
+	
+	@Override
+	public boolean onPrepareOptionsMenu(Menu menu) {
+    	
+    	menu.findItem(R.id.itemHome).setEnabled(false);
+
+		return super.onPrepareOptionsMenu(menu);
+	}
+
+    @Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+					
+		switch (item.getItemId()) {
+		case R.id.itemSolar:
+			
+			HomeActivity.this.startActivity(new Intent(HomeActivity.this, SolarActivity.class));
+			overridePendingTransition(R.anim.fadein, R.anim.fadeout);
+			
+			return true;
+		
+		case R.id.itemHeatPump:
+			
+			HomeActivity.this.startActivity(new Intent(HomeActivity.this, HeatPumpActivity.class));
+			overridePendingTransition(R.anim.fadein, R.anim.fadeout);
+			
+			return true;
+			
+		case R.id.itemBiomass:
+			
+			HomeActivity.this.startActivity(new Intent(HomeActivity.this, BiomassActivity.class));
+			overridePendingTransition(R.anim.fadein, R.anim.fadeout);
+			
+			return true;
+		
+		case R.id.itemGasBoiler:
+			
+			HomeActivity.this.startActivity(new Intent(HomeActivity.this, GasBoilerActivity.class));
+			overridePendingTransition(R.anim.fadein, R.anim.fadeout);
+			
+			return true;
+			
+		case R.id.itemHeatTransfer:
+			
+			HomeActivity.this.startActivity(new Intent(HomeActivity.this, HeatTransferActivity.class));
+			overridePendingTransition(R.anim.fadein, R.anim.fadeout);
+			
+			return true;
+		
+		case R.id.itemHome:
+			
+			HomeActivity.this.startActivity(new Intent(HomeActivity.this, HomeActivity.class));
+			overridePendingTransition(R.anim.fadein, R.anim.fadeout);
+			
+			return true;
+			
+		case R.id.itemQuit:
+			
+			finish();
+			
+			return true;
+		
+		default:
+			return super.onOptionsItemSelected(item);
 		}
 	}
 }
