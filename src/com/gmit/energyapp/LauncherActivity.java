@@ -70,31 +70,43 @@ public class LauncherActivity extends Activity implements OnClickListener {
 		switch(v.getId()){
 		
 		case R.id.img_solar:
+		case R.id.txtLauncherSolar:
+			
 			LauncherActivity.this.startActivity(new Intent(LauncherActivity.this, SolarActivity.class));
 			overridePendingTransition(R.anim.fadein, R.anim.fadeout);
 			break;
 		
 		case R.id.img_heatpump:
+		case R.id.txtLauncherHeatPump:
+			
 			LauncherActivity.this.startActivity(new Intent(LauncherActivity.this, HeatPumpActivity.class));
 			overridePendingTransition(R.anim.fadein, R.anim.fadeout);
 			break;
 		
 		case R.id.img_biomass:
+		case R.id.txtLauncherBiomass:
+			
 			LauncherActivity.this.startActivity(new Intent(LauncherActivity.this, BiomassActivity.class));
 			overridePendingTransition(R.anim.fadein, R.anim.fadeout);
 			break;
 			
 		case R.id.img_gasboiler:
+		case R.id.txtLauncherGasBoiler:
+			
 			LauncherActivity.this.startActivity(new Intent(LauncherActivity.this, GasBoilerActivity.class));
 			overridePendingTransition(R.anim.fadein, R.anim.fadeout);
 			break;
 			
 		case R.id.img_heattransfer:
+		case R.id.txtLauncherHeatTransfer:
+			
 			LauncherActivity.this.startActivity(new Intent(LauncherActivity.this, HeatTransferActivity.class));
 			overridePendingTransition(R.anim.fadein, R.anim.fadeout);
 			break;
 		
 		case R.id.img_about:
+		case R.id.txtLauncherAbout:
+			
 			LauncherActivity.this.startActivity(new Intent(LauncherActivity.this, AboutActivity.class));
 			overridePendingTransition(R.anim.fadein, R.anim.fadeout);
 		}

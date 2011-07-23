@@ -23,11 +23,31 @@
 -->
 
 <resources>
+	<style name="LinearLayoutImageLauncher">
+		<item name="android:orientation">vertical</item>
+		<item name="android:layout_height">fill_parent</item>
+		<item name="android:layout_width">fill_parent</item>
+		<item name="android:layout_weight">1</item>
+	</style>
+	
 	<style name="ImageLauncher">
 		<item name="android:layout_width">wrap_content</item>
 		<item name="android:layout_height">wrap_content</item>
+		<item name="android:layout_gravity">center_horizontal</item>
 		<item name="android:layout_weight">1</item>
-		<item name="android:layout_gravity">center_vertical</item>
-		<item name="android:layout_margin">10dp</item>
+	</style>
+	
+	<style name="TextLauncher">
+		<item name="android:layout_width">wrap_content</item>
+		<item name="android:layout_height">wrap_content</item>
+		<!-- <item name="android:layout_weight">1</item> -->
+		<item name="android:layout_gravity">center</item>
+		<item name="android:typeface">monospace</item>
+		<item name="android:textStyle">bold</item>
+		<item name="android:textSize">15dp</item>
+		<item name="android:shadowColor">#696969</item>
+		<item name="android:shadowRadius">1.5</item>
+		<item name="android:shadowDx">1.5</item>
+		<item name="android:shadowDy">1.5</item>
 	</style>
 </resources>

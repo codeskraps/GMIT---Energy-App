@@ -28,46 +28,112 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
     
-    <LinearLayout 
-    	android:layout_height="wrap_content" 
+    <LinearLayout
+    	android:orientation="horizontal"
+    	android:layout_height="fill_parent" 
     	android:layout_width="fill_parent" 
-    	android:layout_weight="1">
+    	android:layout_weight="1"
+    	android:layout_marginTop="10dp">
     	
-        <ImageView 
-        	android:src="@drawable/solar" 
-        	android:id="@+id/img_solar"
-        	style="@style/ImageLauncher" />
-        	        	
-        <ImageView 
-        	android:src="@drawable/heatpump" 
-        	android:id="@+id/img_heatpump"
-        	style="@style/ImageLauncher" />
-        	
-        <ImageView 
-        	android:src="@drawable/biomassboiler" 
-        	android:id="@+id/img_biomass" 
-        	style="@style/ImageLauncher" />
+    	<LinearLayout
+    		style="@style/LinearLayoutImageLauncher">
+    		
+    		<ImageView 
+	        	android:src="@drawable/solar" 
+	        	android:id="@+id/img_solar"
+	        	style="@style/ImageLauncher" />
+	         
+	      	<TextView 
+	        	android:id="@+id/txtLauncherSolar" 
+	        	android:text="@string/solartxt"
+	        	style="@style/TextLauncher" />
+	 	
+	 	</LinearLayout>
+	 	
+	 	<LinearLayout
+    		style="@style/LinearLayoutImageLauncher">
+    			        	        	
+	        <ImageView 
+	        	android:src="@drawable/heatpump" 
+	        	android:id="@+id/img_heatpump"
+	        	style="@style/ImageLauncher" />
+	        	
+	      	<TextView 
+	        	android:id="@+id/txtLauncherHeatPump" 
+	        	android:text="@string/heatpumptxt"
+	        	style="@style/TextLauncher" />
+	        	
+	   	</LinearLayout>
+	   	
+	   	<LinearLayout
+    		style="@style/LinearLayoutImageLauncher">
+	        	
+	        <ImageView 
+	        	android:src="@drawable/biomassboiler" 
+	        	android:id="@+id/img_biomass" 
+	        	style="@style/ImageLauncher" />
+	        	
+	        <TextView 
+	        	android:id="@+id/txtLauncherBiomass" 
+	        	android:text="@string/biomasstxt"
+	        	style="@style/TextLauncher" />
+	        	
+		</LinearLayout>
         	
     </LinearLayout>
     
-    <LinearLayout 
-    	android:layout_height="wrap_content" 
+    <LinearLayout
+    	android:orientation="horizontal"
+    	android:layout_height="fill_parent" 
     	android:layout_width="fill_parent" 
-    	android:layout_weight="1">
+    	android:layout_weight="1"
+    	android:layout_marginTop="10dp"
+    	android:layout_marginBottom="10dp">
+    	
+    	<LinearLayout
+    		style="@style/LinearLayoutImageLauncher">
         	
-        <ImageView 
-        	android:src="@drawable/gas_boiler" 
-        	android:id="@+id/img_gasboiler" 
-        	style="@style/ImageLauncher" />
+	        <ImageView 
+	        	android:src="@drawable/gas_boiler" 
+	        	android:id="@+id/img_gasboiler" 
+	        	style="@style/ImageLauncher" />
+	        	
+	       	<TextView 
+	        	android:id="@+id/txtLauncherGasBoiler" 
+	        	android:text="@string/gasboilertxt"
+	        	style="@style/TextLauncher" />
+	        	
+	  	</LinearLayout>
+	        	
+	  	<LinearLayout
+    		style="@style/LinearLayoutImageLauncher">
         	
-        <ImageView 
-        	android:src="@drawable/heat_transfer" 
-        	android:id="@+id/img_heattransfer" 
-        	style="@style/ImageLauncher" />
-        	
-        <ImageView 
-        	android:src="@drawable/about" 
-        	android:id="@+id/img_about" 
-        	style="@style/ImageLauncher" />
+	        <ImageView 
+	        	android:src="@drawable/heat_transfer" 
+	        	android:id="@+id/img_heattransfer" 
+	        	style="@style/ImageLauncher" />
+	        	
+	      	<TextView 
+	        	android:id="@+id/txtLauncherHeatTransfer" 
+	        	android:text="@string/heattransfertxt"
+	        	style="@style/TextLauncher" />
+	        	
+	 	</LinearLayout>
+	        	
+	 	<LinearLayout
+    		style="@style/LinearLayoutImageLauncher">
+	        	
+	        <ImageView 
+	        	android:src="@drawable/about" 
+	        	android:id="@+id/img_about" 
+	        	style="@style/ImageLauncher" />
+	       	
+	       	<TextView 
+	        	android:id="@+id/txtLauncherAbout" 
+	        	android:text="@string/abouttxt"
+	        	style="@style/TextLauncher" />
+	        	
+	 	</LinearLayout>
+	 	
     </LinearLayout>
 </LinearLayout>

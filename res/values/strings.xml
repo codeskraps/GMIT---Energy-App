@@ -46,6 +46,14 @@
     <string name="btnHomeOne">Mechanical Engineering Department in GMIT</string>
     <string name="btnHomeTwo">Energy Lab</string>
     
+    <!-- Launcher -->
+    <string name="solartxt">Solar</string>
+    <string name="heatpumptxt">Heat Pump</string>
+    <string name="biomasstxt">Biomass Boiler</string>
+    <string name="gasboilertxt">Gas Boiler</string>
+    <string name="heattransfertxt">Heat Transfer</string>
+    <string name="abouttxt">About</string>
+    
     <!-- Solar -->
     <string name="solarLevel2Text">Solar panels transfer the sun’s energy, which is in the form of electromagnetic radiation, into thermal energy to heat water for domestic and industrial purposes.</string>
     <string name="btnSolarOne">See video of solar panel</string>
