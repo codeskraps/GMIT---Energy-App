@@ -100,58 +100,18 @@ public class SolarActivity extends Activity implements OnClickListener{
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 					
-		switch (item.getItemId()) {
-		case R.id.itemSolar:
+		if (item.getItemId() == R.id.itemQuit) {
 			
-			SolarActivity.this.startActivity(new Intent(SolarActivity.this, SolarActivity.class));
-			overridePendingTransition(R.anim.fadein, R.anim.fadeout);
-			
-			return true;
+			moveTaskToBack(true);
 		
-		case R.id.itemHeatPump:
+		} else {
 			
-			SolarActivity.this.startActivity(new Intent(SolarActivity.this, HeatPumpActivity.class));
+			EnergyApplication energyApp = (EnergyApplication) getApplication();
+			SolarActivity.this.startActivity(energyApp.getMenuIntent(item, SolarActivity.this));
 			overridePendingTransition(R.anim.fadein, R.anim.fadeout);
-			
-			return true;
-			
-		case R.id.itemBiomass:
-			
-			SolarActivity.this.startActivity(new Intent(SolarActivity.this, BiomassActivity.class));
-			overridePendingTransition(R.anim.fadein, R.anim.fadeout);
-			
-			return true;
-		
-		case R.id.itemGasBoiler:
-			
-			SolarActivity.this.startActivity(new Intent(SolarActivity.this, GasBoilerActivity.class));
-			overridePendingTransition(R.anim.fadein, R.anim.fadeout);
-			
-			return true;
-			
-		case R.id.itemHeatTransfer:
-			
-			SolarActivity.this.startActivity(new Intent(SolarActivity.this, HeatTransferActivity.class));
-			overridePendingTransition(R.anim.fadein, R.anim.fadeout);
-			
-			return true;
-		
-		case R.id.itemHome:
-			
-			SolarActivity.this.startActivity(new Intent(SolarActivity.this, HomeActivity.class));
-			overridePendingTransition(R.anim.fadein, R.anim.fadeout);
-			
-			return true;
-			
-		case R.id.itemQuit:
-			
-			finish();
-			
-			return true;
-		
-		default:
-			return super.onOptionsItemSelected(item);
 		}
+		
+		return super.onOptionsItemSelected(item);
 	}
 
 }

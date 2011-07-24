@@ -25,9 +25,13 @@ package com.gmit.energyapp;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class LauncherActivity extends Activity implements OnClickListener {
 	
@@ -37,6 +41,13 @@ public class LauncherActivity extends Activity implements OnClickListener {
 	private ImageView img_gasboiler = null;
 	private ImageView img_heattransfer = null;
 	private ImageView img_about = null;
+	
+	private TextView txt_solar = null;
+	private TextView txt_heatpump = null;
+	private TextView txt_biomass = null;
+	private TextView txt_gasboiler = null;
+	private TextView txt_heattransfer = null;
+	private TextView txt_about = null;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -50,6 +61,13 @@ public class LauncherActivity extends Activity implements OnClickListener {
         img_heattransfer = (ImageView) findViewById(R.id.img_heattransfer);
         img_about = (ImageView) findViewById(R.id.img_about);
         
+        txt_solar = (TextView) findViewById(R.id.txtLauncherSolar);
+        txt_heatpump = (TextView) findViewById(R.id.txtLauncherHeatPump);
+        txt_biomass = (TextView) findViewById(R.id.txtLauncherBiomass);
+        txt_gasboiler = (TextView) findViewById(R.id.txtLauncherGasBoiler);
+        txt_heattransfer = (TextView) findViewById(R.id.txtLauncherHeatTransfer);
+        txt_about = (TextView) findViewById(R.id.txtLauncherAbout);
+        
         img_solar.setOnClickListener(this);
         img_heatpump.setOnClickListener(this);
         img_biomass.setOnClickListener(this);
@@ -57,6 +75,12 @@ public class LauncherActivity extends Activity implements OnClickListener {
         img_heattransfer.setOnClickListener(this);
         img_about.setOnClickListener(this);
         
+        txt_solar.setOnClickListener(this);
+        txt_heatpump.setOnClickListener(this);
+        txt_biomass.setOnClickListener(this);
+        txt_gasboiler.setOnClickListener(this);
+        txt_heattransfer.setOnClickListener(this);
+        txt_about.setOnClickListener(this);
     }
     
     @Override
@@ -110,6 +134,29 @@ public class LauncherActivity extends Activity implements OnClickListener {
 			LauncherActivity.this.startActivity(new Intent(LauncherActivity.this, AboutActivity.class));
 			overridePendingTransition(R.anim.fadein, R.anim.fadeout);
 		}
+	}
+	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		MenuInflater inflater = getMenuInflater();
+		inflater.inflate(R.menu.main, menu);
+		return true;
+	}
+	
+    @Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+					
+    	if (item.getItemId() == R.id.itemQuit) {
+			
+			moveTaskToBack(true);
 		
+		} else {
+			
+			EnergyApplication energyApp = (EnergyApplication) getApplication();
+			LauncherActivity.this.startActivity(energyApp.getMenuIntent(item, LauncherActivity.this));
+			overridePendingTransition(R.anim.fadein, R.anim.fadeout);
+		}
+		
+		return super.onOptionsItemSelected(item);
 	}
 }

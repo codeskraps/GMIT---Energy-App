@@ -19,50 +19,20 @@
  * General Public License along with this program.
  * If not, see <http://www.gnu.org/licenses/>.
  */
-	
+
 package com.gmit.energyapp;
 
-import android.app.Activity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 
-public class AboutActivity extends Activity {
+public class PreferenceActivity extends android.preference.PreferenceActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.about);
-	}
-	
-	@Override
-	public void onBackPressed() {
-		super.onBackPressed();
-		overridePendingTransition(R.anim.fadein, R.anim.fadeout);
+		
+		setTitle(R.string.preference_activity);
+		
+		addPreferencesFromResource(R.xml.preferences);
 	}
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		MenuInflater inflater = getMenuInflater();
-		inflater.inflate(R.menu.main, menu);
-		return true;
-	}
-	
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-					
-		if (item.getItemId() == R.id.itemQuit) {
-			
-			moveTaskToBack(true);
-		
-		} else {
-			
-			EnergyApplication energyApp = (EnergyApplication) getApplication();
-			AboutActivity.this.startActivity(energyApp.getMenuIntent(item, AboutActivity.this));
-			overridePendingTransition(R.anim.fadein, R.anim.fadeout);
-		}
-		
-		return super.onOptionsItemSelected(item);
-	}
 }

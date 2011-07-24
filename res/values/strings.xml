@@ -23,6 +23,7 @@
 -->
 
 <resources>
+	<!-- Activities -->
     <string name="app_name">GMIT - Energy App</string>
     <string name="solar_activity">GMIT - Solar</string>
     <string name="solar_overview_activity">GMIT - Solar Overview</string>
@@ -31,6 +32,7 @@
     <string name="gasboiler_activity">GMIT - Condensing Gas Boiler</string>
     <string name="heattransfer_activity">GMIT - Heat Transfer</string>
     <string name="about_activity">GMIT - About</string>
+    <string name="preference_activity">GMIT - Preferences</string>
     
     <!-- MENU -->
     <string name="menuSolar">Solar Panels</string>
@@ -39,6 +41,7 @@
     <string name="menuGasBoiler">Gas Boiler</string>
     <string name="menuHeatTransfer">Heat Transfer</string>
     <string name="menuHome">Home</string>
+    <string name="menuPreference">Preferences</string>
     <string name="menuQuit">Quit</string>
     
     <!-- HOME -->
@@ -105,4 +108,12 @@
     <string name="btnHeatTransferThree">Underfloor heating system</string>
     
     <string name="ok">Ok</string>
+    
+    <!-- Preferences -->
+    <string name="GeneralPreferences">General Preferences</string>
+    <string name="Fullscreen">Fullscreen</string>
+    <string name="Fullscreen_summary">Show application in fullscreen</string>
+    <string name="GmitEnergy">GMIT - Energy App</string>
+    <string name="GmitEnergyTitle">GMIT Energy App v1.0</string>
+    <string name="GmitEnergySummary">License GPL v3 - 2011 - Carles Sentis</string>
 </resources>

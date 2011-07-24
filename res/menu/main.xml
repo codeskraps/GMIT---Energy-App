@@ -46,7 +46,13 @@
     <item 
     	android:id="@+id/itemHome" 
     	android:title="@string/menuHome"
-    	android:icon="@android:drawable/ic_menu_close_clear_cancel" />   	
+    	android:icon="@android:drawable/ic_menu_close_clear_cancel" />
+    
+    <item 
+    	android:id="@+id/itemPreference"
+    	android:title="@string/menuPreference"
+    	android:icon="@android:drawable/ic_menu_preferences" />
+    	   	
     <item 
     	android:id="@+id/itemQuit" 
     	android:title="@string/menuQuit" 
