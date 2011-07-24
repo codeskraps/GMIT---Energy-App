@@ -25,14 +25,15 @@
 <resources>
 	<!-- Activities -->
     <string name="app_name">GMIT - Energy App</string>
-    <string name="solar_activity">GMIT - Solar</string>
-    <string name="solar_overview_activity">GMIT - Solar Overview</string>
+    <string name="solar_activity">GMIT - Solar Panels</string>
+    <string name="solar_overview_activity">GMIT - Solar Panels Overview</string>
     <string name="heatpump_activity">GMIT - Heat Pump</string>
     <string name="biomass_activity">GMIT - Biomass Boiler</string>
     <string name="gasboiler_activity">GMIT - Condensing Gas Boiler</string>
     <string name="heattransfer_activity">GMIT - Heat Transfer</string>
     <string name="about_activity">GMIT - About</string>
     <string name="preference_activity">GMIT - Preferences</string>
+    <string name="webview_activity">GMIT - The Department of Mechanical &amp; Industrial Engineering</string>
     
     <!-- MENU -->
     <string name="menuSolar">Solar Panels</string>
@@ -50,7 +51,7 @@
     <string name="btnHomeTwo">Energy Lab</string>
     
     <!-- Launcher -->
-    <string name="solartxt">Solar</string>
+    <string name="solartxt">Solar Panels</string>
     <string name="heatpumptxt">Heat Pump</string>
     <string name="biomasstxt">Biomass Boiler</string>
     <string name="gasboilertxt">Gas Boiler</string>

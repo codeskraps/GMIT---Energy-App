@@ -25,13 +25,18 @@ package com.gmit.energyapp;
 import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.MenuItem;
 
-public class EnergyApplication extends Application {
+public class EnergyApplication extends Application implements OnSharedPreferenceChangeListener {
 	private static final String TAG = EnergyApplication.class.getSimpleName();
+	private static final String CHKFULLSCREEN ="ckbfullscreen";
 
-	private String youTubeVideo = null;
+	private EnergyData energyData = null;
+	private SharedPreferences prefs = null;
 	
 	@Override
 	public void onCreate() {
@@ -39,19 +44,14 @@ public class EnergyApplication extends Application {
 		
 		Log.d(TAG, "onCreate started");
 		
-		setYouTubeVideo("");
-	}
-
-	public String getYouTubeVideo() {
-		Log.d(TAG, "getYouTubeVideo: " + youTubeVideo);
+		prefs = PreferenceManager.getDefaultSharedPreferences(this);
+		prefs.registerOnSharedPreferenceChangeListener(this);
 		
-		return youTubeVideo;
-	}
-
-	public void setYouTubeVideo(String youTubeVideo) {
-		Log.d(TAG, "setYouVideo: " + youTubeVideo);
+		setEnergyData(new EnergyData(this));
 		
-		this.youTubeVideo = youTubeVideo;
+		SharedPreferences settings = getSharedPreferences("preferences", MODE_PRIVATE);
+		boolean chkFullscreen = settings.getBoolean("ckbfullscreen", false);
+		energyData.setChkFullscreen(chkFullscreen);
 	}
 	
 	public Intent getMenuIntent(MenuItem item, Context context) {
@@ -67,5 +67,22 @@ public class EnergyApplication extends Application {
 			case R.id.itemPreference:	return new Intent(context, PreferenceActivity.class);
 		}
 		return null;
+	}
+
+	@Override
+	public void onSharedPreferenceChanged(SharedPreferences prefs, String key) {
+		if (key.equals(CHKFULLSCREEN)) {
+			boolean chkFullscreen = prefs.getBoolean("ckbfullscreen", false);
+			energyData.setChkFullscreen(chkFullscreen);
+			energyData.setInvalidate(true);
+		}
+	}
+
+	public EnergyData getEnergyData() {
+		return energyData;
+	}
+
+	public void setEnergyData(EnergyData energyData) {
+		this.energyData = energyData;
 	}
 }

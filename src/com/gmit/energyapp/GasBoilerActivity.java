@@ -40,7 +40,8 @@ public class GasBoilerActivity extends Activity implements OnClickListener {
 		case R.id.btnGasBoilerOne:
 			
 			EnergyApplication energyApp = (EnergyApplication) getApplication();
-	        energyApp.setYouTubeVideo(YOUTUBEVIDEO);
+	        EnergyData energyData = energyApp.getEnergyData();
+	        energyData.setYouTubeVideo(YOUTUBEVIDEO);
 			
 	        GasBoilerActivity.this.startActivity(new Intent(GasBoilerActivity.this, YouTubeActivity.class));
 	        

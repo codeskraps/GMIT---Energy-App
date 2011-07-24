@@ -31,11 +31,14 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.WindowManager;
 import android.widget.Button;
 
 public class SolarActivity extends Activity implements OnClickListener{
 	private static final String TAG = SolarActivity.class.getSimpleName();
 	private static final String YOUTUBEVIDEO = "http://www.youtube.com/watch?v=sqTGm60wP4g";
+	
+	private EnergyData energyData = null;
 	
 	private Button btnSolarOne = null;
 	private Button btnSolarTwo = null;
@@ -46,6 +49,16 @@ public class SolarActivity extends Activity implements OnClickListener{
 		
 		Log.d(TAG, "SolarActivity started");
 		
+		EnergyApplication energyApp = (EnergyApplication) getApplication();
+        energyData = energyApp.getEnergyData();
+		
+        if (energyData.isChkFullscreen()) {
+        	
+        //requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, 
+                                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        }
+        
 		setContentView(R.layout.solar);
 		
 		btnSolarOne = (Button) findViewById(R.id.btnSolarOne);
@@ -53,6 +66,24 @@ public class SolarActivity extends Activity implements OnClickListener{
 		
 		btnSolarOne.setOnClickListener(this);
 		btnSolarTwo.setOnClickListener(this);
+	}
+
+	@Override
+	protected void onResume() {
+		super.onResume();
+		
+		if (energyData.isInvalidate()) {
+			
+			if (energyData.isChkFullscreen()) {
+	        	
+		        //requestWindowFeature(Window.FEATURE_NO_TITLE);
+		        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, 
+		                                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+			}
+		        
+			setContentView(R.layout.solar);
+			energyData.setInvalidate(false);
+		}
 	}
 
 	@Override
@@ -67,8 +98,7 @@ public class SolarActivity extends Activity implements OnClickListener{
 		
 		case R.id.btnSolarOne:
 			
-			EnergyApplication energyApp = (EnergyApplication) getApplication();
-	        energyApp.setYouTubeVideo(YOUTUBEVIDEO);
+			energyData.setYouTubeVideo(YOUTUBEVIDEO);
 			
 	        SolarActivity.this.startActivity(new Intent(SolarActivity.this, YouTubeActivity.class));
 			

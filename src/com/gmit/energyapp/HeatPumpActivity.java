@@ -65,7 +65,8 @@ public class HeatPumpActivity extends Activity implements OnClickListener {
 		case R.id.btnHeatOne:
 			
 			EnergyApplication energyApp = (EnergyApplication) getApplication();
-	        energyApp.setYouTubeVideo(YOUTUBEVIDEO);
+	        EnergyData energyData = energyApp.getEnergyData();
+	        energyData.setYouTubeVideo(YOUTUBEVIDEO);
 			
 	        HeatPumpActivity.this.startActivity(new Intent(HeatPumpActivity.this, YouTubeActivity.class));
 	        

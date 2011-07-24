@@ -65,7 +65,8 @@ public class BiomassActivity extends Activity implements OnClickListener {
 		case R.id.btnBiomassOne:
 			
 			EnergyApplication energyApp = (EnergyApplication) getApplication();
-	        energyApp.setYouTubeVideo(YOUTUBEVIDEO);
+	        EnergyData energyData = energyApp.getEnergyData();
+	        energyData.setYouTubeVideo(YOUTUBEVIDEO);
 			
 	        BiomassActivity.this.startActivity(new Intent(BiomassActivity.this, YouTubeActivity.class));
 	        

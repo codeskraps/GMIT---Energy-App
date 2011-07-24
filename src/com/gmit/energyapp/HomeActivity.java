@@ -53,7 +53,7 @@ public class HomeActivity extends Activity implements OnClickListener {
 	public void onClick(View v) {
 		switch (v.getId()){
 		case R.id.btnHomeOne:
-			HomeActivity.this.startActivity(new Intent(HomeActivity.this, MechanicalEngineeringDepartmentWebView.class));
+			HomeActivity.this.startActivity(new Intent(HomeActivity.this, WebViewActivity.class));
 			overridePendingTransition(R.anim.fadein, R.anim.fadeout);
 			break;
 		case R.id.btnHomeTwo:

@@ -20,8 +20,9 @@ public class YouTubeActivity extends Activity {
 		Log.d(TAG, "onCreate Started");
 		
 		EnergyApplication energyApp = (EnergyApplication) getApplication();
-        startVideo(energyApp.getYouTubeVideo());
-
+		EnergyData energyData = energyApp.getEnergyData();
+        
+        startVideo(energyData.getYouTubeVideo());
 	}
 
 	private void startVideo(String youTubeVideo) {

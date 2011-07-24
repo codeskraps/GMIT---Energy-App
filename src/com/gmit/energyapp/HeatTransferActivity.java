@@ -65,7 +65,8 @@ public class HeatTransferActivity extends Activity implements OnClickListener {
 		case R.id.btnHeatTransferOne:
 			
 			EnergyApplication energyApp = (EnergyApplication) getApplication();
-	        energyApp.setYouTubeVideo(YOUTUBEVIDEO);
+	        EnergyData energyData = energyApp.getEnergyData();
+	        energyData.setYouTubeVideo(YOUTUBEVIDEO);
 			
 	        HeatTransferActivity.this.startActivity(new Intent(HeatTransferActivity.this, YouTubeActivity.class));
 	        
