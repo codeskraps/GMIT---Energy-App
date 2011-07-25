@@ -7,25 +7,62 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
 public class GasBoilerActivity extends Activity implements OnClickListener {
 	private static final String YOUTUBEVIDEO = "http://www.youtube.com/watch?v=MFzYIpXEjDU";
 	
+	private EnergyData energyData = null;
+	
+	private boolean activityPaused;
+
 	private Button btnGasBoilerOne = null;
 	private Button btnGasBoilerTwo = null;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
+		EnergyApplication energyApp = (EnergyApplication) getApplication();
+        energyData = energyApp.getEnergyData();
+        
+		if (energyData.isChkFullscreen()) {
+        	
+	        //requestWindowFeature(Window.FEATURE_NO_TITLE);
+	        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+		}
+	    
 		setContentView(R.layout.gasboiler);
+		
+		activityPaused = false;
 		
 		btnGasBoilerOne = (Button) findViewById(R.id.btnGasBoilerOne);
 		btnGasBoilerTwo = (Button) findViewById(R.id.btnGasBoilerTwo);
 		
 		btnGasBoilerOne.setOnClickListener(this);
 		btnGasBoilerTwo.setOnClickListener(this);
+	}
+	
+	@Override
+	protected void onResume() {
+		super.onResume();
+		
+		if (energyData.isInvalidate() && activityPaused) {
+			
+			GasBoilerActivity.this.startActivity(new Intent(GasBoilerActivity.this, GasBoilerActivity.class));
+			GasBoilerActivity.this.finish();
+		}
+		
+		activityPaused = false;
+	}
+
+	@Override
+	protected void onPause() {
+		super.onPause();
+		
+		activityPaused = true;
 	}
 
 	@Override

@@ -40,6 +40,8 @@ public class SolarActivity extends Activity implements OnClickListener{
 	
 	private EnergyData energyData = null;
 	
+	private boolean activityPaused;
+	
 	private Button btnSolarOne = null;
 	private Button btnSolarTwo = null;
 		
@@ -51,39 +53,49 @@ public class SolarActivity extends Activity implements OnClickListener{
 		
 		EnergyApplication energyApp = (EnergyApplication) getApplication();
         energyData = energyApp.getEnergyData();
-		
-        if (energyData.isChkFullscreen()) {
-        	
-        //requestWindowFeature(Window.FEATURE_NO_TITLE);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, 
-                                WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        }
         
+		if (energyData.isChkFullscreen()) {
+        	
+	        //requestWindowFeature(Window.FEATURE_NO_TITLE);
+	        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+		}
+	    
 		setContentView(R.layout.solar);
+		
+		activityPaused = false;
 		
 		btnSolarOne = (Button) findViewById(R.id.btnSolarOne);
 		btnSolarTwo = (Button) findViewById(R.id.btnSolarTwo);
 		
 		btnSolarOne.setOnClickListener(this);
 		btnSolarTwo.setOnClickListener(this);
+		
+		activityPaused = false;
 	}
 
 	@Override
 	protected void onResume() {
 		super.onResume();
 		
-		if (energyData.isInvalidate()) {
+		Log.d(TAG, "SolarActivity onResume");
+		
+		if (energyData.isInvalidate() && activityPaused) {
 			
-			if (energyData.isChkFullscreen()) {
-	        	
-		        //requestWindowFeature(Window.FEATURE_NO_TITLE);
-		        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, 
-		                                WindowManager.LayoutParams.FLAG_FULLSCREEN);
-			}
-		        
-			setContentView(R.layout.solar);
-			energyData.setInvalidate(false);
+			Log.d(TAG, "SolarActivity onResume isInvalidte");
+			
+			SolarActivity.this.startActivity(new Intent(SolarActivity.this, SolarActivity.class));
+			SolarActivity.this.finish();
+			Log.d(TAG, "SolarActivity onResume finish");
 		}
+		
+		activityPaused = false;
+	}
+
+	@Override
+	protected void onPause() {
+		super.onPause();
+		
+		activityPaused = true;
 	}
 
 	@Override

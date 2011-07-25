@@ -29,11 +29,16 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
 public class HeatPumpActivity extends Activity implements OnClickListener {
 	private static final String YOUTUBEVIDEO = "http://www.youtube.com/watch?v=g9U1xtW-TEo&playnext=1&list=PL4F286D120FAD18B1";
+	
+	private EnergyData energyData = null;
+	
+	private boolean activityPaused;
 	
 	private Button btnHeatOne = null;
 	private Button btnHeatTwo = null;
@@ -42,7 +47,19 @@ public class HeatPumpActivity extends Activity implements OnClickListener {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
+		EnergyApplication energyApp = (EnergyApplication) getApplication();
+        energyData = energyApp.getEnergyData();
+        
+		if (energyData.isChkFullscreen()) {
+        	
+	        //requestWindowFeature(Window.FEATURE_NO_TITLE);
+	        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+		}
+	    
 		setContentView(R.layout.heatpump);
+		
+		activityPaused = false;
 		
 		btnHeatOne = (Button) findViewById(R.id.btnHeatOne);
 		btnHeatTwo = (Button) findViewById(R.id.btnHeatTwo);
@@ -51,6 +68,26 @@ public class HeatPumpActivity extends Activity implements OnClickListener {
 		btnHeatOne.setOnClickListener(this);
 		btnHeatTwo.setOnClickListener(this);
 		btnHeatThree.setOnClickListener(this);
+	}
+	
+	@Override
+	protected void onResume() {
+		super.onResume();
+		
+		if (energyData.isInvalidate() && activityPaused) {
+			
+			HeatPumpActivity.this.startActivity(new Intent(HeatPumpActivity.this, HeatPumpActivity.class));
+			HeatPumpActivity.this.finish();
+		}
+		
+		activityPaused = false;
+	}
+
+	@Override
+	protected void onPause() {
+		super.onPause();
+		
+		activityPaused = true;
 	}
 	
 	@Override

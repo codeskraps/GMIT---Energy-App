@@ -29,11 +29,16 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
 public class BiomassActivity extends Activity implements OnClickListener {
 	private static final String YOUTUBEVIDEO = "http://www.youtube.com/watch?v=B-pmbUSZsK4&feature=related";
+	
+	private EnergyData energyData = null;
+	
+	private boolean activityPaused;
 	
 	private Button btnBiomassOne = null;
 	private Button btnBiomassTwo = null;
@@ -42,7 +47,19 @@ public class BiomassActivity extends Activity implements OnClickListener {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
+		EnergyApplication energyApp = (EnergyApplication) getApplication();
+        energyData = energyApp.getEnergyData();
+        
+		if (energyData.isChkFullscreen()) {
+        	
+	        //requestWindowFeature(Window.FEATURE_NO_TITLE);
+	        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+		}
+	    
 		setContentView(R.layout.biomass);
+		
+		activityPaused = false;
 		
 		btnBiomassOne = (Button) findViewById(R.id.btnBiomassOne);
 		btnBiomassTwo = (Button) findViewById(R.id.btnBiomassTwo);
@@ -51,6 +68,26 @@ public class BiomassActivity extends Activity implements OnClickListener {
 		btnBiomassOne.setOnClickListener(this);
 		btnBiomassTwo.setOnClickListener(this);
 		btnBiomassThree.setOnClickListener(this);
+	}
+	
+	@Override
+	protected void onResume() {
+		super.onResume();
+		
+		if (energyData.isInvalidate() && activityPaused) {
+			
+			BiomassActivity.this.startActivity(new Intent(BiomassActivity.this, BiomassActivity.class));
+			BiomassActivity.this.finish();
+		}
+		
+		activityPaused = false;
+	}
+
+	@Override
+	protected void onPause() {
+		super.onPause();
+		
+		activityPaused = true;
 	}
 	
 	@Override

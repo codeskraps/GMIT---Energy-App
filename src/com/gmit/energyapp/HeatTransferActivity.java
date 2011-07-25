@@ -29,11 +29,16 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
 public class HeatTransferActivity extends Activity implements OnClickListener {
 	private static final String YOUTUBEVIDEO = "http://www.youtube.com/watch?v=2AzgljdNNN4&feature=related";
+	
+	private EnergyData energyData = null;
+	
+	private boolean activityPaused;
 	
 	private Button btnHeatOne = null;
 	private Button btnHeatTwo = null;
@@ -42,7 +47,19 @@ public class HeatTransferActivity extends Activity implements OnClickListener {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
+		EnergyApplication energyApp = (EnergyApplication) getApplication();
+        energyData = energyApp.getEnergyData();
+        
+		if (energyData.isChkFullscreen()) {
+        	
+	        //requestWindowFeature(Window.FEATURE_NO_TITLE);
+	        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+		}
+	    
 		setContentView(R.layout.heattransfer);
+		
+		activityPaused = false;
 		
 		btnHeatOne = (Button) findViewById(R.id.btnHeatTransferOne);
 		btnHeatTwo = (Button) findViewById(R.id.btnHeatTransferTwo);
@@ -51,6 +68,26 @@ public class HeatTransferActivity extends Activity implements OnClickListener {
 		btnHeatOne.setOnClickListener(this);
 		btnHeatTwo.setOnClickListener(this);
 		btnHeatThree.setOnClickListener(this);
+	}
+	
+	@Override
+	protected void onResume() {
+		super.onResume();
+		
+		if (energyData.isInvalidate() && activityPaused) {
+			
+			HeatTransferActivity.this.startActivity(new Intent(HeatTransferActivity.this, AboutActivity.class));
+			HeatTransferActivity.this.finish();
+		}
+		
+		activityPaused = false;
+	}
+
+	@Override
+	protected void onPause() {
+		super.onPause();
+		
+		activityPaused = true;
 	}
 
 	@Override

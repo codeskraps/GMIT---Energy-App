@@ -29,11 +29,16 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 public class LauncherActivity extends Activity implements OnClickListener {
+	
+	private EnergyData energyData = null;
+	
+	private boolean activityPaused;
 	
 	private ImageView img_solar = null;
 	private ImageView img_heatpump = null;
@@ -52,7 +57,19 @@ public class LauncherActivity extends Activity implements OnClickListener {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.launcher);
+        
+        EnergyApplication energyApp = (EnergyApplication) getApplication();
+        energyData = energyApp.getEnergyData();
+        
+		if (energyData.isChkFullscreen()) {
+        	
+	        //requestWindowFeature(Window.FEATURE_NO_TITLE);
+	        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+		}
+	    
+		setContentView(R.layout.launcher);
+		
+		activityPaused = false;
         
         img_solar = (ImageView) findViewById(R.id.img_solar);
         img_heatpump = (ImageView) findViewById(R.id.img_heatpump);
@@ -82,6 +99,26 @@ public class LauncherActivity extends Activity implements OnClickListener {
         txt_heattransfer.setOnClickListener(this);
         txt_about.setOnClickListener(this);
     }
+    
+    @Override
+	protected void onResume() {
+		super.onResume();
+		
+		if (energyData.isInvalidate() && activityPaused) {
+			
+			LauncherActivity.this.startActivity(new Intent(LauncherActivity.this, LauncherActivity.class));
+			LauncherActivity.this.finish();
+		}
+		
+		activityPaused = false;
+	}
+
+	@Override
+	protected void onPause() {
+		super.onPause();
+		
+		activityPaused = true;
+	}
     
     @Override
 	public void onBackPressed() {

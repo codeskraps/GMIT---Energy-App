@@ -26,17 +26,14 @@ import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.MenuItem;
 
-public class EnergyApplication extends Application implements OnSharedPreferenceChangeListener {
+public class EnergyApplication extends Application {
 	private static final String TAG = EnergyApplication.class.getSimpleName();
-	private static final String CHKFULLSCREEN ="ckbfullscreen";
-
+	
 	private EnergyData energyData = null;
-	private SharedPreferences prefs = null;
 	
 	@Override
 	public void onCreate() {
@@ -44,14 +41,13 @@ public class EnergyApplication extends Application implements OnSharedPreference
 		
 		Log.d(TAG, "onCreate started");
 		
-		prefs = PreferenceManager.getDefaultSharedPreferences(this);
-		prefs.registerOnSharedPreferenceChangeListener(this);
-		
 		setEnergyData(new EnergyData(this));
 		
-		SharedPreferences settings = getSharedPreferences("preferences", MODE_PRIVATE);
-		boolean chkFullscreen = settings.getBoolean("ckbfullscreen", false);
+		//SharedPreferences settings = getSharedPreferences("preferences", MODE_PRIVATE);
+		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+		boolean chkFullscreen = prefs.getBoolean("ckbfullscreen", false);
 		energyData.setChkFullscreen(chkFullscreen);
+		Log.d(TAG, "fullscreen: " + energyData.isChkFullscreen());
 	}
 	
 	public Intent getMenuIntent(MenuItem item, Context context) {
@@ -67,15 +63,6 @@ public class EnergyApplication extends Application implements OnSharedPreference
 			case R.id.itemPreference:	return new Intent(context, PreferenceActivity.class);
 		}
 		return null;
-	}
-
-	@Override
-	public void onSharedPreferenceChanged(SharedPreferences prefs, String key) {
-		if (key.equals(CHKFULLSCREEN)) {
-			boolean chkFullscreen = prefs.getBoolean("ckbfullscreen", false);
-			energyData.setChkFullscreen(chkFullscreen);
-			energyData.setInvalidate(true);
-		}
 	}
 
 	public EnergyData getEnergyData() {

@@ -22,17 +22,75 @@
 
 package com.gmit.energyapp;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
+import android.util.Log;
+import android.view.WindowManager;
 
-public class PreferenceActivity extends android.preference.PreferenceActivity {
-
+public class PreferenceActivity extends android.preference.PreferenceActivity implements OnSharedPreferenceChangeListener {
+	private static final String TAG = PreferenceActivity.class.getSimpleName();
+	private static final String CHKFULLSCREEN ="ckbfullscreen";
+	
+	private EnergyData energyData = null;
+	private SharedPreferences prefs = null;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
+		Log.d(TAG, "Prefs onCreate");
+		
+		EnergyApplication energyApp = (EnergyApplication) getApplication();
+        energyData = energyApp.getEnergyData();
+        
+		if (energyData.isChkFullscreen()) {
+        	
+	        //requestWindowFeature(Window.FEATURE_NO_TITLE);
+	        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+		}
+		
 		setTitle(R.string.preference_activity);
 		
 		addPreferencesFromResource(R.xml.preferences);
+		
+		prefs = PreferenceManager.getDefaultSharedPreferences(this);
+		prefs.registerOnSharedPreferenceChangeListener(this);
+	}
+	
+	@Override
+	protected void onPause() {
+		super.onPause();
+		
+		prefs.unregisterOnSharedPreferenceChangeListener(this);
+
+	}
+	
+	@Override
+	public void onBackPressed() {
+		super.onBackPressed();
+		
+		overridePendingTransition(R.anim.fadein, R.anim.fadeout);
 	}
 
+	@Override
+	public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+		Log.d(TAG, "Prefs Changed");
+		
+		if (key.equals(CHKFULLSCREEN)) {
+			Log.d(TAG, "Prefs fullscreen Changed");
+			
+			boolean chkFullscreen = prefs.getBoolean("ckbfullscreen", false);
+			energyData.setChkFullscreen(chkFullscreen);
+			energyData.setInvalidate(true);
+			
+			Log.d(TAG, key + ": " + energyData.isChkFullscreen());
+			
+			
+			PreferenceActivity.this.startActivity(new Intent(PreferenceActivity.this, PreferenceActivity.class));
+			PreferenceActivity.this.finish();
+		}
+	}
 }

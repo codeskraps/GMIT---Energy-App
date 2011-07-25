@@ -23,19 +23,82 @@
 package com.gmit.energyapp;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.WindowManager;
 import android.webkit.WebView;
 
 public class WebViewActivity extends Activity {
 
+	private EnergyData energyData = null;
+	
+	private boolean activityPaused;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
+		EnergyApplication energyApp = (EnergyApplication) getApplication();
+        energyData = energyApp.getEnergyData();
+        
+		if (energyData.isChkFullscreen()) {
+        	
+	        //requestWindowFeature(Window.FEATURE_NO_TITLE);
+	        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+		}
 		
 		WebView webview = new WebView(this);
 		setContentView(webview);
 		
 		webview.loadUrl("http://www.gmit.ie/engineering/mechanical-industrial/index.html ");
+		
+		activityPaused = false;
+	}
+	
+	@Override
+	protected void onResume() {
+		super.onResume();
+		
+		if (energyData.isInvalidate() && activityPaused) {
+			
+			WebViewActivity.this.startActivity(new Intent(WebViewActivity.this, WebViewActivity.class));
+			WebViewActivity.this.finish();
+		}
+		
+		activityPaused = false;
 	}
 
+	@Override
+	protected void onPause() {
+		super.onPause();
+		
+		activityPaused = true;
+	}
+	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		MenuInflater inflater = getMenuInflater();
+		inflater.inflate(R.menu.main, menu);
+		return true;
+	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+					
+		if (item.getItemId() == R.id.itemQuit) {
+			
+			moveTaskToBack(true);
+		
+		} else {
+			
+			EnergyApplication energyApp = (EnergyApplication) getApplication();
+			WebViewActivity.this.startActivity(energyApp.getMenuIntent(item, WebViewActivity.this));
+			overridePendingTransition(R.anim.fadein, R.anim.fadeout);
+		}
+		
+		return super.onOptionsItemSelected(item);
+	}
 }

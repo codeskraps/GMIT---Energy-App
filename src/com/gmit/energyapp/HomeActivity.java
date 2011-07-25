@@ -29,10 +29,15 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
 public class HomeActivity extends Activity implements OnClickListener {
+	
+	private EnergyData energyData = null;
+	
+	private boolean activityPaused;
 	
 	private Button btnHomeOne = null;
 	private Button btnHomeTwo = null;
@@ -40,13 +45,45 @@ public class HomeActivity extends Activity implements OnClickListener {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
+		EnergyApplication energyApp = (EnergyApplication) getApplication();
+        energyData = energyApp.getEnergyData();
+        
+		if (energyData.isChkFullscreen()) {
+        	
+	        //requestWindowFeature(Window.FEATURE_NO_TITLE);
+	        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+		}
+	    
 		setContentView(R.layout.home);
+		
+		activityPaused = false;
 		
 		btnHomeOne = (Button) findViewById(R.id.btnHomeOne);
 		btnHomeTwo = (Button) findViewById(R.id.btnHomeTwo);
 		
 		btnHomeOne.setOnClickListener(this);
 		btnHomeTwo.setOnClickListener(this);
+	}
+	
+	@Override
+	protected void onResume() {
+		super.onResume();
+		
+		if (energyData.isInvalidate() && activityPaused) {
+			
+			HomeActivity.this.startActivity(new Intent(HomeActivity.this, HomeActivity.class));
+			HomeActivity.this.finish();
+		}
+		
+		activityPaused = false;
+	}
+
+	@Override
+	protected void onPause() {
+		super.onPause();
+		
+		activityPaused = true;
 	}
 
 	@Override
