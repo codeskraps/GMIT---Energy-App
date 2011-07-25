@@ -30,7 +30,7 @@
   		<CheckBoxPreference 
   			android:title="@string/Fullscreen"
             android:summary="@string/Fullscreen_summary"
-            android:defaultValue="false"
+            android:defaultValue="true"
             android:key="ckbfullscreen" />
   		
   	</PreferenceCategory>

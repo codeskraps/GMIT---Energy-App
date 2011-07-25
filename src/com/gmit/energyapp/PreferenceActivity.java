@@ -52,9 +52,10 @@ public class PreferenceActivity extends android.preference.PreferenceActivity im
 	        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		}
 		
+		//requestWindowFeature(Window.FEATURE_LEFT_ICON);
 		setTitle(R.string.preference_activity);
-		
 		addPreferencesFromResource(R.xml.preferences);
+		//getWindow().setFeatureDrawableResource(Window.FEATURE_LEFT_ICON, R.drawable.icon);
 		
 		prefs = PreferenceManager.getDefaultSharedPreferences(this);
 		prefs.registerOnSharedPreferenceChangeListener(this);
@@ -82,7 +83,7 @@ public class PreferenceActivity extends android.preference.PreferenceActivity im
 		if (key.equals(CHKFULLSCREEN)) {
 			Log.d(TAG, "Prefs fullscreen Changed");
 			
-			boolean chkFullscreen = prefs.getBoolean("ckbfullscreen", false);
+			boolean chkFullscreen = prefs.getBoolean("ckbfullscreen", true);
 			energyData.setChkFullscreen(chkFullscreen);
 			energyData.setInvalidate(true);
 			

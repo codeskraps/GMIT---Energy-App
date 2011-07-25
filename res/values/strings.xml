@@ -25,6 +25,8 @@
 <resources>
 	<!-- Activities -->
     <string name="app_name">GMIT - Energy App</string>
+    <string name="home_activity">GMIT - Welcome to the Energy App</string>
+    <string name="launcher_activity">GMIT - Launcher</string>
     <string name="solar_activity">GMIT - Solar Panels</string>
     <string name="solar_overview_activity">GMIT - Solar Panels Overview</string>
     <string name="heatpump_activity">GMIT - Heat Pump</string>
@@ -111,10 +113,10 @@
     <string name="ok">Ok</string>
     
     <!-- Preferences -->
-    <string name="GeneralPreferences">General Preferences</string>
-    <string name="Fullscreen">Fullscreen</string>
-    <string name="Fullscreen_summary">Show application in fullscreen</string>
-    <string name="GmitEnergy">GMIT - Energy App</string>
+    <string name="GeneralPreferences">Display</string>
+    <string name="Fullscreen">Notification bar</string>
+    <string name="Fullscreen_summary">Hides the notification bar from view</string>
+    <string name="GmitEnergy">Information</string>
     <string name="GmitEnergyTitle">GMIT Energy App v1.0</string>
     <string name="GmitEnergySummary">License GPL v3 - 2011 - Carles Sentis</string>
 </resources>

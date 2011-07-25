@@ -45,7 +45,7 @@ public class EnergyApplication extends Application {
 		
 		//SharedPreferences settings = getSharedPreferences("preferences", MODE_PRIVATE);
 		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
-		boolean chkFullscreen = prefs.getBoolean("ckbfullscreen", false);
+		boolean chkFullscreen = prefs.getBoolean("ckbfullscreen", true);
 		energyData.setChkFullscreen(chkFullscreen);
 		Log.d(TAG, "fullscreen: " + energyData.isChkFullscreen());
 	}
