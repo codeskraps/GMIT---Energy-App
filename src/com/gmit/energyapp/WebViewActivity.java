@@ -25,16 +25,23 @@ package com.gmit.energyapp;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.Window;
 import android.view.WindowManager;
+import android.webkit.WebChromeClient;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
+import android.widget.Toast;
 
 public class WebViewActivity extends Activity {
+	private static final String URL = "http://www.gmit.ie/engineering/mechanical-industrial/index.html";
 
 	private EnergyData energyData = null;
-	
+	private WebView webview = null;
 	private boolean activityPaused;
 	
 	@Override
@@ -50,10 +57,38 @@ public class WebViewActivity extends Activity {
 	        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		}
 		
-		WebView webview = new WebView(this);
-		setContentView(webview);
-		
-		webview.loadUrl("http://www.gmit.ie/engineering/mechanical-industrial/index.html ");
+		requestWindowFeature(Window.FEATURE_LEFT_ICON);
+		requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
+	    requestWindowFeature(Window.FEATURE_PROGRESS);
+	    
+	    setTitle(URL);
+	    setContentView(R.layout.webview);
+		setFeatureDrawableResource(Window.FEATURE_LEFT_ICON, R.drawable.icon);
+		setProgressBarIndeterminateVisibility(true);
+	    setProgressBarVisibility(true);
+
+		try {
+			
+			webview = (WebView) findViewById(R.id.webview);
+			webview.getSettings().setJavaScriptEnabled(true);
+			webview.getSettings().setBuiltInZoomControls(true); 
+			webview.setWebViewClient(new WebViewActivityClient());
+			
+			webview.setWebChromeClient(new WebChromeClient() {
+				public void onProgressChanged(WebView view, int progress) {
+					setProgress(progress * 100);
+					if(progress == 100) {
+						setProgressBarIndeterminateVisibility(false);
+						setProgressBarVisibility(false);
+					}
+				}
+			});
+			webview.loadUrl(URL);
+
+		} catch (Exception e) {
+	        Log.e(getClass().getSimpleName(), "Browser: " + e.getMessage());
+	        Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG).show();
+	    } 
 		
 		activityPaused = false;
 	}
@@ -79,6 +114,21 @@ public class WebViewActivity extends Activity {
 	}
 	
 	@Override
+	public void onBackPressed() {
+		super.onBackPressed();
+		overridePendingTransition(R.anim.fadein, R.anim.fadeout);
+	}
+		
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+		if ((keyCode == KeyEvent.KEYCODE_BACK) && webview.canGoBack()) {
+			webview.goBack();
+			return true;
+		}
+		return super.onKeyDown(keyCode, event);
+	}
+
+	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		MenuInflater inflater = getMenuInflater();
 		inflater.inflate(R.menu.main, menu);
@@ -100,5 +150,14 @@ public class WebViewActivity extends Activity {
 		}
 		
 		return super.onOptionsItemSelected(item);
+	}
+	
+	private class WebViewActivityClient extends WebViewClient {
+	    @Override
+	    public boolean shouldOverrideUrlLoading(WebView view, String url) {
+	        view.loadUrl(url);
+	        setTitle(url);
+	        return true;
+	    }
 	}
 }

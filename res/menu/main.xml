@@ -47,6 +47,10 @@
     	android:id="@+id/itemHome" 
     	android:title="@string/menuHome"
     	android:icon="@android:drawable/ic_menu_close_clear_cancel" />
+    	
+   	<item
+   		android:id="@+id/itemAbout"
+   		android:title="@string/menuAbout"/>
     
     <item 
     	android:id="@+id/itemPreference"

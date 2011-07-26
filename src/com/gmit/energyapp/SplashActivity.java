@@ -55,10 +55,17 @@ public class SplashActivity extends Activity {
 			@Override
 			public void run() {
 
-				SplashActivity.this.startActivity(new Intent(SplashActivity.this, HomeActivity.class));
+				if (energyData.isChkShowWelcome()) {
+					
+					SplashActivity.this.startActivity(new Intent(SplashActivity.this, HomeActivity.class));
+					
+				} else {
+					
+					SplashActivity.this.startActivity(new Intent(SplashActivity.this, LauncherActivity.class));
+				}
+				
 				SplashActivity.this.finish();
 				overridePendingTransition(R.anim.fadein, R.anim.fadeout);
-
 			}
 
 		}, SPLASH_DISPLAY_LENGHT);

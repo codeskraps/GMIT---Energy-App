@@ -28,12 +28,12 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.Window;
 import android.view.WindowManager;
 
 public class AboutActivity extends Activity {
 	
 	private EnergyData energyData = null;
-	
 	private boolean activityPaused;
 
 	@Override
@@ -49,7 +49,9 @@ public class AboutActivity extends Activity {
 	        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		}
 	    
+		requestWindowFeature(Window.FEATURE_LEFT_ICON);
 		setContentView(R.layout.about);
+		setFeatureDrawableResource(Window.FEATURE_LEFT_ICON, R.drawable.icon);
 		
 		activityPaused = false;
 	}
@@ -85,6 +87,14 @@ public class AboutActivity extends Activity {
 		MenuInflater inflater = getMenuInflater();
 		inflater.inflate(R.menu.main, menu);
 		return true;
+	}
+	
+	@Override
+	public boolean onPrepareOptionsMenu(Menu menu) {
+    	
+    	menu.findItem(R.id.itemAbout).setEnabled(false);
+
+		return super.onPrepareOptionsMenu(menu);
 	}
 	
 	@Override

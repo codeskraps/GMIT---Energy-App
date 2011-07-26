@@ -30,12 +30,14 @@ public class EnergyData {
 	private boolean invalidate;
 	private String youTubeVideo = null;
 	private boolean chkFullscreen;
+	private boolean chkShowWelcome;
 	
 	public EnergyData(Context context) {
 		setContext(context);
 		setInvalidate(false);
 		setYouTubeVideo("");
-		setChkFullscreen(false);
+		setChkFullscreen(true);
+		setChkShowWelcome(true);
 	}
 
 	public Context getContext() {
@@ -68,5 +70,13 @@ public class EnergyData {
 
 	public void setChkFullscreen(boolean chkFullscreen) {
 		this.chkFullscreen = chkFullscreen;
+	}
+
+	public boolean isChkShowWelcome() {
+		return chkShowWelcome;
+	}
+
+	public void setChkShowWelcome(boolean chkShowWelcome) {
+		this.chkShowWelcome = chkShowWelcome;
 	}
 }

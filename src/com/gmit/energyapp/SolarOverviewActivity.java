@@ -23,28 +23,122 @@
 package com.gmit.energyapp;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.MotionEvent;
+import android.view.View;
+import android.view.View.OnTouchListener;
+import android.view.Window;
+import android.view.WindowManager;
+import android.webkit.WebView;
 
-public class SolarOverviewActivity extends Activity {
+public class SolarOverviewActivity extends Activity implements OnTouchListener {
 	private static final String TAG = SolarOverviewActivity.class.getSimpleName();
 	
-//	private static final short DIALOG_PIN_1 = 1;
-//	private static final short DIALOG_PIN_2 = 2;
-//	private static final short DIALOG_PIN_3 = 3;
-//	private static final short DIALOG_PIN_4 = 4;
-//	private static final short DIALOG_PIN_5 = 5;
-//	private static final short DIALOG_PIN_6 = 6;
-//	private static final short DIALOG_PIN_7 = 7;
-//	private static final short DIALOG_PIN_8 = 8;
-//	private static final short DIALOG_PIN_9 = 9;
-//	private static final short DIALOG_PIN_10 = 10;
+	private EnergyData energyData = null;
+	private boolean activityPaused;
+	
+	private WebView webView = null;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
+		EnergyApplication energyApp = (EnergyApplication) getApplication();
+        energyData = energyApp.getEnergyData();
+        
+        
+		if (energyData.isChkFullscreen()) {
+        	
+	        //requestWindowFeature(Window.FEATURE_NO_TITLE);
+	        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+		}
+		
+		requestWindowFeature(Window.FEATURE_LEFT_ICON);
 		setContentView(R.layout.solar_overview);
+		setFeatureDrawableResource(Window.FEATURE_LEFT_ICON, R.drawable.icon);
+		
+
+		webView = (WebView) findViewById(R.id.solar_overview);
+		//webView.getSettings().setBuiltInZoomControls(true);
+		webView.loadUrl("file:///android_asset/solar_panels_system_overview.html");
+		webView.setOnTouchListener(this);
+		
+		activityPaused = false;
+	}
+	
+	@Override
+	protected void onResume() {
+		super.onResume();
+		
+		Log.d(TAG, "SolarOverviewActivity onResume");
+		
+		if (energyData.isInvalidate() && activityPaused) {
+			
+			Log.d(TAG, "SolarActivity onResume isInvalidte");
+			
+			SolarOverviewActivity.this.startActivity(new Intent(SolarOverviewActivity.this, SolarOverviewActivity.class));
+			SolarOverviewActivity.this.finish();
+			Log.d(TAG, "SolarOverviewActivity onResume finish");
+		}
+		
+		activityPaused = false;
+	}
+	
+	@Override
+	protected void onPause() {
+		super.onPause();
+		
+		activityPaused = true;
+	}
+	
+	@Override
+	public void onBackPressed() {
+		super.onBackPressed();
+		overridePendingTransition(R.anim.fadein, R.anim.fadeout);
+	}
+
+	@Override
+	public boolean onTouch(View v, MotionEvent event) {
+		Log.d(TAG, "image size height: " + webView.getHeight() + ", width: " + webView.getWidth());
+		
+		switch (event.getAction()) {
+			case MotionEvent.ACTION_DOWN: 
+				float x = event.getX();
+				float y = event.getY();
+          
+				Log.d(TAG, "X: " + x + ", Y: " + y);
+				break;
+		}
+		return false;
+	}
+	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		MenuInflater inflater = getMenuInflater();
+		inflater.inflate(R.menu.main, menu);
+		return true;
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+					
+		if (item.getItemId() == R.id.itemQuit) {
+			
+			moveTaskToBack(true);
+		
+		} else {
+			
+			EnergyApplication energyApp = (EnergyApplication) getApplication();
+			SolarOverviewActivity.this.startActivity(energyApp.getMenuIntent(item, SolarOverviewActivity.this));
+			overridePendingTransition(R.anim.fadein, R.anim.fadeout);
+		}
+		
+		return super.onOptionsItemSelected(item);
 	}
 
 //	@Override
@@ -67,18 +161,4 @@ public class SolarOverviewActivity extends Activity {
 //        return null;
 //	}
 
-	@Override
-	public boolean onTouchEvent(MotionEvent event) {
-		Log.d(TAG, "onTouchEvent started");
-		
-	    switch (event.getAction()) {
-	        case MotionEvent.ACTION_DOWN: 
-	        	float x = event.getX();
-	            float y = event.getY();
-	            
-	            Log.d(TAG, "X: " + x + ", Y: " + y);
-	            break;
-	    }
-		return super.onTouchEvent(event);
-	}
 }

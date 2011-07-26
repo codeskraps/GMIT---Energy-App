@@ -49,9 +49,9 @@
             	  android:label="@string/home_activity"
             	  android:theme="@android:style/Theme.Light"
             	  android:screenOrientation="landscape" />
-            	  
+        
+        <!-- android:label="@string/webview_activity"  -->
        	<activity android:name=".WebViewActivity" 
-       			  android:label="@string/webview_activity"
        			  android:screenOrientation="landscape" />
 		
 		<activity android:name=".LauncherActivity"

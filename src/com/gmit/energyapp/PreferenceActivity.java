@@ -33,6 +33,7 @@ import android.view.WindowManager;
 public class PreferenceActivity extends android.preference.PreferenceActivity implements OnSharedPreferenceChangeListener {
 	private static final String TAG = PreferenceActivity.class.getSimpleName();
 	private static final String CHKFULLSCREEN ="ckbfullscreen";
+	private static final String CHKSHOWWELCOME = "chkshowwelcome";
 	
 	private EnergyData energyData = null;
 	private SharedPreferences prefs = null;
@@ -92,6 +93,11 @@ public class PreferenceActivity extends android.preference.PreferenceActivity im
 			
 			PreferenceActivity.this.startActivity(new Intent(PreferenceActivity.this, PreferenceActivity.class));
 			PreferenceActivity.this.finish();
+		
+		} else if (key.equals(CHKSHOWWELCOME)) {
+			
+			boolean chkShowWelcome = prefs.getBoolean(CHKSHOWWELCOME, true);
+			energyData.setChkShowWelcome(chkShowWelcome);
 		}
 	}
 }

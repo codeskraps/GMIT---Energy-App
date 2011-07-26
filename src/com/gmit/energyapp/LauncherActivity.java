@@ -29,6 +29,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
 import android.view.WindowManager;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
@@ -37,7 +38,6 @@ import android.widget.TextView;
 public class LauncherActivity extends Activity implements OnClickListener {
 	
 	private EnergyData energyData = null;
-	
 	private boolean activityPaused;
 	
 	private ImageView img_solar = null;
@@ -67,7 +67,9 @@ public class LauncherActivity extends Activity implements OnClickListener {
 	        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		}
 	    
+		requestWindowFeature(Window.FEATURE_LEFT_ICON);
 		setContentView(R.layout.launcher);
+		setFeatureDrawableResource(Window.FEATURE_LEFT_ICON, R.drawable.icon);
 		
 		activityPaused = false;
         

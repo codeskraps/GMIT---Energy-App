@@ -32,6 +32,12 @@
             android:summary="@string/Fullscreen_summary"
             android:defaultValue="true"
             android:key="ckbfullscreen" />
+            
+      	<CheckBoxPreference 
+      		android:title="@string/showWelcomescreen"
+      		android:summary="@string/showWelcomescreen_summary"
+      		android:defaultValue="true"
+      		android:key="chkshowwelcome" />
   		
   	</PreferenceCategory>
   	

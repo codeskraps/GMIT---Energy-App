@@ -33,7 +33,7 @@
     <string name="biomass_activity">GMIT - Biomass Boiler</string>
     <string name="gasboiler_activity">GMIT - Condensing Gas Boiler</string>
     <string name="heattransfer_activity">GMIT - Heat Transfer</string>
-    <string name="about_activity">GMIT - About</string>
+    <string name="about_activity">About the GMIT Energy lab</string>
     <string name="preference_activity">GMIT - Preferences</string>
     <string name="webview_activity">GMIT - The Department of Mechanical &amp; Industrial Engineering</string>
     
@@ -44,6 +44,7 @@
     <string name="menuGasBoiler">Gas Boiler</string>
     <string name="menuHeatTransfer">Heat Transfer</string>
     <string name="menuHome">Home</string>
+    <string name="menuAbout">About</string>
     <string name="menuPreference">Preferences</string>
     <string name="menuQuit">Quit</string>
     
@@ -110,12 +111,18 @@
     <string name="btnHeatTransferTwo">Radiator system</string>
     <string name="btnHeatTransferThree">Underfloor heating system</string>
     
+    <!-- About -->
+    <string name="aboutLevel2Text">The Energy Lab in GMIT is equipped with state-of-the-art sustainable energy technologies: solar, biomass, heat pumps, and wind.  Sensors monitor and track the performance of all these systems. Students can view the technologies and analyse their performance on the Energy lab website.</string>
+    <string name="btnAboutOne">See video of Energy Lab</string>
+    
     <string name="ok">Ok</string>
     
     <!-- Preferences -->
     <string name="GeneralPreferences">Display</string>
-    <string name="Fullscreen">Notification bar</string>
+    <string name="Fullscreen">Hide notification bar</string>
     <string name="Fullscreen_summary">Hides the notification bar from view</string>
+    <string name="showWelcomescreen">Show welcome screen</string>
+    <string name="showWelcomescreen_summary">Always show the welcome screen on start</string>
     <string name="GmitEnergy">Information</string>
     <string name="GmitEnergyTitle">GMIT Energy App v1.0</string>
     <string name="GmitEnergySummary">License GPL v3 - 2011 - Carles Sentis</string>

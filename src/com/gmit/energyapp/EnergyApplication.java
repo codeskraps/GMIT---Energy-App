@@ -32,6 +32,8 @@ import android.view.MenuItem;
 
 public class EnergyApplication extends Application {
 	private static final String TAG = EnergyApplication.class.getSimpleName();
+	private static final String CHKFULLSCREEN = "ckbfullscreen";
+	private static final String CHKSHOWWELCOME = "chkshowwelcome";
 	
 	private EnergyData energyData = null;
 	
@@ -45,8 +47,10 @@ public class EnergyApplication extends Application {
 		
 		//SharedPreferences settings = getSharedPreferences("preferences", MODE_PRIVATE);
 		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
-		boolean chkFullscreen = prefs.getBoolean("ckbfullscreen", true);
+		boolean chkFullscreen = prefs.getBoolean(CHKFULLSCREEN, true);
+		boolean chkShowWelcome = prefs.getBoolean(CHKSHOWWELCOME, true);
 		energyData.setChkFullscreen(chkFullscreen);
+		energyData.setChkShowWelcome(chkShowWelcome);
 		Log.d(TAG, "fullscreen: " + energyData.isChkFullscreen());
 	}
 	
@@ -60,6 +64,7 @@ public class EnergyApplication extends Application {
 			case R.id.itemGasBoiler:	return new Intent(context, GasBoilerActivity.class);
 			case R.id.itemHeatTransfer:	return new Intent(context, HeatTransferActivity.class);
 			case R.id.itemHome:			return new Intent(context, HomeActivity.class);
+			case R.id.itemAbout:		return new Intent(context, AboutActivity.class);
 			case R.id.itemPreference:	return new Intent(context, PreferenceActivity.class);
 		}
 		return null;
