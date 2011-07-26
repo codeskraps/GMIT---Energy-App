@@ -37,8 +37,7 @@ import android.widget.Button;
 public class BiomassActivity extends Activity implements OnClickListener {
 	private static final String YOUTUBEVIDEO = "http://www.youtube.com/watch?v=B-pmbUSZsK4&feature=related";
 	
-	private EnergyData energyData = null;
-	
+	private EnergyData energyData = null;	
 	private boolean activityPaused;
 	
 	private Button btnBiomassOne = null;
@@ -54,7 +53,6 @@ public class BiomassActivity extends Activity implements OnClickListener {
         
 		if (energyData.isChkFullscreen()) {
         	
-	        //requestWindowFeature(Window.FEATURE_NO_TITLE);
 	        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		}
 	    

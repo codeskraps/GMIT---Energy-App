@@ -26,6 +26,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -34,13 +35,16 @@ import android.view.View;
 import android.view.View.OnTouchListener;
 import android.view.Window;
 import android.view.WindowManager;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
+import android.widget.Toast;
 
 public class SolarOverviewActivity extends Activity implements OnTouchListener {
 	private static final String TAG = SolarOverviewActivity.class.getSimpleName();
 	
 	private EnergyData energyData = null;
 	private boolean activityPaused;
+	private boolean showToast;
 	
 	private WebView webView = null;
 
@@ -54,7 +58,6 @@ public class SolarOverviewActivity extends Activity implements OnTouchListener {
         
 		if (energyData.isChkFullscreen()) {
         	
-	        //requestWindowFeature(Window.FEATURE_NO_TITLE);
 	        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		}
 		
@@ -64,11 +67,12 @@ public class SolarOverviewActivity extends Activity implements OnTouchListener {
 		
 
 		webView = (WebView) findViewById(R.id.solar_overview);
-		//webView.getSettings().setBuiltInZoomControls(true);
-		webView.loadUrl("file:///android_asset/solar_panels_system_overview.html");
+		webView.getSettings().setUseWideViewPort(true);
+		webView.loadUrl("file:///android_asset/solar/solar_panels_system_overview.html");
 		webView.setOnTouchListener(this);
 		
 		activityPaused = false;
+		showToast = true;
 	}
 	
 	@Override
@@ -84,6 +88,15 @@ public class SolarOverviewActivity extends Activity implements OnTouchListener {
 			SolarOverviewActivity.this.startActivity(new Intent(SolarOverviewActivity.this, SolarOverviewActivity.class));
 			SolarOverviewActivity.this.finish();
 			Log.d(TAG, "SolarOverviewActivity onResume finish");
+		}
+		
+		if (showToast) {
+			
+			Toast toast = Toast.makeText(this, getString(R.string.Zoom), Toast.LENGTH_LONG);
+			toast.setGravity(Gravity.BOTTOM|Gravity.CENTER, 0, 0);
+			toast.show();
+			
+			showToast = false;
 		}
 		
 		activityPaused = false;
@@ -104,15 +117,30 @@ public class SolarOverviewActivity extends Activity implements OnTouchListener {
 
 	@Override
 	public boolean onTouch(View v, MotionEvent event) {
-		Log.d(TAG, "image size height: " + webView.getHeight() + ", width: " + webView.getWidth());
+		//Log.d(TAG, "image size Width: " + webView.getWidth() + ", Height: " + webView.getHeight());
 		
 		switch (event.getAction()) {
 			case MotionEvent.ACTION_DOWN: 
 				float x = event.getX();
 				float y = event.getY();
-          
-				Log.d(TAG, "X: " + x + ", Y: " + y);
-				break;
+				
+				int xOffset = v.getScrollX();
+				int yOffset = v.getScrollY();
+				
+				float xSize = webView.getWidth();
+				float ySize = webView.getHeight();
+				float s = webView.getScale();
+				
+				Log.d(TAG, "Image size Width: " + xSize + ", height: " + ySize + ", scale: " + s);
+				Log.d(TAG, "Image scale size: " + (xSize*s) + ", height: " + (ySize*s));
+				Log.d(TAG, "Image Offset   x: " + xOffset + ", y: " + yOffset);
+				Log.d(TAG, "Screen Clicked X: " + x + ", Y: " + y);
+				Log.d(TAG, "Position pin   x: " + (x+xOffset) + ", y: " + (y+yOffset));
+				
+				
+				
+				
+				break; 
 		}
 		return false;
 	}

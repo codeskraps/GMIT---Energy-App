@@ -38,7 +38,6 @@ public class HeatPumpActivity extends Activity implements OnClickListener {
 	private static final String YOUTUBEVIDEO = "http://www.youtube.com/watch?v=g9U1xtW-TEo&playnext=1&list=PL4F286D120FAD18B1";
 	
 	private EnergyData energyData = null;
-	
 	private boolean activityPaused;
 	
 	private Button btnHeatOne = null;
@@ -54,7 +53,6 @@ public class HeatPumpActivity extends Activity implements OnClickListener {
         
 		if (energyData.isChkFullscreen()) {
         	
-	        //requestWindowFeature(Window.FEATURE_NO_TITLE);
 	        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		}
 	    

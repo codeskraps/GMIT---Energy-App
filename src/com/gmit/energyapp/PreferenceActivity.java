@@ -49,14 +49,11 @@ public class PreferenceActivity extends android.preference.PreferenceActivity im
         
 		if (energyData.isChkFullscreen()) {
         	
-	        //requestWindowFeature(Window.FEATURE_NO_TITLE);
 	        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		}
 		
-		//requestWindowFeature(Window.FEATURE_LEFT_ICON);
 		setTitle(R.string.preference_activity);
 		addPreferencesFromResource(R.xml.preferences);
-		//getWindow().setFeatureDrawableResource(Window.FEATURE_LEFT_ICON, R.drawable.icon);
 		
 		prefs = PreferenceManager.getDefaultSharedPreferences(this);
 		prefs.registerOnSharedPreferenceChangeListener(this);

@@ -30,7 +30,6 @@ import android.view.Window;
 import android.view.WindowManager;
 
 public class SplashActivity extends Activity {
-
 	private final int SPLASH_DISPLAY_LENGHT = 1000;
 	
 	private EnergyData energyData = null;

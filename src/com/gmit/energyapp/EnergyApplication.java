@@ -45,13 +45,11 @@ public class EnergyApplication extends Application {
 		
 		setEnergyData(new EnergyData(this));
 		
-		//SharedPreferences settings = getSharedPreferences("preferences", MODE_PRIVATE);
 		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
 		boolean chkFullscreen = prefs.getBoolean(CHKFULLSCREEN, true);
 		boolean chkShowWelcome = prefs.getBoolean(CHKSHOWWELCOME, true);
 		energyData.setChkFullscreen(chkFullscreen);
 		energyData.setChkShowWelcome(chkShowWelcome);
-		Log.d(TAG, "fullscreen: " + energyData.isChkFullscreen());
 	}
 	
 	public Intent getMenuIntent(MenuItem item, Context context) {

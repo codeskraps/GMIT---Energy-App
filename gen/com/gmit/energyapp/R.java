@@ -19,32 +19,27 @@ public final class R {
         public static final int biomass_boiler_1_lvl_2=0x7f020001;
         public static final int biomass_boiler_2_lvl_2=0x7f020002;
         public static final int biomass_boiler_induced_draft_fan_lvl_3=0x7f020003;
-        public static final int biomass_boiler_wood_gasification_lvl_3=0x7f020004;
-        public static final int biomass_boiler_wood_pellet_lvl_3=0x7f020005;
-        public static final int biomassboiler=0x7f020006;
-        public static final int biomassboiler_bw=0x7f020007;
-        public static final int gas_boiler=0x7f020008;
-        public static final int gas_boiler_bw=0x7f020009;
-        public static final int gas_boiler_lvl_2=0x7f02000a;
-        public static final int gmit=0x7f02000b;
-        public static final int heat_pump_lvl_2=0x7f02000c;
-        public static final int heat_pump_system_overview_lvl_3=0x7f02000d;
-        public static final int heat_transfer=0x7f02000e;
-        public static final int heat_transfer_bw=0x7f02000f;
-        public static final int heat_transfer_lvl_2_1=0x7f020010;
-        public static final int heat_transfer_lvl_2_2=0x7f020011;
-        public static final int heatpump=0x7f020012;
-        public static final int heatpump_bw=0x7f020013;
-        public static final int home=0x7f020014;
-        public static final int home_small=0x7f020015;
-        public static final int icon=0x7f020016;
-        public static final int logo=0x7f020017;
-        public static final int pin=0x7f020018;
-        public static final int solar=0x7f020019;
-        public static final int solar_bw=0x7f02001a;
-        public static final int solar_panels_lvl_2=0x7f02001b;
-        public static final int solar_panels_system_overview_lvl_3=0x7f02001c;
-        public static final int solar_panels_system_overview_lvl_3_pins=0x7f02001d;
+        public static final int biomassboiler=0x7f020004;
+        public static final int biomassboiler_bw=0x7f020005;
+        public static final int gas_boiler=0x7f020006;
+        public static final int gas_boiler_bw=0x7f020007;
+        public static final int gas_boiler_lvl_2=0x7f020008;
+        public static final int gmit=0x7f020009;
+        public static final int heat_pump_lvl_2=0x7f02000a;
+        public static final int heat_transfer=0x7f02000b;
+        public static final int heat_transfer_bw=0x7f02000c;
+        public static final int heat_transfer_lvl_2_1=0x7f02000d;
+        public static final int heat_transfer_lvl_2_2=0x7f02000e;
+        public static final int heatpump=0x7f02000f;
+        public static final int heatpump_bw=0x7f020010;
+        public static final int home=0x7f020011;
+        public static final int home_small=0x7f020012;
+        public static final int icon=0x7f020013;
+        public static final int logo=0x7f020014;
+        public static final int pin=0x7f020015;
+        public static final int solar=0x7f020016;
+        public static final int solar_bw=0x7f020017;
+        public static final int solar_panels_lvl_2=0x7f020018;
     }
     public static final class id {
         public static final int btnAboutOne=0x7f090000;
@@ -105,14 +100,17 @@ public final class R {
         public static final int main=0x7f080000;
     }
     public static final class string {
-        public static final int Fullscreen=0x7f060048;
-        public static final int Fullscreen_summary=0x7f060049;
+        public static final int Fullscreen=0x7f060047;
+        public static final int Fullscreen_summary=0x7f060048;
         /**  Preferences 
          */
-        public static final int GeneralPreferences=0x7f060047;
-        public static final int GmitEnergy=0x7f06004c;
-        public static final int GmitEnergySummary=0x7f06004e;
-        public static final int GmitEnergyTitle=0x7f06004d;
+        public static final int GeneralPreferences=0x7f060046;
+        public static final int GmitEnergy=0x7f06004b;
+        public static final int GmitEnergySummary=0x7f06004d;
+        public static final int GmitEnergyTitle=0x7f06004c;
+        /**  Toast 
+         */
+        public static final int Zoom=0x7f06004e;
         /**  About 
          */
         public static final int aboutLevel2Text=0x7f060044;
@@ -173,10 +171,12 @@ public final class R {
         /**  MENU 
          */
         public static final int menuSolar=0x7f06000c;
-        public static final int ok=0x7f060046;
+        /**  Other 
+         */
+        public static final int ok=0x7f06004f;
         public static final int preference_activity=0x7f06000a;
-        public static final int showWelcomescreen=0x7f06004a;
-        public static final int showWelcomescreen_summary=0x7f06004b;
+        public static final int showWelcomescreen=0x7f060049;
+        public static final int showWelcomescreen_summary=0x7f06004a;
         /**  Solar 
          */
         public static final int solarLevel2Text=0x7f06001e;

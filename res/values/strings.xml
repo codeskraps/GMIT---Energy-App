@@ -115,8 +115,6 @@
     <string name="aboutLevel2Text">The Energy Lab in GMIT is equipped with state-of-the-art sustainable energy technologies: solar, biomass, heat pumps, and wind.  Sensors monitor and track the performance of all these systems. Students can view the technologies and analyse their performance on the Energy lab website.</string>
     <string name="btnAboutOne">See video of Energy Lab</string>
     
-    <string name="ok">Ok</string>
-    
     <!-- Preferences -->
     <string name="GeneralPreferences">Display</string>
     <string name="Fullscreen">Hide notification bar</string>
@@ -126,4 +124,10 @@
     <string name="GmitEnergy">Information</string>
     <string name="GmitEnergyTitle">GMIT Energy App v1.0</string>
     <string name="GmitEnergySummary">License GPL v3 - 2011 - Carles Sentis</string>
+    
+    <!-- Toast -->
+    <string name="Zoom">Double tap to zoom in/out</string>
+    
+    <!-- Other -->
+    <string name="ok">Ok</string>
 </resources>

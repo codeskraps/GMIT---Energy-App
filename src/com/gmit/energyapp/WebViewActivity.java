@@ -53,7 +53,6 @@ public class WebViewActivity extends Activity {
         
 		if (energyData.isChkFullscreen()) {
         	
-	        //requestWindowFeature(Window.FEATURE_NO_TITLE);
 	        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		}
 		
@@ -61,7 +60,6 @@ public class WebViewActivity extends Activity {
 		requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
 	    requestWindowFeature(Window.FEATURE_PROGRESS);
 	    
-	    setTitle(URL);
 	    setContentView(R.layout.webview);
 		setFeatureDrawableResource(Window.FEATURE_LEFT_ICON, R.drawable.icon);
 		setProgressBarIndeterminateVisibility(true);
@@ -71,7 +69,8 @@ public class WebViewActivity extends Activity {
 			
 			webview = (WebView) findViewById(R.id.webview);
 			webview.getSettings().setJavaScriptEnabled(true);
-			webview.getSettings().setBuiltInZoomControls(true); 
+			webview.getSettings().setBuiltInZoomControls(true);
+			webview.getSettings().setUseWideViewPort(true);
 			webview.setWebViewClient(new WebViewActivityClient());
 			
 			webview.setWebChromeClient(new WebChromeClient() {
@@ -84,6 +83,8 @@ public class WebViewActivity extends Activity {
 				}
 			});
 			webview.loadUrl(URL);
+			//setTitle(webview.getTitle());
+			setTitle("GMIT Galway-Mayo Institute of Technology - Your Place - Your Future");
 
 		} catch (Exception e) {
 	        Log.e(getClass().getSimpleName(), "Browser: " + e.getMessage());
@@ -123,6 +124,7 @@ public class WebViewActivity extends Activity {
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		if ((keyCode == KeyEvent.KEYCODE_BACK) && webview.canGoBack()) {
 			webview.goBack();
+			setTitle(webview.getTitle());
 			return true;
 		}
 		return super.onKeyDown(keyCode, event);
@@ -156,7 +158,7 @@ public class WebViewActivity extends Activity {
 	    @Override
 	    public boolean shouldOverrideUrlLoading(WebView view, String url) {
 	        view.loadUrl(url);
-	        setTitle(url);
+	        setTitle(view.getTitle());
 	        return true;
 	    }
 	}
