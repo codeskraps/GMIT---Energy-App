@@ -22,15 +22,9 @@
 		If not, see <http://www.gnu.org/licenses/>.
 -->
 
-<LinearLayout 
+<WebView 
 	xmlns:android="http://schemas.android.com/apk/res/android"
-	android:layout_width="fill_parent"
-	android:layout_height="fill_parent"
-	android:orientation="vertical" >
-	
-	<WebView  
-	    android:id="@+id/solar_overview"
-	    android:layout_width="fill_parent"
-	    android:layout_height="fill_parent"
-	/>
-</LinearLayout>
+    android:id="@+id/solar_overview"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+/>

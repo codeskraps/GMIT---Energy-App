@@ -190,6 +190,8 @@ public final class R {
         public static final int solarMessagePin7=0x7f060031;
         public static final int solarMessagePin8=0x7f060032;
         public static final int solarMessagePin9=0x7f060033;
+        /**  Solar Overview 
+         */
         public static final int solarTitlePin1=0x7f060021;
         public static final int solarTitlePin10=0x7f06002a;
         public static final int solarTitlePin2=0x7f060022;

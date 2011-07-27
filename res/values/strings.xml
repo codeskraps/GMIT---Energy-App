@@ -66,28 +66,29 @@
     <string name="btnSolarOne">See video of solar panel</string>
     <string name="btnSolarTwo">System overview</string>
     
-    <string name="solarTitlePin1">pin1</string>
-    <string name="solarTitlePin2">pin2</string>
-    <string name="solarTitlePin3">pin3</string>
-    <string name="solarTitlePin4">pin4</string>
-    <string name="solarTitlePin5">pin5</string>
-    <string name="solarTitlePin6">pin6</string>
-    <string name="solarTitlePin7">pin7</string>
-    <string name="solarTitlePin8">pin8</string>
-    <string name="solarTitlePin9">pin9</string>
-    <string name="solarTitlePin10">pin10</string>
+    <!-- Solar Overview -->
+    <string name="solarTitlePin1">Inlet temperature</string>
+    <string name="solarTitlePin2">Outlet temperature</string>
+    <string name="solarTitlePin3">Solar thermal flat plate</string>
+    <string name="solarTitlePin4">System controller + pump</string>
+    <string name="solarTitlePin5">Expansion vessel</string>
+    <string name="solarTitlePin6">Pressure gauge</string>
+    <string name="solarTitlePin7">Solar return temperature</string>
+    <string name="solarTitlePin8">Solar flow temperature</string>
+    <string name="solarTitlePin9">Hot water storage tank</string>
+    <string name="solarTitlePin10">Solar radiation</string>
     
-    <string name="solarMessagePin1">pin1</string>
-    <string name="solarMessagePin2">pin2</string>
-    <string name="solarMessagePin3">pin3</string>
-    <string name="solarMessagePin4">pin4</string>
-    <string name="solarMessagePin5">pin5</string>
-    <string name="solarMessagePin6">pin6</string>
-    <string name="solarMessagePin7">pin7</string>
-    <string name="solarMessagePin8">pin8</string>
-    <string name="solarMessagePin9">pin9</string>
-    <string name="solarMessagePin10">pin10</string>
-        
+    <string name="solarMessagePin1">The inlet temperature sensor measures the temperature of the incoming (cold) water to the collector. It is only needed during testing and is not a standard part of a domestic solar thermal system.</string>
+    <string name="solarMessagePin2">The outlet temperature sensor measures the temperature of the outgoing (heated) water from the collector.  When the outgoing water temperature reaches a set temperature compared with that pre-set at the top of the storage tank, the circulation pump is activated. When the temperature difference goes below a pre-set value, the pump de-activates.</string>
+    <string name="solarMessagePin3">The best place to put a solar thermal collector is on a south-facing roof. This is where it will get most sun. The solar panels act like a window.  They let in the sun’s energy and it is taken up by the solar thermal system. The typical domestic home uses either flat plate or evacuated tube collectors. The diagram presents the flat plate collector in GMIT Energy lab.</string>
+    <string name="solarMessagePin4">The system controller turns on/off the circulating pump, based on the reading from the solar collector outlet temperature.</string>
+    <string name="solarMessagePin5">The expansion tank allows the water in the system to expand due to water temperature rise.</string>
+    <string name="solarMessagePin6">The pressure gauge shows the pressure of the fluid in the pipes of the solar collector system.</string>
+    <string name="solarMessagePin7">This is the temperature of the water coming from the coil in the multi-energy tank. The hot water in the pipe coming from the solar panels is transferred from the inlet pipe to heat the water in the tank.</string>
+    <string name="solarMessagePin8">This is the temperature of the water coming from the solar panel minus the temperature losses occurring in the pipework between the solar panel and the tank. To reduce these losses, use ‘class 0’ high temperature insulation.</string>
+    <string name="solarMessagePin9">The basic solar thermal system has a dual coil cylinder as the storage tank. A dual coil cylinder basically has two coils: a coil for the solar thermal system and a coil for the auxiliary heating system. The circulating pump for the solar system sends the hot water from the solar panels through the lower coil.  The heat from the solar collector is transferred into the tank, ready for use. On a dull day, when there is not much sun,  the second coil is used to heat the tank, via an auxiliary heating system, typically an oil, gas or biomass fuelled boiler.</string>
+    <string name="solarMessagePin10">pin 10</string>
+         
     <!-- HeatPump -->
     <string name="heatpumpLevel2Text">An air source heat pump extracts heat from the surrounding air.  A fan draws the air over a heat exchanger coil known as an Evaporator.  The coil is filled with a cold refrigerant liquid. As the air flows over this coil, the cool liquid inside the coil draws heat from the air, and begins to heat up. This heat is later passed into a hot water storage tank located within the building, via a second heat exchanger known as a Condenser.</string>
     <string name="btnHeatOne">See video of heat pump</string>
