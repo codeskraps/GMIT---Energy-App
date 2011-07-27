@@ -33,26 +33,14 @@
     	android:layout_height="fill_parent" 
     	android:layout_width="fill_parent">
         
-        <LinearLayout 
-    		android:orientation="horizontal" 
-    		android:layout_width="fill_parent" 
-    		android:layout_height="wrap_content">
-    		
-    	  	<ImageView 
-	       		android:src="@drawable/logo"
-	       		android:layout_width="fill_parent"
-	       		android:layout_weight="1"  
-	       		android:layout_margin="10dp" 
-	       		android:layout_height="150dp"/>
-					
-	  	</LinearLayout>
- 
-      	<TextView 
+       	<ImageView 
+      		android:src="@drawable/logo"
+       		style="@style/ImageMain" />
+       		
+       	<TextView 
       		android:text="@string/aboutLevel2Text" 
-      		android:layout_height="wrap_content" 
-      		android:layout_width="wrap_content" 
-      		android:layout_margin="10dp"/>
-      	
+      		style="@style/TextMain" />
+      		
       	<LinearLayout 
     		android:orientation="horizontal" 
     		android:layout_width="fill_parent" 

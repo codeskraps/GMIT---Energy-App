@@ -87,6 +87,12 @@ public class HomeActivity extends Activity implements OnClickListener {
 		
 		activityPaused = true;
 	}
+	
+	@Override
+	public void onBackPressed() {
+		super.onBackPressed();
+		overridePendingTransition(R.anim.fadein, R.anim.fadeout);
+	}
 
 	@Override
 	public void onClick(View v) {

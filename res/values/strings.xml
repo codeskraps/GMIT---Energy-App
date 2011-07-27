@@ -87,7 +87,7 @@
     <string name="solarMessagePin7">This is the temperature of the water coming from the coil in the multi-energy tank. The hot water in the pipe coming from the solar panels is transferred from the inlet pipe to heat the water in the tank.</string>
     <string name="solarMessagePin8">This is the temperature of the water coming from the solar panel minus the temperature losses occurring in the pipework between the solar panel and the tank. To reduce these losses, use ‘class 0’ high temperature insulation.</string>
     <string name="solarMessagePin9">The basic solar thermal system has a dual coil cylinder as the storage tank. A dual coil cylinder basically has two coils: a coil for the solar thermal system and a coil for the auxiliary heating system. The circulating pump for the solar system sends the hot water from the solar panels through the lower coil.  The heat from the solar collector is transferred into the tank, ready for use. On a dull day, when there is not much sun,  the second coil is used to heat the tank, via an auxiliary heating system, typically an oil, gas or biomass fuelled boiler.</string>
-    <string name="solarMessagePin10">pin 10</string>
+    <string name="solarMessagePin10">The sun provides energy in the form of electromagnetic radiation. The average direct solar radiation in Ireland is 2.6kWh/m2/day, which is quite good considering the large number of cloudy, overcast days. Solar panels can provide on average 60\u0025 of domestic hot water in winter and usually 100\u0025 in summer.</string>
          
     <!-- HeatPump -->
     <string name="heatpumpLevel2Text">An air source heat pump extracts heat from the surrounding air.  A fan draws the air over a heat exchanger coil known as an Evaporator.  The coil is filled with a cold refrigerant liquid. As the air flows over this coil, the cool liquid inside the coil draws heat from the air, and begins to heat up. This heat is later passed into a hot water storage tank located within the building, via a second heat exchanger known as a Condenser.</string>
@@ -122,6 +122,8 @@
     <string name="Fullscreen_summary">Hides the notification bar from view</string>
     <string name="showWelcomescreen">Show welcome screen</string>
     <string name="showWelcomescreen_summary">Always show the welcome screen on start</string>
+    <string name="showOverviewPins">Show pins in overviews</string>
+    <string name="showOverviewPins_summary">Always show the push pins in the overview screen</string>
     <string name="GmitEnergy">Information</string>
     <string name="GmitEnergyTitle">GMIT Energy App v1.0</string>
     <string name="GmitEnergySummary">License GPL v3 - 2011 - Carles Sentis</string>

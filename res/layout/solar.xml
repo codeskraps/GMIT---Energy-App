@@ -35,16 +35,12 @@
          
        	<ImageView 
        		android:src="@drawable/solar_panels_lvl_2"
-       		android:layout_width="fill_parent"
-       		android:layout_height="200dp"
-       		android:layout_margin="10dp" />
-
+       		style="@style/ImageMain" />
+       		
       	<TextView 
-      		android:text="@string/solarLevel2Text" 
-      		android:layout_height="wrap_content" 
-      		android:layout_width="wrap_content" 
-      		android:layout_margin="10dp"/>
-      	
+      		android:text="@string/solarLevel2Text"
+      		style="@style/TextMain" />
+      		
       	<LinearLayout 
     		android:orientation="horizontal" 
     		android:layout_width="fill_parent" 

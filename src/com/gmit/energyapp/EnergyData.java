@@ -31,6 +31,7 @@ public class EnergyData {
 	private String youTubeVideo = null;
 	private boolean chkFullscreen;
 	private boolean chkShowWelcome;
+	private boolean chkShowOverviewPins;
 	
 	public EnergyData(Context context) {
 		setContext(context);
@@ -38,6 +39,7 @@ public class EnergyData {
 		setYouTubeVideo("");
 		setChkFullscreen(true);
 		setChkShowWelcome(true);
+		setChkShowOverviewPins(true);
 	}
 
 	public Context getContext() {
@@ -78,5 +80,13 @@ public class EnergyData {
 
 	public void setChkShowWelcome(boolean chkShowWelcome) {
 		this.chkShowWelcome = chkShowWelcome;
+	}
+
+	public boolean isChkShowOverviewPins() {
+		return chkShowOverviewPins;
+	}
+
+	public void setChkShowOverviewPins(boolean chkShowOverviewPins) {
+		this.chkShowOverviewPins = chkShowOverviewPins;
 	}
 }

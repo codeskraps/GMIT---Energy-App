@@ -38,6 +38,12 @@
       		android:summary="@string/showWelcomescreen_summary"
       		android:defaultValue="true"
       		android:key="chkshowwelcome" />
+      		
+      	<CheckBoxPreference 
+      		android:title="@string/showOverviewPins"
+      		android:summary="@string/showOverviewPins_summary"
+      		android:defaultValue="true"
+      		android:key="chkshowoverviewpins" />
   		
   	</PreferenceCategory>
   	

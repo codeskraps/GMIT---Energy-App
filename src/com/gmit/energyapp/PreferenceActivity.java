@@ -34,6 +34,7 @@ public class PreferenceActivity extends android.preference.PreferenceActivity im
 	private static final String TAG = PreferenceActivity.class.getSimpleName();
 	private static final String CHKFULLSCREEN ="ckbfullscreen";
 	private static final String CHKSHOWWELCOME = "chkshowwelcome";
+	private static final String CHKOVERVIEWPINS ="chkshowoverviewpins";
 	
 	private EnergyData energyData = null;
 	private SharedPreferences prefs = null;
@@ -95,6 +96,12 @@ public class PreferenceActivity extends android.preference.PreferenceActivity im
 			
 			boolean chkShowWelcome = prefs.getBoolean(CHKSHOWWELCOME, true);
 			energyData.setChkShowWelcome(chkShowWelcome);
+		
+		} else if (key.equals(CHKOVERVIEWPINS)) {
+			
+			boolean chkShowOverviewPins = prefs.getBoolean(CHKOVERVIEWPINS, true);
+			energyData.setChkShowOverviewPins(chkShowOverviewPins);
+			energyData.setInvalidate(true);
 		}
 	}
 }

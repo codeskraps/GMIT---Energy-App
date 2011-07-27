@@ -37,6 +37,23 @@
 		<item name="android:layout_weight">1</item>
 	</style>
 	
+	<style name="ImageMain">
+		<item name="android:layout_width">fill_parent</item>
+		<item name="android:layout_height">200dp</item>
+		<item name="android:layout_weight">1</item>  
+		<item name="android:layout_marginLeft">10dp</item>
+		<item name="android:layout_marginRight">10dp</item>
+		<item name="android:layout_marginBottom">10dp</item>
+		<item name="android:layout_marginTop">20dp</item>
+	</style>
+	
+	<style name="TextMain">
+		<item name="android:textSize">15sp</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:layout_width">wrap_content</item>
+		<item name="android:layout_margin">20dp</item>
+	</style>
+	
 	<style name="TextLauncher">
 		<item name="android:layout_width">wrap_content</item>
 		<item name="android:layout_height">wrap_content</item>

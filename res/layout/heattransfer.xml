@@ -46,26 +46,18 @@
 	    		
 		      	<ImageView 
 		       		android:src="@drawable/heat_transfer_lvl_2_1"
-		       		android:layout_width="fill_parent"
-		       		android:layout_weight="1"  
-		       		android:layout_margin="10dp" 
-		       		android:layout_height="150dp"/>
+		       		style="@style/ImageMain" />
 		      		
 		      	<ImageView 
 		       		android:src="@drawable/heat_transfer_lvl_2_2"
-		       		android:layout_width="fill_parent"
-		       		android:layout_weight="1"  
-		       		android:layout_margin="10dp" 
-		       		android:layout_height="150dp"/>
+		       		style="@style/ImageMain" />
 					
 	      		</LinearLayout>
 	  	</LinearLayout>
  
       	<TextView 
       		android:text="@string/heattransferLevel2Text" 
-      		android:layout_height="wrap_content" 
-      		android:layout_width="wrap_content" 
-      		android:layout_margin="10dp"/>
+      		style="@style/TextMain" />
       	
       	<LinearLayout 
     		android:orientation="horizontal" 

@@ -46,26 +46,19 @@
 	    		
 		      	<ImageView 
 		       		android:src="@drawable/biomass_boiler_1_lvl_2"
-		       		android:layout_width="fill_parent"
-		       		android:layout_weight="1"  
-		       		android:layout_margin="10dp" 
-		       		android:layout_height="150dp"/>
-		      		
+		       		style="@style/ImageMain" />
+		       		
 		      	<ImageView 
 		       		android:src="@drawable/biomass_boiler_2_lvl_2"
-		       		android:layout_width="fill_parent"
-		       		android:layout_weight="1"  
-		       		android:layout_margin="10dp" 
-		       		android:layout_height="150dp"/>
+		       		style="@style/ImageMain" />
 					
 	      		</LinearLayout>
+	      		
 	  	</LinearLayout>
  
       	<TextView 
       		android:text="@string/biomassLevel2Text" 
-      		android:layout_height="wrap_content" 
-      		android:layout_width="wrap_content" 
-      		android:layout_margin="10dp"/>
+      		style="@style/TextMain" />
       	
       	<LinearLayout 
     		android:orientation="horizontal" 

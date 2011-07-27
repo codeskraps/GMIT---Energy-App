@@ -42,13 +42,10 @@ import android.widget.Toast;
 
 public class SolarOverviewActivity extends Activity {
 	private static final String TAG = SolarOverviewActivity.class.getSimpleName();
-	private static final int DIALOG = 1;
 	
 	private EnergyData energyData = null;
 	private boolean activityPaused;
 	private boolean showToast;
-	private String dialogTitle = null;
-	private String dialogMessage = null;
 	
 	private WebView webView = null;
 
@@ -72,9 +69,6 @@ public class SolarOverviewActivity extends Activity {
 
 		webView = (WebView) findViewById(R.id.solar_overview);
 		webView.getSettings().setUseWideViewPort(true);
-		
-		
-		//webView.setOnTouchListener(this);
 		webView.setWebViewClient(new WebViewActivityClient());
 		
 		webView.setWebChromeClient(new WebChromeClient() {
@@ -86,7 +80,11 @@ public class SolarOverviewActivity extends Activity {
 				}
 			}
 		});
-		webView.loadUrl("file:///android_asset/solar/solar_panels_system_overview.html");
+		
+		if (energyData.isChkShowOverviewPins()) 
+			webView.loadUrl("file:///android_asset/solar/solar_panels_system_overview_pins.html");
+		
+		else webView.loadUrl("file:///android_asset/solar/solar_panels_system_overview.html");
 		
 		activityPaused = false;
 		showToast = true;
@@ -131,36 +129,6 @@ public class SolarOverviewActivity extends Activity {
 		super.onBackPressed();
 		overridePendingTransition(R.anim.fadein, R.anim.fadeout);
 	}
-
-//	@Override
-//	public boolean onTouch(View v, MotionEvent event) {
-//		//Log.d(TAG, "image size Width: " + webView.getWidth() + ", Height: " + webView.getHeight());
-//		
-//		switch (event.getAction()) {
-//			case MotionEvent.ACTION_DOWN: 
-//				float x = event.getX();
-//				float y = event.getY();
-//				
-//				int xOffset = v.getScrollX();
-//				int yOffset = v.getScrollY();
-//				
-//				float xSize = webView.getWidth();
-//				float ySize = webView.getHeight();
-//				float s = webView.getScale();
-//				
-//				Log.d(TAG, "Image size Width: " + xSize + ", height: " + ySize + ", scale: " + s);
-//				Log.d(TAG, "Image scale size: " + (xSize*s) + ", height: " + (ySize*s));
-//				Log.d(TAG, "Image Offset   x: " + xOffset + ", y: " + yOffset);
-//				Log.d(TAG, "Screen Clicked X: " + x + ", Y: " + y);
-//				Log.d(TAG, "Position pin   x: " + (x+xOffset) + ", y: " + (y+yOffset));
-//				
-//				
-//				
-//				
-//				break; 
-//		}
-//		return false;
-//	}
 	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -191,48 +159,17 @@ public class SolarOverviewActivity extends Activity {
 	    public boolean shouldOverrideUrlLoading(WebView view, String url) {
 	    	Log.d(TAG, "url: " + url);
 	    	
-	    	if (url.equals("file:///android_asset/solar/1")) {
-	    		dialogTitle = getString(R.string.solarTitlePin1);
-	    		dialogMessage = getString(R.string.solarMessagePin1);
+	    	if (url.equals("file:///android_asset/solar/1")) showDialog(1);
+	    	else if (url.equals("file:///android_asset/solar/2")) showDialog(2);
+	    	else if (url.equals("file:///android_asset/solar/3")) showDialog(3);
+	    	else if (url.equals("file:///android_asset/solar/4")) showDialog(4);
+	    	else if (url.equals("file:///android_asset/solar/5")) showDialog(5);
+	    	else if (url.equals("file:///android_asset/solar/6")) showDialog(6);
+	    	else if (url.equals("file:///android_asset/solar/7")) showDialog(7);
+	    	else if (url.equals("file:///android_asset/solar/8")) showDialog(8);
+	    	else if (url.equals("file:///android_asset/solar/9")) showDialog(9);
+	    	else if (url.equals("file:///android_asset/solar/10")) showDialog(10);
 	    		
-	    	} else if (url.equals("file:///android_asset/solar/2")) {
-	    		dialogTitle = getString(R.string.solarTitlePin2);
-	    		dialogMessage = getString(R.string.solarMessagePin2);
-	    		
-	    	} else if (url.equals("file:///android_asset/solar/3")) {
-	    		dialogTitle = getString(R.string.solarTitlePin3);
-	    		dialogMessage = getString(R.string.solarMessagePin3);
-	    		
-			} else if (url.equals("file:///android_asset/solar/4")) {
-				dialogTitle = getString(R.string.solarTitlePin4);
-	    		dialogMessage = getString(R.string.solarMessagePin4);
-	    		
-			} else if (url.equals("file:///android_asset/solar/5")) {
-				dialogTitle = getString(R.string.solarTitlePin5);
-	    		dialogMessage = getString(R.string.solarMessagePin5);
-	    		
-			} else if (url.equals("file:///android_asset/solar/6")) {
-				dialogTitle = getString(R.string.solarTitlePin6);
-	    		dialogMessage = getString(R.string.solarMessagePin6);
-	    		
-			} else if (url.equals("file:///android_asset/solar/7")) {
-				dialogTitle = getString(R.string.solarTitlePin7);
-	    		dialogMessage = getString(R.string.solarMessagePin7);
-	    		
-			} else if (url.equals("file:///android_asset/solar/8")) {
-				dialogTitle = getString(R.string.solarTitlePin8);
-	    		dialogMessage = getString(R.string.solarMessagePin8);
-	    		
-			} else if (url.equals("file:///android_asset/solar/9")) {
-				dialogTitle = getString(R.string.solarTitlePin9);
-	    		dialogMessage = getString(R.string.solarMessagePin9);
-	    		
-			} else if (url.equals("file:///android_asset/solar/10")) {
-				dialogTitle = getString(R.string.solarTitlePin10);
-	    		dialogMessage = getString(R.string.solarMessagePin10);
-			}
-	    	showDialog(DIALOG);
-	    	
 	        return true;
 	    }
 	}
@@ -240,26 +177,143 @@ public class SolarOverviewActivity extends Activity {
 	@Override
     protected Dialog onCreateDialog(int id) {
        	Log.d(TAG, "onCreateDialog 1");
-    	return new AlertDialog.Builder(SolarOverviewActivity.this)
-        //.setIcon(R.drawable.alert_dialog_icon)
-        //.setTitle(dialogTitle)
-        //.setMessage(dialogMessage)
-        .setPositiveButton(getString(R.string.ok), new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int whichButton) {
+       	
+       	//Resources res = getResources();
+       	//BitmapDrawable icon = new BitmapDrawable(res, myProduct.getUri().toString());
+       	       	
+       	switch (id) {
+       	case 1:
+       		return new AlertDialog.Builder(SolarOverviewActivity.this)
+            //.setIcon(R.drawable.solar_bw)
+       		.setTitle(getString(R.string.solarTitlePin1))
+            .setMessage(getString(R.string.solarMessagePin1))
+            .setPositiveButton(getString(R.string.ok), new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int whichButton) {
 
-                /* User clicked OK so do some stuff */
-            }
-        })
-        .create();
+                    /* User clicked OK so do some stuff */
+                }
+            })
+            .create();
+       		
+       	case 2:
+       		return new AlertDialog.Builder(SolarOverviewActivity.this)
+            //.setIcon(R.drawable.solar_bw)
+       		.setTitle(getString(R.string.solarTitlePin2))
+            .setMessage(getString(R.string.solarMessagePin2))
+            .setPositiveButton(getString(R.string.ok), new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int whichButton) {
+
+                    /* User clicked OK so do some stuff */
+                }
+            })
+            .create();
+       		
+       	case 3:
+       		return new AlertDialog.Builder(SolarOverviewActivity.this)
+            //.setIcon(R.drawable.alert_dialog_icon)
+       		.setTitle(getString(R.string.solarTitlePin3))
+            .setMessage(getString(R.string.solarMessagePin3))
+            .setPositiveButton(getString(R.string.ok), new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int whichButton) {
+
+                    /* User clicked OK so do some stuff */
+                }
+            })
+            .create();
+       		
+       	case 4:
+       		return new AlertDialog.Builder(SolarOverviewActivity.this)
+            //.setIcon(R.drawable.alert_dialog_icon)
+       		.setTitle(getString(R.string.solarTitlePin4))
+            .setMessage(getString(R.string.solarMessagePin4))
+            .setPositiveButton(getString(R.string.ok), new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int whichButton) {
+
+                    /* User clicked OK so do some stuff */
+                }
+            })
+            .create();
+       		
+       	case 5:
+       		return new AlertDialog.Builder(SolarOverviewActivity.this)
+            //.setIcon(R.drawable.alert_dialog_icon)
+       		.setTitle(getString(R.string.solarTitlePin5))
+            .setMessage(getString(R.string.solarMessagePin5))
+            .setPositiveButton(getString(R.string.ok), new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int whichButton) {
+
+                    /* User clicked OK so do some stuff */
+                }
+            })
+            .create();
+       		
+       	case 6:
+       		return new AlertDialog.Builder(SolarOverviewActivity.this)
+            //.setIcon(R.drawable.alert_dialog_icon)
+       		.setTitle(getString(R.string.solarTitlePin6))
+            .setMessage(getString(R.string.solarMessagePin6))
+            .setPositiveButton(getString(R.string.ok), new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int whichButton) {
+
+                    /* User clicked OK so do some stuff */
+                }
+            })
+            .create();
+       		
+       	case 7:
+       		return new AlertDialog.Builder(SolarOverviewActivity.this)
+            //.setIcon(R.drawable.alert_dialog_icon)
+       		.setTitle(getString(R.string.solarTitlePin7))
+            .setMessage(getString(R.string.solarMessagePin7))
+            .setPositiveButton(getString(R.string.ok), new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int whichButton) {
+
+                    /* User clicked OK so do some stuff */
+                }
+            })
+            .create();
+       		
+       	case 8:
+       		return new AlertDialog.Builder(SolarOverviewActivity.this)
+            //.setIcon(R.drawable.alert_dialog_icon)
+       		.setTitle(getString(R.string.solarTitlePin8))
+            .setMessage(getString(R.string.solarMessagePin8))
+            .setPositiveButton(getString(R.string.ok), new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int whichButton) {
+
+                    /* User clicked OK so do some stuff */
+                }
+            })
+            .create();
+       		
+       	case 9:
+       		return new AlertDialog.Builder(SolarOverviewActivity.this)
+            //.setIcon(R.drawable.alert_dialog_icon)
+       		.setTitle(getString(R.string.solarTitlePin9))
+            .setMessage(getString(R.string.solarMessagePin9))
+            .setPositiveButton(getString(R.string.ok), new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int whichButton) {
+
+                    /* User clicked OK so do some stuff */
+                }
+            })
+            .create();
+       		
+       	case 10:
+       		return new AlertDialog.Builder(SolarOverviewActivity.this)
+            //.setIcon(R.drawable.alert_dialog_icon)
+       		.setTitle(getString(R.string.solarTitlePin10))
+            .setMessage(getString(R.string.solarMessagePin10))
+            .setPositiveButton(getString(R.string.ok), new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int whichButton) {
+
+                    /* User clicked OK so do some stuff */
+                }
+            })
+            .create();
+
+       	default:
+       		return null;
+       	}    	
 	}
-
-	@Override
-	protected void onPrepareDialog(int id, Dialog dialog) {
-		super.onPrepareDialog(id, dialog);
-		
-		dialog.setTitle(dialogTitle);
-		//((AlertDialog) dialog).setTitle(dialogTitle);
-		//((AlertDialog) dialog).setMessage(dialogMessage);
-	}
-
 }

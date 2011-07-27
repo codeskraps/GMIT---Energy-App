@@ -35,15 +35,11 @@
          
        	<ImageView 
        		android:src="@drawable/home_small"
-       		android:layout_width="fill_parent" 
-       		android:layout_margin="10dp" 
-       		android:layout_height="200dp"/>
+       		style="@style/ImageMain" />
  
       	<TextView 
       		android:text="@string/homeText" 
-      		android:layout_height="wrap_content" 
-      		android:layout_width="wrap_content" 
-      		android:layout_margin="10dp"/>
+      		style="@style/TextMain" />
       	
       	<LinearLayout 
     		android:orientation="horizontal" 
