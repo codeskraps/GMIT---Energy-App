@@ -40,8 +40,8 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Toast;
 
-public class SolarOverviewActivity extends Activity {
-	private static final String TAG = SolarOverviewActivity.class.getSimpleName();
+public class WoodGasificationActivity extends Activity {
+	private static final String TAG = WoodGasificationActivity.class.getSimpleName();
 	
 	private EnergyData energyData = null;
 	private boolean activityPaused;
@@ -94,15 +94,15 @@ public class SolarOverviewActivity extends Activity {
 	protected void onResume() {
 		super.onResume();
 		
-		Log.d(TAG, "SolarOverviewActivity onResume");
+		Log.d(TAG, "WoodGasificationActivity onResume");
 		
 		if (energyData.isInvalidate() && activityPaused) {
 			
-			Log.d(TAG, "SolarActivity onResume isInvalidte");
+			Log.d(TAG, "WoodGasificationActivity onResume isInvalidte");
 			
-			SolarOverviewActivity.this.startActivity(new Intent(SolarOverviewActivity.this, SolarOverviewActivity.class));
-			SolarOverviewActivity.this.finish();
-			Log.d(TAG, "SolarOverviewActivity onResume finish");
+			WoodGasificationActivity.this.startActivity(new Intent(WoodGasificationActivity.this, WoodGasificationActivity.class));
+			WoodGasificationActivity.this.finish();
+			Log.d(TAG, "WoodGasificationActivity onResume finish");
 		}
 		
 		if (showToast) {
@@ -140,7 +140,7 @@ public class SolarOverviewActivity extends Activity {
 	@Override
 	public boolean onPrepareOptionsMenu(Menu menu) {
     	
-    	menu.findItem(R.id.itemSolar).setEnabled(false);
+    	menu.findItem(R.id.itemBiomass).setEnabled(false);
 
 		return super.onPrepareOptionsMenu(menu);
 	}
@@ -155,7 +155,7 @@ public class SolarOverviewActivity extends Activity {
 		} else {
 			
 			EnergyApplication energyApp = (EnergyApplication) getApplication();
-			SolarOverviewActivity.this.startActivity(energyApp.getMenuIntent(item, SolarOverviewActivity.this));
+			WoodGasificationActivity.this.startActivity(energyApp.getMenuIntent(item, WoodGasificationActivity.this));
 			overridePendingTransition(R.anim.fadein, R.anim.fadeout);
 		}
 		
@@ -186,15 +186,12 @@ public class SolarOverviewActivity extends Activity {
     protected Dialog onCreateDialog(int id) {
        	Log.d(TAG, "onCreateDialog 1");
        	
-       	//Resources res = getResources();
-       	//BitmapDrawable icon = new BitmapDrawable(res, myProduct.getUri().toString());
-       	       	
        	switch (id) {
        	case 1:
-       		return new AlertDialog.Builder(SolarOverviewActivity.this)
+       		return new AlertDialog.Builder(WoodGasificationActivity.this)
             //.setIcon(R.drawable.solar_bw)
-       		.setTitle(getString(R.string.solarTitlePin1))
-            .setMessage(getString(R.string.solarMessagePin1))
+       		.setTitle(getString(R.string.woodgasificationTitlePin1))
+            .setMessage(getString(R.string.woodgasificationMessagePin1))
             .setPositiveButton(getString(R.string.ok), new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int whichButton) {
 
@@ -204,10 +201,10 @@ public class SolarOverviewActivity extends Activity {
             .create();
        		
        	case 2:
-       		return new AlertDialog.Builder(SolarOverviewActivity.this)
+       		return new AlertDialog.Builder(WoodGasificationActivity.this)
             //.setIcon(R.drawable.solar_bw)
-       		.setTitle(getString(R.string.solarTitlePin2))
-            .setMessage(getString(R.string.solarMessagePin2))
+       		.setTitle(getString(R.string.woodgasificationTitlePin2))
+            .setMessage(getString(R.string.woodgasificationMessagePin2))
             .setPositiveButton(getString(R.string.ok), new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int whichButton) {
 
@@ -217,10 +214,10 @@ public class SolarOverviewActivity extends Activity {
             .create();
        		
        	case 3:
-       		return new AlertDialog.Builder(SolarOverviewActivity.this)
+       		return new AlertDialog.Builder(WoodGasificationActivity.this)
             //.setIcon(R.drawable.alert_dialog_icon)
-       		.setTitle(getString(R.string.solarTitlePin3))
-            .setMessage(getString(R.string.solarMessagePin3))
+       		.setTitle(getString(R.string.woodgasificationTitlePin3))
+            .setMessage(getString(R.string.woodgasificationMessagePin3))
             .setPositiveButton(getString(R.string.ok), new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int whichButton) {
 
@@ -230,10 +227,10 @@ public class SolarOverviewActivity extends Activity {
             .create();
        		
        	case 4:
-       		return new AlertDialog.Builder(SolarOverviewActivity.this)
+       		return new AlertDialog.Builder(WoodGasificationActivity.this)
             //.setIcon(R.drawable.alert_dialog_icon)
-       		.setTitle(getString(R.string.solarTitlePin4))
-            .setMessage(getString(R.string.solarMessagePin4))
+       		.setTitle(getString(R.string.woodgasificationTitlePin4))
+            .setMessage(getString(R.string.woodgasificationMessagePin4))
             .setPositiveButton(getString(R.string.ok), new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int whichButton) {
 
@@ -243,10 +240,10 @@ public class SolarOverviewActivity extends Activity {
             .create();
        		
        	case 5:
-       		return new AlertDialog.Builder(SolarOverviewActivity.this)
+       		return new AlertDialog.Builder(WoodGasificationActivity.this)
             //.setIcon(R.drawable.alert_dialog_icon)
-       		.setTitle(getString(R.string.solarTitlePin5))
-            .setMessage(getString(R.string.solarMessagePin5))
+       		.setTitle(getString(R.string.woodgasificationTitlePin5))
+            .setMessage(getString(R.string.woodgasificationMessagePin5))
             .setPositiveButton(getString(R.string.ok), new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int whichButton) {
 
@@ -256,10 +253,10 @@ public class SolarOverviewActivity extends Activity {
             .create();
        		
        	case 6:
-       		return new AlertDialog.Builder(SolarOverviewActivity.this)
+       		return new AlertDialog.Builder(WoodGasificationActivity.this)
             //.setIcon(R.drawable.alert_dialog_icon)
-       		.setTitle(getString(R.string.solarTitlePin6))
-            .setMessage(getString(R.string.solarMessagePin6))
+       		.setTitle(getString(R.string.woodgasificationTitlePin6))
+            .setMessage(getString(R.string.woodgasificationMessagePin6))
             .setPositiveButton(getString(R.string.ok), new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int whichButton) {
 
@@ -269,10 +266,10 @@ public class SolarOverviewActivity extends Activity {
             .create();
        		
        	case 7:
-       		return new AlertDialog.Builder(SolarOverviewActivity.this)
+       		return new AlertDialog.Builder(WoodGasificationActivity.this)
             //.setIcon(R.drawable.alert_dialog_icon)
-       		.setTitle(getString(R.string.solarTitlePin7))
-            .setMessage(getString(R.string.solarMessagePin7))
+       		.setTitle(getString(R.string.woodgasificationTitlePin7))
+            .setMessage(getString(R.string.woodgasificationMessagePin7))
             .setPositiveButton(getString(R.string.ok), new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int whichButton) {
 
@@ -282,10 +279,10 @@ public class SolarOverviewActivity extends Activity {
             .create();
        		
        	case 8:
-       		return new AlertDialog.Builder(SolarOverviewActivity.this)
+       		return new AlertDialog.Builder(WoodGasificationActivity.this)
             //.setIcon(R.drawable.alert_dialog_icon)
-       		.setTitle(getString(R.string.solarTitlePin8))
-            .setMessage(getString(R.string.solarMessagePin8))
+       		.setTitle(getString(R.string.woodgasificationTitlePin8))
+            .setMessage(getString(R.string.woodgasificationMessagePin8))
             .setPositiveButton(getString(R.string.ok), new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int whichButton) {
 
@@ -295,23 +292,10 @@ public class SolarOverviewActivity extends Activity {
             .create();
        		
        	case 9:
-       		return new AlertDialog.Builder(SolarOverviewActivity.this)
+       		return new AlertDialog.Builder(WoodGasificationActivity.this)
             //.setIcon(R.drawable.alert_dialog_icon)
-       		.setTitle(getString(R.string.solarTitlePin9))
-            .setMessage(getString(R.string.solarMessagePin9))
-            .setPositiveButton(getString(R.string.ok), new DialogInterface.OnClickListener() {
-                public void onClick(DialogInterface dialog, int whichButton) {
-
-                    /* User clicked OK so do some stuff */
-                }
-            })
-            .create();
-       		
-       	case 10:
-       		return new AlertDialog.Builder(SolarOverviewActivity.this)
-            //.setIcon(R.drawable.alert_dialog_icon)
-       		.setTitle(getString(R.string.solarTitlePin10))
-            .setMessage(getString(R.string.solarMessagePin10))
+       		.setTitle(getString(R.string.woodgasificationTitlePin9))
+            .setMessage(getString(R.string.woodgasificationMessagePin9))
             .setPositiveButton(getString(R.string.ok), new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int whichButton) {
 

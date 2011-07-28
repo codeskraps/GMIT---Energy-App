@@ -65,23 +65,22 @@ public final class R {
         public static final int img_heatpump=0x7f090010;
         public static final int img_heattransfer=0x7f090016;
         public static final int img_solar=0x7f09000e;
-        public static final int itemAbout=0x7f090024;
-        public static final int itemBiomass=0x7f090020;
-        public static final int itemGasBoiler=0x7f090021;
-        public static final int itemHeatPump=0x7f09001f;
-        public static final int itemHeatTransfer=0x7f090022;
-        public static final int itemHome=0x7f090023;
-        public static final int itemPreference=0x7f090025;
-        public static final int itemQuit=0x7f090026;
-        public static final int itemSolar=0x7f09001e;
-        public static final int solar_overview=0x7f09001c;
+        public static final int itemAbout=0x7f090023;
+        public static final int itemBiomass=0x7f09001f;
+        public static final int itemGasBoiler=0x7f090020;
+        public static final int itemHeatPump=0x7f09001e;
+        public static final int itemHeatTransfer=0x7f090021;
+        public static final int itemHome=0x7f090022;
+        public static final int itemPreference=0x7f090024;
+        public static final int itemQuit=0x7f090025;
+        public static final int itemSolar=0x7f09001d;
         public static final int txtLauncherAbout=0x7f090019;
         public static final int txtLauncherBiomass=0x7f090013;
         public static final int txtLauncherGasBoiler=0x7f090015;
         public static final int txtLauncherHeatPump=0x7f090011;
         public static final int txtLauncherHeatTransfer=0x7f090017;
         public static final int txtLauncherSolar=0x7f09000f;
-        public static final int webview=0x7f09001d;
+        public static final int webview=0x7f09001c;
     }
     public static final class layout {
         public static final int about=0x7f030000;
@@ -92,125 +91,168 @@ public final class R {
         public static final int home=0x7f030005;
         public static final int launcher=0x7f030006;
         public static final int solar=0x7f030007;
-        public static final int solar_overview=0x7f030008;
-        public static final int splash=0x7f030009;
-        public static final int webview=0x7f03000a;
-        public static final int youtube=0x7f03000b;
+        public static final int splash=0x7f030008;
+        public static final int webview=0x7f030009;
+        public static final int youtube=0x7f03000a;
     }
     public static final class menu {
         public static final int main=0x7f080000;
     }
     public static final class string {
-        public static final int Fullscreen=0x7f060047;
-        public static final int Fullscreen_summary=0x7f060048;
+        public static final int Fullscreen=0x7f06006e;
+        public static final int Fullscreen_summary=0x7f06006f;
         /**  Preferences 
          */
-        public static final int GeneralPreferences=0x7f060046;
-        public static final int GmitEnergy=0x7f06004d;
-        public static final int GmitEnergySummary=0x7f06004f;
-        public static final int GmitEnergyTitle=0x7f06004e;
+        public static final int GeneralPreferences=0x7f06006d;
+        public static final int GmitEnergy=0x7f060074;
+        public static final int GmitEnergySummary=0x7f060076;
+        public static final int GmitEnergyTitle=0x7f060075;
+        public static final int Woodgasification_activity=0x7f060007;
         /**  Toast 
          */
-        public static final int Zoom=0x7f060050;
+        public static final int Zoom=0x7f060077;
         /**  About 
          */
-        public static final int aboutLevel2Text=0x7f060044;
-        public static final int about_activity=0x7f060009;
-        public static final int abouttxt=0x7f06001d;
+        public static final int aboutLevel2Text=0x7f06006b;
+        public static final int about_activity=0x7f06000a;
+        public static final int abouttxt=0x7f06001e;
         /**  Activities 
          */
         public static final int app_name=0x7f060000;
         /**  Biomass 
          */
-        public static final int biomassLevel2Text=0x7f060039;
+        public static final int biomassLevel2Text=0x7f06004e;
         public static final int biomass_activity=0x7f060006;
-        public static final int biomasstxt=0x7f06001a;
-        public static final int btnAboutOne=0x7f060045;
-        public static final int btnBiomassOne=0x7f06003a;
-        public static final int btnBiomassThree=0x7f06003c;
-        public static final int btnBiomassTwo=0x7f06003b;
-        public static final int btnGasBoilerOne=0x7f06003e;
-        public static final int btnGasBoilerTwo=0x7f06003f;
-        public static final int btnHeatOne=0x7f060036;
-        public static final int btnHeatThree=0x7f060038;
-        public static final int btnHeatTransferOne=0x7f060041;
-        public static final int btnHeatTransferThree=0x7f060043;
-        public static final int btnHeatTransferTwo=0x7f060042;
-        public static final int btnHeatTwo=0x7f060037;
-        public static final int btnHomeOne=0x7f060016;
-        public static final int btnHomeTwo=0x7f060017;
-        public static final int btnSolarOne=0x7f06001f;
-        public static final int btnSolarTwo=0x7f060020;
-        /**  Gas Boiler 
+        public static final int biomasstxt=0x7f06001b;
+        public static final int btnAboutOne=0x7f06006c;
+        public static final int btnBiomassOne=0x7f06004f;
+        public static final int btnBiomassThree=0x7f060051;
+        public static final int btnBiomassTwo=0x7f060050;
+        public static final int btnGasBoilerOne=0x7f060065;
+        public static final int btnGasBoilerTwo=0x7f060066;
+        public static final int btnHeatOne=0x7f060037;
+        public static final int btnHeatThree=0x7f060039;
+        public static final int btnHeatTransferOne=0x7f060068;
+        public static final int btnHeatTransferThree=0x7f06006a;
+        public static final int btnHeatTransferTwo=0x7f060069;
+        public static final int btnHeatTwo=0x7f060038;
+        public static final int btnHomeOne=0x7f060017;
+        public static final int btnHomeTwo=0x7f060018;
+        public static final int btnSolarOne=0x7f060020;
+        public static final int btnSolarTwo=0x7f060021;
+        /**  Wood Pellet 
+ Gas Boiler 
          */
-        public static final int gasboilerLevel2Text=0x7f06003d;
-        public static final int gasboiler_activity=0x7f060007;
-        public static final int gasboilertxt=0x7f06001b;
+        public static final int gasboilerLevel2Text=0x7f060064;
+        public static final int gasboiler_activity=0x7f060008;
+        public static final int gasboilertxt=0x7f06001c;
         /**  HeatPump 
          */
-        public static final int heatpumpLevel2Text=0x7f060035;
+        public static final int heatpumpLevel2Text=0x7f060036;
+        public static final int heatpumpMessagePin1=0x7f060044;
+        public static final int heatpumpMessagePin10=0x7f06004d;
+        public static final int heatpumpMessagePin2=0x7f060045;
+        public static final int heatpumpMessagePin3=0x7f060046;
+        public static final int heatpumpMessagePin4=0x7f060047;
+        public static final int heatpumpMessagePin5=0x7f060048;
+        public static final int heatpumpMessagePin6=0x7f060049;
+        public static final int heatpumpMessagePin7=0x7f06004a;
+        public static final int heatpumpMessagePin8=0x7f06004b;
+        public static final int heatpumpMessagePin9=0x7f06004c;
+        /**  HeatPump Overview 
+         */
+        public static final int heatpumpTitlePin1=0x7f06003a;
+        public static final int heatpumpTitlePin10=0x7f060043;
+        public static final int heatpumpTitlePin2=0x7f06003b;
+        public static final int heatpumpTitlePin3=0x7f06003c;
+        public static final int heatpumpTitlePin4=0x7f06003d;
+        public static final int heatpumpTitlePin5=0x7f06003e;
+        public static final int heatpumpTitlePin6=0x7f06003f;
+        public static final int heatpumpTitlePin7=0x7f060040;
+        public static final int heatpumpTitlePin8=0x7f060041;
+        public static final int heatpumpTitlePin9=0x7f060042;
         public static final int heatpump_activity=0x7f060005;
-        public static final int heatpumptxt=0x7f060019;
+        public static final int heatpumptxt=0x7f06001a;
         /**  Heat Transfer 
          */
-        public static final int heattransferLevel2Text=0x7f060040;
-        public static final int heattransfer_activity=0x7f060008;
-        public static final int heattransfertxt=0x7f06001c;
+        public static final int heattransferLevel2Text=0x7f060067;
+        public static final int heattransfer_activity=0x7f060009;
+        public static final int heattransfertxt=0x7f06001d;
         /**  HOME 
          */
-        public static final int homeText=0x7f060015;
+        public static final int homeText=0x7f060016;
         public static final int home_activity=0x7f060001;
         public static final int launcher_activity=0x7f060002;
-        public static final int menuAbout=0x7f060012;
-        public static final int menuBiomass=0x7f06000e;
-        public static final int menuGasBoiler=0x7f06000f;
-        public static final int menuHeatPump=0x7f06000d;
-        public static final int menuHeatTransfer=0x7f060010;
-        public static final int menuHome=0x7f060011;
-        public static final int menuPreference=0x7f060013;
-        public static final int menuQuit=0x7f060014;
+        public static final int menuAbout=0x7f060013;
+        public static final int menuBiomass=0x7f06000f;
+        public static final int menuGasBoiler=0x7f060010;
+        public static final int menuHeatPump=0x7f06000e;
+        public static final int menuHeatTransfer=0x7f060011;
+        public static final int menuHome=0x7f060012;
+        public static final int menuPreference=0x7f060014;
+        public static final int menuQuit=0x7f060015;
         /**  MENU 
          */
-        public static final int menuSolar=0x7f06000c;
+        public static final int menuSolar=0x7f06000d;
         /**  Other 
          */
-        public static final int ok=0x7f060051;
-        public static final int preference_activity=0x7f06000a;
-        public static final int showOverviewPins=0x7f06004b;
-        public static final int showOverviewPins_summary=0x7f06004c;
-        public static final int showWelcomescreen=0x7f060049;
-        public static final int showWelcomescreen_summary=0x7f06004a;
+        public static final int ok=0x7f060078;
+        public static final int preference_activity=0x7f06000b;
+        public static final int showOverviewPins=0x7f060072;
+        public static final int showOverviewPins_summary=0x7f060073;
+        public static final int showWelcomescreen=0x7f060070;
+        public static final int showWelcomescreen_summary=0x7f060071;
         /**  Solar 
          */
-        public static final int solarLevel2Text=0x7f06001e;
-        public static final int solarMessagePin1=0x7f06002b;
-        public static final int solarMessagePin10=0x7f060034;
-        public static final int solarMessagePin2=0x7f06002c;
-        public static final int solarMessagePin3=0x7f06002d;
-        public static final int solarMessagePin4=0x7f06002e;
-        public static final int solarMessagePin5=0x7f06002f;
-        public static final int solarMessagePin6=0x7f060030;
-        public static final int solarMessagePin7=0x7f060031;
-        public static final int solarMessagePin8=0x7f060032;
-        public static final int solarMessagePin9=0x7f060033;
+        public static final int solarLevel2Text=0x7f06001f;
+        public static final int solarMessagePin1=0x7f06002c;
+        public static final int solarMessagePin10=0x7f060035;
+        public static final int solarMessagePin2=0x7f06002d;
+        public static final int solarMessagePin3=0x7f06002e;
+        public static final int solarMessagePin4=0x7f06002f;
+        public static final int solarMessagePin5=0x7f060030;
+        public static final int solarMessagePin6=0x7f060031;
+        public static final int solarMessagePin7=0x7f060032;
+        public static final int solarMessagePin8=0x7f060033;
+        public static final int solarMessagePin9=0x7f060034;
         /**  Solar Overview 
          */
-        public static final int solarTitlePin1=0x7f060021;
-        public static final int solarTitlePin10=0x7f06002a;
-        public static final int solarTitlePin2=0x7f060022;
-        public static final int solarTitlePin3=0x7f060023;
-        public static final int solarTitlePin4=0x7f060024;
-        public static final int solarTitlePin5=0x7f060025;
-        public static final int solarTitlePin6=0x7f060026;
-        public static final int solarTitlePin7=0x7f060027;
-        public static final int solarTitlePin8=0x7f060028;
-        public static final int solarTitlePin9=0x7f060029;
+        public static final int solarTitlePin1=0x7f060022;
+        public static final int solarTitlePin10=0x7f06002b;
+        public static final int solarTitlePin2=0x7f060023;
+        public static final int solarTitlePin3=0x7f060024;
+        public static final int solarTitlePin4=0x7f060025;
+        public static final int solarTitlePin5=0x7f060026;
+        public static final int solarTitlePin6=0x7f060027;
+        public static final int solarTitlePin7=0x7f060028;
+        public static final int solarTitlePin8=0x7f060029;
+        public static final int solarTitlePin9=0x7f06002a;
         public static final int solar_activity=0x7f060003;
         public static final int solar_overview_activity=0x7f060004;
         /**  Launcher 
          */
-        public static final int solartxt=0x7f060018;
-        public static final int webview_activity=0x7f06000b;
+        public static final int solartxt=0x7f060019;
+        public static final int webview_activity=0x7f06000c;
+        public static final int woodgasificationMessagePin1=0x7f06005b;
+        public static final int woodgasificationMessagePin2=0x7f06005c;
+        public static final int woodgasificationMessagePin3=0x7f06005d;
+        public static final int woodgasificationMessagePin4=0x7f06005e;
+        public static final int woodgasificationMessagePin5=0x7f06005f;
+        public static final int woodgasificationMessagePin6=0x7f060060;
+        public static final int woodgasificationMessagePin7=0x7f060061;
+        public static final int woodgasificationMessagePin8=0x7f060062;
+        public static final int woodgasificationMessagePin9=0x7f060063;
+        /**  Wood Gasification 
+         */
+        public static final int woodgasificationTitlePin1=0x7f060052;
+        public static final int woodgasificationTitlePin2=0x7f060053;
+        public static final int woodgasificationTitlePin3=0x7f060054;
+        public static final int woodgasificationTitlePin4=0x7f060055;
+        public static final int woodgasificationTitlePin5=0x7f060056;
+        public static final int woodgasificationTitlePin6=0x7f060057;
+        public static final int woodgasificationTitlePin7=0x7f060058;
+        public static final int woodgasificationTitlePin8=0x7f060059;
+        public static final int woodgasificationTitlePin9=0x7f06005a;
     }
     public static final class style {
         public static final int ImageLauncher=0x7f070001;

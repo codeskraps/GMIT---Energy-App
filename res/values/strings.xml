@@ -24,13 +24,14 @@
 
 <resources>
 	<!-- Activities -->
-    <string name="app_name">GMIT - Energy App</string>
-    <string name="home_activity">GMIT - Welcome to the Energy App</string>
+    <string name="app_name">GMIT - Energy Lab</string>
+    <string name="home_activity">GMIT - Welcome to the Energy Lab</string>
     <string name="launcher_activity">GMIT - Launcher</string>
     <string name="solar_activity">GMIT - Solar Panels</string>
     <string name="solar_overview_activity">GMIT - Solar Panels Overview</string>
     <string name="heatpump_activity">GMIT - Heat Pump</string>
     <string name="biomass_activity">GMIT - Biomass Boiler</string>
+    <string name="Woodgasification_activity">GMIT - Wood Gasification</string>
     <string name="gasboiler_activity">GMIT - Condensing Gas Boiler</string>
     <string name="heattransfer_activity">GMIT - Heat Transfer</string>
     <string name="about_activity">About the GMIT Energy lab</string>
@@ -95,11 +96,57 @@
     <string name="btnHeatTwo">System overview and operation</string>
     <string name="btnHeatThree">Efficiency and cost of ownership</string>
     
+    <!-- HeatPump Overview -->
+    <string name="heatpumpTitlePin1">Ambient air</string>
+    <string name="heatpumpTitlePin2">Evaporator</string>
+    <string name="heatpumpTitlePin3">Compressor</string>
+    <string name="heatpumpTitlePin4">Condenser</string>
+    <string name="heatpumpTitlePin5">Receiver vessel</string>
+    <string name="heatpumpTitlePin6">Throttle valve (expansion valve)</string>
+    <string name="heatpumpTitlePin7">Heat/cool mode switch</string>
+    <string name="heatpumpTitlePin8">Hot water flow</string>
+    <string name="heatpumpTitlePin9">Cold return flow</string>
+    <string name="heatpumpTitlePin10">Multi-energy tank</string>
+    
+    <string name="heatpumpMessagePin1">The air outside the building. The heat pump in the GMIT Energy Lab draws heat energy from a large volume of air outside and transforms it into a lower volume of hot water inside.</string>
+    <string name="heatpumpMessagePin2">The evaporator uses a fan to draw air from the surroundings over tubes containing refrigerant.  Since the air is warmer than the refrigerant in the tubes, heat is transferred from the ‘warm’ air (even at or below 0oC) to the colder refrigerant. This causes the cold refrigerant liquid to evaporate, and turn into a gas.</string>
+    <string name="heatpumpMessagePin3">The compressor, driven by an electric motor, acts like a pump, pushing the refrigerant about the circuit. It also increases both the temperature and pressure of the refrigerant vapour.</string>
+    <string name="heatpumpMessagePin4">The hot vapour from the compressor now enters the condenser and, as it condenses from a vapour to a liquid, gives off heat to the water from the water storage tank. The heated water flows back into the multi-energy tank where it is stored for domestic use.</string>
+    <string name="heatpumpMessagePin5">Receiver tank for temporary storage of the refrigerant.</string>
+    <string name="heatpumpMessagePin6">The refrigerant moves on from the condenser to a receiver tank for temporary storage, before demand draws it through the expansion valve, where its temperature and pressure both decrease. It then returns to the evaporator and the cycle is repeated.</string>
+    <string name="heatpumpMessagePin7">Switch for heat/cool mode. The heat pump can work also in air conditioning mode (providing cool air). This switch makes the system work in reverse mode (transfers heat from water to air).</string>
+    <string name="heatpumpMessagePin8">The hot water supply to the multi-energy tank.</string>
+    <string name="heatpumpMessagePin9">Cold water return from the multi-energy tank.</string>
+    <string name="heatpumpMessagePin10">Thermal store (water storage tank).</string>
+    
     <!-- Biomass -->
     <string name="biomassLevel2Text">Biomass is a term used to identify fuels used in the renewable energy sector. These fuels include agricultural residues, energy crops and wood based crops.\n\nA wood pellet boiler (see left image from the GMIT Energy Lab) is fired on biological material (wood pellets) and is used to heat water. A gasification boiler (see right image from the GMIT Energy Lab) uses a syngas which is generated through the chemical reaction of burning wood and is also used to heat water.</string>
     <string name="btnBiomassOne">See video of biomass boiler</string>
     <string name="btnBiomassTwo">Wood gasification</string>
     <string name="btnBiomassThree">Wood pellet</string>
+    
+    <!-- Wood Gasification -->
+    <string name="woodgasificationTitlePin1">Lambda sensor</string>
+    <string name="woodgasificationTitlePin2">Induced draft fan</string>
+    <string name="woodgasificationTitlePin3">Primary combustion chamber</string>
+    <string name="woodgasificationTitlePin4">Flue gas turbulators</string>
+    <string name="woodgasificationTitlePin5">Mixing valve (by-pass)</string>
+    <string name="woodgasificationTitlePin6">Control panel</string>
+    <string name="woodgasificationTitlePin7">Flow</string>
+    <string name="woodgasificationTitlePin8">Return</string>
+    <string name="woodgasificationTitlePin9">Multi-energy tank</string>
+    
+    <string name="woodgasificationMessagePin1">The oxygen sensor measures the difference between exhaust gas mixture and the external air. The lambda sensor is extremely important, as it is used to control the air inlet valve, thereby achieving an optimum environment for combustion.</string>
+    <string name="woodgasificationMessagePin2">The induced draft ventilator is fitted to the flue gas connection and operates via an electric motor. The boiler needs the fan to draw the gases generated in the first combustion chamber into the secondary combustion chamber, where they are burned at a very high temperature.</string>
+    <string name="woodgasificationMessagePin3">This is the main chamber in the boiler where the boiler is filled with logs, the logs are ignited, and initial combustion of the wood takes place. Depending on the type of wood used, the boiler can hold between 36-55kg of wood.</string>
+    <string name="woodgasificationMessagePin4">Small baffles are inserted into the boiler heat exchanger to agitate the air providing better heat transfer to the boiler hence increasing the efficiency of the boiler.</string>
+    <string name="woodgasificationMessagePin5">A mixing valve is connected to the flow and return pipe work. This ensures that water temperature in the pipe going back to the boiler is high enough to prevent condensation of flue gases in the boiler. This keeps the boiler running more efficiently. A three-way valve permits flow and return water to be mixed in the proportions necessary to keep the water going back to the boiler at the desired temperature.</string>
+    <string name="woodgasificationMessagePin6">The boiler’s control panel is fixed to the top surface of the boiler. It allows the user to set key performance values for the efficient operation of the boiler.</string>
+    <string name="woodgasificationMessagePin7">The hot water supply to the multi-energy tank.</string>
+    <string name="woodgasificationMessagePin8">Cold water return from the multi-energy tank.</string>
+    <string name="woodgasificationMessagePin9">Thermal store (water storage tank).</string>
+    
+    <!-- Wood Pellet -->
     
     <!-- Gas Boiler -->
     <string name="gasboilerLevel2Text">Condensing gas boilers use less fuel and have lower running costs than other boilers. Higher efficiency levels are made possible by extracting heat contained in the combustion gases, which would otherwise have been lost to the atmosphere.</string>
@@ -125,7 +172,7 @@
     <string name="showOverviewPins">Show pins in overviews</string>
     <string name="showOverviewPins_summary">Always show the push pins in the overview screen</string>
     <string name="GmitEnergy">Information</string>
-    <string name="GmitEnergyTitle">GMIT Energy App v1.0</string>
+    <string name="GmitEnergyTitle">GMIT Energy Lab v1.0</string>
     <string name="GmitEnergySummary">License GPL v3 - 2011 - Carles Sentis</string>
     
     <!-- Toast -->

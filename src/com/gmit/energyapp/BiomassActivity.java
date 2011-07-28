@@ -109,9 +109,15 @@ public class BiomassActivity extends Activity implements OnClickListener {
 	        BiomassActivity.this.startActivity(new Intent(BiomassActivity.this, YouTubeActivity.class));
 	        
 			break;
+			
 		case R.id.btnBiomassTwo:
+			
+			BiomassActivity.this.startActivity(new Intent(BiomassActivity.this, WoodGasificationActivity.class));
+			
 			break;
+			
 		case R.id.btnBiomassThree:
+			
 			break;
 		}
 	}
