@@ -82,9 +82,9 @@ public class WoodGasificationActivity extends Activity {
 		});
 		
 		if (energyData.isChkShowOverviewPins()) 
-			webView.loadUrl("file:///android_asset/solar/solar_panels_system_overview_pins.html");
+			webView.loadUrl("file:///android_asset/biomass/wood_gasification/wood_gasification_pin.html");
 		
-		else webView.loadUrl("file:///android_asset/solar/solar_panels_system_overview.html");
+		else webView.loadUrl("file:///android_asset/biomass/wood_gasification/wood_gasification.html");
 		
 		activityPaused = false;
 		showToast = true;
@@ -167,16 +167,15 @@ public class WoodGasificationActivity extends Activity {
 	    public boolean shouldOverrideUrlLoading(WebView view, String url) {
 	    	Log.d(TAG, "url: " + url);
 	    	
-	    	if (url.equals("file:///android_asset/solar/1")) showDialog(1);
-	    	else if (url.equals("file:///android_asset/solar/2")) showDialog(2);
-	    	else if (url.equals("file:///android_asset/solar/3")) showDialog(3);
-	    	else if (url.equals("file:///android_asset/solar/4")) showDialog(4);
-	    	else if (url.equals("file:///android_asset/solar/5")) showDialog(5);
-	    	else if (url.equals("file:///android_asset/solar/6")) showDialog(6);
-	    	else if (url.equals("file:///android_asset/solar/7")) showDialog(7);
-	    	else if (url.equals("file:///android_asset/solar/8")) showDialog(8);
-	    	else if (url.equals("file:///android_asset/solar/9")) showDialog(9);
-	    	else if (url.equals("file:///android_asset/solar/10")) showDialog(10);
+	    	if (url.equals("file:///android_asset/biomass/wood_gasification/1")) showDialog(1);
+	    	else if (url.equals("file:///android_asset/biomass/wood_gasification/2")) showDialog(2);
+	    	else if (url.equals("file:///android_asset/biomass/wood_gasification/3")) showDialog(3);
+	    	else if (url.equals("file:///android_asset/biomass/wood_gasification/4")) showDialog(4);
+	    	else if (url.equals("file:///android_asset/biomass/wood_gasification/5")) showDialog(5);
+	    	else if (url.equals("file:///android_asset/biomass/wood_gasification/6")) showDialog(6);
+	    	else if (url.equals("file:///android_asset/biomass/wood_gasification/7")) showDialog(7);
+	    	else if (url.equals("file:///android_asset/biomass/wood_gasification/8")) showDialog(8);
+	    	else if (url.equals("file:///android_asset/biomass/wood_gasification/9")) showDialog(9);
 	    		
 	        return true;
 	    }
