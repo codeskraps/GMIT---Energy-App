@@ -114,12 +114,14 @@ public class SolarActivity extends Activity implements OnClickListener{
 			energyData.setYouTubeVideo(YOUTUBEVIDEO);
 			
 	        SolarActivity.this.startActivity(new Intent(SolarActivity.this, YouTubeActivity.class));
-			
+	        overridePendingTransition(R.anim.fadein, R.anim.fadeout);
+	        
 	        break;
 		
 		case R.id.btnSolarTwo:
 			
 			SolarActivity.this.startActivity(new Intent(SolarActivity.this, SolarOverviewActivity.class));
+			overridePendingTransition(R.anim.fadein, R.anim.fadeout);
 			
 			break;
 		}

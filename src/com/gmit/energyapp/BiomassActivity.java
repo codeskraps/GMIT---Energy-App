@@ -107,18 +107,21 @@ public class BiomassActivity extends Activity implements OnClickListener {
 	        energyData.setYouTubeVideo(YOUTUBEVIDEO);
 			
 	        BiomassActivity.this.startActivity(new Intent(BiomassActivity.this, YouTubeActivity.class));
+	        overridePendingTransition(R.anim.fadein, R.anim.fadeout);
 	        
 			break;
 			
 		case R.id.btnBiomassTwo:
 			
 			BiomassActivity.this.startActivity(new Intent(BiomassActivity.this, WoodGasificationActivity.class));
+			overridePendingTransition(R.anim.fadein, R.anim.fadeout);
 			
 			break;
 			
 		case R.id.btnBiomassThree:
 			
 			BiomassActivity.this.startActivity(new Intent(BiomassActivity.this, WoodPelletActivity.class));
+			overridePendingTransition(R.anim.fadein, R.anim.fadeout);
 			
 			break;
 		}

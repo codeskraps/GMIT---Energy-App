@@ -30,14 +30,19 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class WoodGasificationActivity extends Activity {
@@ -200,18 +205,29 @@ public class WoodGasificationActivity extends Activity {
             .create();
        		
        	case 2:
-       		return new AlertDialog.Builder(WoodGasificationActivity.this)
-            //.setIcon(R.drawable.solar_bw)
-       		.setTitle(getString(R.string.woodgasificationTitlePin2))
-            .setMessage(getString(R.string.woodgasificationMessagePin2))
-            .setPositiveButton(getString(R.string.ok), new DialogInterface.OnClickListener() {
+       		LayoutInflater inflater = (LayoutInflater) WoodGasificationActivity.this.getSystemService(LAYOUT_INFLATER_SERVICE);
+       		View layout = inflater.inflate(R.layout.custom_dialog, (ViewGroup) findViewById(R.id.layout_root));
+
+       		AlertDialog.Builder builder = new AlertDialog.Builder(WoodGasificationActivity.this);
+       		builder.setView(layout);
+       		AlertDialog alertDialog = builder.create();
+       		
+       		TextView text = (TextView) layout.findViewById(R.id.dialog_text);
+       		text.setText(getString(R.string.woodgasificationMessagePin2));
+       		
+       		ImageView image = (ImageView) layout.findViewById(R.id.dialog_image);
+       		image.setImageResource(R.drawable.biomass_boiler_induced_draft_fan_lvl_3);
+       		
+       		alertDialog.setTitle(getString(R.string.woodgasificationTitlePin2));
+       		alertDialog.setButton(getString(R.string.ok), new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int whichButton) {
 
                     /* User clicked OK so do some stuff */
                 }
-            })
-            .create();
+            });
        		
+       		return alertDialog;
+
        	case 3:
        		return new AlertDialog.Builder(WoodGasificationActivity.this)
             //.setIcon(R.drawable.alert_dialog_icon)
