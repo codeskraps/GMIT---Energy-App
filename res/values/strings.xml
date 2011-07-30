@@ -32,6 +32,7 @@
     <string name="heatpump_activity">GMIT - Heat Pump</string>
     <string name="biomass_activity">GMIT - Biomass Boiler</string>
     <string name="Woodgasification_activity">GMIT - Wood Gasification</string>
+    <string name="Woodpellet_activity">GMIT - Wood Pellet</string>
     <string name="gasboiler_activity">GMIT - Condensing Gas Boiler</string>
     <string name="heattransfer_activity">GMIT - Heat Transfer</string>
     <string name="about_activity">About the GMIT Energy lab</string>
@@ -147,6 +148,39 @@
     <string name="woodgasificationMessagePin9">Thermal store (water storage tank).</string>
     
     <!-- Wood Pellet -->
+    <string name="woodpelletTitlePin1">Safety valve</string>
+    <string name="woodpelletTitlePin2">Power supply</string>
+    <string name="woodpelletTitlePin3">Safety cut‐off</string>
+    <string name="woodpelletTitlePin4">Control box</string>
+    <string name="woodpelletTitlePin5">Pressure/temperature display</string>
+    <string name="woodpelletTitlePin6">Pellet feed tube</string>
+    <string name="woodpelletTitlePin7">Burner unit</string>
+    <string name="woodpelletTitlePin8">Combustion flame</string>
+    <string name="woodpelletTitlePin9">Ash chamber</string>
+    <string name="woodpelletTitlePin10">Boiler access hatch</string>
+    <string name="woodpelletTitlePin11">Expansion vessel</string>
+    <string name="woodpelletTitlePin12">Flue</string>
+    <string name="woodpelletTitlePin13">Mixing valve</string>
+    <string name="woodpelletTitlePin14">Flow</string>
+    <string name="woodpelletTitlePin15">Return</string>
+    <string name="woodpelletTitlePin16">Multi‐energy tank</string>
+    
+    <string name="woodpelletMessagePin1">Exhausts to atmosphere in the event of an over pressure.</string>
+    <string name="woodpelletMessagePin2">Electricity from the grid.</string>
+    <string name="woodpelletMessagePin3">In the event of the boiler over heating, the safety cut off will turn off the boiler fan and auger.</string>
+    <string name="woodpelletMessagePin4">Control panel.</string>
+    <string name="woodpelletMessagePin5">Displays pressure and temperature.</string>
+    <string name="woodpelletMessagePin6">Receives pellets from the auger/hopper. The boiler requires wood pellets with a diameter of between 6‐8mm. The use of any other pellets in the boiler may cause loss in combustion efficiency.</string>
+    <string name="woodpelletMessagePin7">Contains the ignition elements, photo cell, internal auger, and fan. The burner unit receives pellets from the external auger. The burner is fed pellets by connecting the thermoplastic hose to the top of the combustion unit and the other side to the external auger.</string>
+    <string name="woodpelletMessagePin8">Ignites the pellets.</string>
+    <string name="woodpelletMessagePin9">Ashes fall into an ash pan located in this chamber. This ash can be used for composting purposes.</string>
+    <string name="woodpelletMessagePin10">Permits access to the boiler.</string>
+    <string name="woodpelletMessagePin11">Allows water to expand when heated.</string>
+    <string name="woodpelletMessagePin12">The purpose of the flue is to generate a draught that will transport smoke and fumes away from the point of combustion. The draught in the flue is determined by outside temperature, boiler capacity, exhaust gas temperature, chimney height and outside wind conditions. As conditions change, the draught can easily vary from 0 to 100Pa. Wood pellet boilers are most efficient when the negative pressure in the flue ranges from 0 to 20Pa. A motorised flue fan has been installed in the Energy Lab to assist in maintaining this pressure differential.</string>
+    <string name="woodpelletMessagePin13">The 3‐way thermostatic mixing valve ensures the return temperature to the boiler is hot enough to prevent condensation of the flue gases in the boiler chamber.</string>
+    <string name="woodpelletMessagePin14">The hot water supply to the multi‐energy tank.</string>
+    <string name="woodpelletMessagePin15">Cold water return from the multi‐energy tank.</string>
+    <string name="woodpelletMessagePin16">Thermal store (water storage tank).</string>
     
     <!-- Gas Boiler -->
     <string name="gasboilerLevel2Text">Condensing gas boilers use less fuel and have lower running costs than other boilers. Higher efficiency levels are made possible by extracting heat contained in the combustion gases, which would otherwise have been lost to the atmosphere.</string>

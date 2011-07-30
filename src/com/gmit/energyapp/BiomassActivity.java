@@ -118,6 +118,8 @@ public class BiomassActivity extends Activity implements OnClickListener {
 			
 		case R.id.btnBiomassThree:
 			
+			BiomassActivity.this.startActivity(new Intent(BiomassActivity.this, WoodPelletActivity.class));
+			
 			break;
 		}
 	}

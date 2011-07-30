@@ -25,10 +25,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
       package="com.gmit.energyapp"
       android:versionCode="1"
-      android:versionName="1.0" >
-      <!-- android:installLocation="auto">  -->
+      android:versionName="1.0"
+      android:installLocation="auto">
       
-    <uses-sdk android:minSdkVersion="7" />
+    <uses-sdk android:minSdkVersion="8" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application android:icon="@drawable/icon" 
@@ -83,6 +83,11 @@
      			  android:label="@string/Woodgasification_activity"
      			  android:theme="@android:style/Theme.Light"
        			  android:screenOrientation="landscape" />
+       			  
+      	<activity android:name=".WoodPelletActivity"
+      			  android:label="@string/Woodpellet_activity"
+      			  android:theme="@android:style/Theme.Light"
+      			  android:screenOrientation="landscape" />
      	
      	<activity android:name=".GasBoilerActivity"
        			  android:label="@string/gasboiler_activity"
