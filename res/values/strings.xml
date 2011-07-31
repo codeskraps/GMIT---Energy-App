@@ -34,6 +34,7 @@
     <string name="Woodgasification_activity">GMIT - Wood Gasification</string>
     <string name="Woodpellet_activity">GMIT - Wood Pellet</string>
     <string name="gasboiler_activity">GMIT - Condensing Gas Boiler</string>
+    <string name="gasboiler_overveiw_activity">GMIT - Gas Boiler Overview</string>
     <string name="heattransfer_activity">GMIT - Heat Transfer</string>
     <string name="about_activity">About the GMIT Energy lab</string>
     <string name="preference_activity">GMIT - Preferences</string>
@@ -186,6 +187,33 @@
     <string name="gasboilerLevel2Text">Condensing gas boilers use less fuel and have lower running costs than other boilers. Higher efficiency levels are made possible by extracting heat contained in the combustion gases, which would otherwise have been lost to the atmosphere.</string>
     <string name="btnGasBoilerOne">See video of gas boiler</string>
     <string name="btnGasBoilerTwo">System overview</string>
+    
+    <!-- Gas Boiler Overview -->
+    <string name="gasboilerTitlePin1">Flue</string>
+    <string name="gasboilerTitlePin2">Gas saver</string>
+    <string name="gasboilerTitlePin3">Boiler flue outlet</string>
+    <string name="gasboilerTitlePin4">Condensing gas boiler</string>
+    <string name="gasboilerTitlePin5">Boiler controls</string>
+    <string name="gasboilerTitlePin6">Gas meter</string>
+    <string name="gasboilerTitlePin7">Condensation drain</string>
+    <string name="gasboilerTitlePin8">Blending valve</string>
+    <string name="gasboilerTitlePin9">Mains water supply</string>
+    <string name="gasboilerTitlePin10">Flow</string>
+    <string name="gasboilerTitlePin11">Return</string>
+    <string name="gasboilerTitlePin12">Multi-energy tank</string>
+    
+    <string name="gasboilerMessagePin1">The boiler is a room sealed boiler.  A fan draws out the combustion fumes, and discharges them directly outside through the central core of a circular, concentric flue, around which air is drawn in and passed to the combustion chamber of the boiler.</string>
+    <string name="gasboilerMessagePin2">This is a passive flue gas heat recovery device. The gas saver is easily installed between the boiler and flue. It stores the condensate (5.5L) normally expelled into the atmosphere through the boiler flue.  The heat from this condensate is used to pre-heat water coming into the boiler base from the cold mains supply. This significantly increases efficiency of the condensing boiler to greater than 91\u0025.</string>
+    <string name="gasboilerMessagePin3">Gas boiler air inlet and exhaust gas outlet.</string>
+    <string name="gasboilerMessagePin4">The gas boiler installed in the Energy Lab is an Alpha CD25C high efficiency, condensing, combination boiler designed to use propane gas only. The boiler has an efficiency of 91.9\u0025. As it is a ‘combi’ boiler, it is therefore capable of providing both central heating and domestic hot water at mains pressure.</string>
+    <string name="gasboilerMessagePin5">This controls the operational efficiency of the boiler by allowing the user to adjust key performance parameters.</string>
+    <string name="gasboilerMessagePin6">In order to determine the efficiency of the boiler, the rate of propane being consumed is monitored using a gas meter.</string>
+    <string name="gasboilerMessagePin7">The condensate produced by the boiler is usually acidic, and has to be piped to a drain. The heat exchanger of the boiler must be of very high quality to prevent corrosion by the acid.</string>
+    <string name="gasboilerMessagePin8">A 3-way valve mixes some cold water with hot water on the return, thus preventing thermal shock and condensation on the outside of the boiler plate.</string>
+    <string name="gasboilerMessagePin9">Supplies cold water for domestic hot water heating at mains pressure.</string>
+    <string name="gasboilerMessagePin10">The hot water supply to the multi-energy tank.</string>
+    <string name="gasboilerMessagePin11">Cold water return from the multi-energy tank.</string>
+    <string name="gasboilerMessagePin12">Thermal store (water storage tank).</string>
     
     <!-- Heat Transfer -->
     <string name="heattransferLevel2Text">The radiator system and the underfloor heating systems represent an excellent example of heat transfer. Heat transfer can occur through conduction, convection and radiation. All three systems are represented in the GMIT Energy lab. Heat transfer only occurs when there is a temperature gradient, i.e. heat energy flows from a high temperature region to a low temperature region.</string>

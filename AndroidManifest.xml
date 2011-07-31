@@ -94,6 +94,11 @@
        			  android:theme="@android:style/Theme.Light"
        			  android:screenOrientation="landscape" />
        			  
+       	<activity android:name=".GasBoilerOverviewActivity"
+       			  android:label="@string/gasboiler_overveiw_activity"
+       			  android:theme="@android:style/Theme.Light"
+       			  android:screenOrientation="landscape" />
+       			  
       	<activity android:name=".HeatTransferActivity"
        			  android:label="@string/heattransfer_activity"
        			  android:theme="@android:style/Theme.Light"

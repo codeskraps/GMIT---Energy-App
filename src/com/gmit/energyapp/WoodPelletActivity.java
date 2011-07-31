@@ -30,14 +30,19 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class WoodPelletActivity extends Activity {
@@ -193,17 +198,28 @@ public class WoodPelletActivity extends Activity {
        	
        	switch (id) {
        	case 1:
-       		return new AlertDialog.Builder(WoodPelletActivity.this)
-            //.setIcon(R.drawable.solar_bw)
-       		.setTitle(getString(R.string.woodpelletTitlePin1))
-            .setMessage(getString(R.string.woodpelletMessagePin1))
-            .setPositiveButton(getString(R.string.ok), new DialogInterface.OnClickListener() {
+       		LayoutInflater inflater_pin1 = (LayoutInflater) WoodPelletActivity.this.getSystemService(LAYOUT_INFLATER_SERVICE);
+       		View layout_pin1 = inflater_pin1.inflate(R.layout.custom_dialog, (ViewGroup) findViewById(R.id.layout_root));
+
+       		AlertDialog.Builder builder_pin1 = new AlertDialog.Builder(WoodPelletActivity.this);
+       		builder_pin1.setView(layout_pin1);
+       		AlertDialog alertDialog_pin1 = builder_pin1.create();
+       		
+       		TextView text_pin1 = (TextView) layout_pin1.findViewById(R.id.dialog_text);
+       		text_pin1.setText(getString(R.string.woodpelletMessagePin1));
+       		
+       		ImageView image_pin1 = (ImageView) layout_pin1.findViewById(R.id.dialog_image);
+       		image_pin1.setImageResource(R.drawable.biomass_boiler_safety_valve_lvl_3);
+       		
+       		alertDialog_pin1.setTitle(getString(R.string.woodpelletTitlePin1));
+       		alertDialog_pin1.setButton(getString(R.string.ok), new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int whichButton) {
 
                     /* User clicked OK so do some stuff */
                 }
-            })
-            .create();
+            });
+       		
+       		return alertDialog_pin1;
        		
        	case 2:
        		return new AlertDialog.Builder(WoodPelletActivity.this)
@@ -258,17 +274,28 @@ public class WoodPelletActivity extends Activity {
             .create();
        		
        	case 6:
-       		return new AlertDialog.Builder(WoodPelletActivity.this)
-            //.setIcon(R.drawable.alert_dialog_icon)
-       		.setTitle(getString(R.string.woodpelletTitlePin6))
-            .setMessage(getString(R.string.woodpelletMessagePin6))
-            .setPositiveButton(getString(R.string.ok), new DialogInterface.OnClickListener() {
+       		LayoutInflater inflater_pin6 = (LayoutInflater) WoodPelletActivity.this.getSystemService(LAYOUT_INFLATER_SERVICE);
+       		View layout_pin6 = inflater_pin6.inflate(R.layout.custom_dialog, (ViewGroup) findViewById(R.id.layout_root));
+
+       		AlertDialog.Builder builder_pin6 = new AlertDialog.Builder(WoodPelletActivity.this);
+       		builder_pin6.setView(layout_pin6);
+       		AlertDialog alertDialog_pin6 = builder_pin6.create();
+       		
+       		TextView text_pin6 = (TextView) layout_pin6.findViewById(R.id.dialog_text);
+       		text_pin6.setText(getString(R.string.woodpelletMessagePin6));
+       		
+       		ImageView image_pin6 = (ImageView) layout_pin6.findViewById(R.id.dialog_image);
+       		image_pin6.setImageResource(R.drawable.biomass_boiler_pellet_feed_tube_lvl_3);
+       		
+       		alertDialog_pin6.setTitle(getString(R.string.woodpelletTitlePin6));
+       		alertDialog_pin6.setButton(getString(R.string.ok), new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int whichButton) {
 
                     /* User clicked OK so do some stuff */
                 }
-            })
-            .create();
+            });
+       		
+       		return alertDialog_pin6;
        		
        	case 7:
        		return new AlertDialog.Builder(WoodPelletActivity.this)

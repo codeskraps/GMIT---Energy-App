@@ -25,8 +25,7 @@ public class GasBoilerActivity extends Activity implements OnClickListener {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
-		EnergyApplication energyApp = (EnergyApplication) getApplication();
-        energyData = energyApp.getEnergyData();
+		energyData = ((EnergyApplication) getApplication()).getEnergyData();
         
 		if (energyData.isChkFullscreen()) {
         	
@@ -82,9 +81,15 @@ public class GasBoilerActivity extends Activity implements OnClickListener {
 	        energyData.setYouTubeVideo(YOUTUBEVIDEO);
 			
 	        GasBoilerActivity.this.startActivity(new Intent(GasBoilerActivity.this, YouTubeActivity.class));
+	        overridePendingTransition(R.anim.fadein, R.anim.fadeout);
 	        
 			break;
+			
 		case R.id.btnGasBoilerTwo:
+			
+			GasBoilerActivity.this.startActivity(new Intent(GasBoilerActivity.this, GasBoilerOverviewActivity.class));
+	        overridePendingTransition(R.anim.fadein, R.anim.fadeout);
+	        
 			break;
 		}
 	}
