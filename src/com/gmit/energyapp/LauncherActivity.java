@@ -24,18 +24,23 @@ package com.gmit.energyapp;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.View.OnTouchListener;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 public class LauncherActivity extends Activity implements OnClickListener {
+	private static final String TAG = LauncherActivity.class.getSimpleName();
 	
 	private EnergyData energyData = null;
 	private boolean activityPaused;
@@ -99,6 +104,116 @@ public class LauncherActivity extends Activity implements OnClickListener {
         txt_gasboiler.setOnClickListener(this);
         txt_heattransfer.setOnClickListener(this);
         txt_about.setOnClickListener(this);
+        
+        img_solar.setOnTouchListener(new OnTouchListener() {
+			
+			@Override
+			public boolean onTouch(View v, MotionEvent event) {
+				switch (event.getAction()) {
+				case MotionEvent.ACTION_DOWN:
+					img_solar.setImageResource(R.drawable.solar_bw_icon);
+					txt_solar.setTextColor(Color.BLACK);
+					break;
+				case MotionEvent.ACTION_UP:
+					img_solar.setImageResource(R.drawable.solar);
+					txt_solar.setTextColor(Color.WHITE);
+					break;
+				}
+				return false;
+			}
+		});
+        
+        img_heatpump.setOnTouchListener(new OnTouchListener() {
+			
+			@Override
+			public boolean onTouch(View v, MotionEvent event) {
+				switch (event.getAction()) {
+				case MotionEvent.ACTION_DOWN:
+					img_heatpump.setImageResource(R.drawable.heatpump_bw_icon);
+					txt_heatpump.setTextColor(Color.BLACK);
+					break;
+				case MotionEvent.ACTION_UP:
+					img_heatpump.setImageResource(R.drawable.heatpump);
+					txt_heatpump.setTextColor(Color.WHITE);
+					break;
+				}
+				return false;
+			}
+		});
+        
+        img_biomass.setOnTouchListener(new OnTouchListener() {
+			
+			@Override
+			public boolean onTouch(View v, MotionEvent event) {
+				switch (event.getAction()) {
+				case MotionEvent.ACTION_DOWN:
+					img_biomass.setImageResource(R.drawable.biomassboiler_bw_icon);
+					txt_biomass.setTextColor(Color.BLACK);
+					break;
+				case MotionEvent.ACTION_UP:
+					img_biomass.setImageResource(R.drawable.biomassboiler);
+					txt_biomass.setTextColor(Color.WHITE);
+					break;
+				}
+				return false;
+			}
+		});
+        
+        img_gasboiler.setOnTouchListener(new OnTouchListener() {
+			
+			@Override
+			public boolean onTouch(View v, MotionEvent event) {
+				switch (event.getAction()) {
+				case MotionEvent.ACTION_DOWN:
+					img_gasboiler.setImageResource(R.drawable.gas_boiler_bw_icon);
+					txt_gasboiler.setTextColor(Color.BLACK);
+					break;
+				case MotionEvent.ACTION_UP:
+					img_gasboiler.setImageResource(R.drawable.gas_boiler);
+					txt_gasboiler.setTextColor(Color.WHITE);
+					break;
+				}
+				return false;
+			}
+		});
+        
+        img_heattransfer.setOnTouchListener(new OnTouchListener() {
+			
+			@Override
+			public boolean onTouch(View v, MotionEvent event) {
+				switch (event.getAction()) {
+				case MotionEvent.ACTION_DOWN:
+					img_heattransfer.setImageResource(R.drawable.heat_transfer_bw_icon);
+					txt_heattransfer.setTextColor(Color.BLACK);
+					break;
+				case MotionEvent.ACTION_UP:
+					img_heattransfer.setImageResource(R.drawable.heat_transfer);
+					txt_heattransfer.setTextColor(Color.WHITE);
+					break;
+				}
+				return false;
+			}
+		});
+        
+        img_about.setOnTouchListener(new OnTouchListener() {
+			
+			@Override
+			public boolean onTouch(View v, MotionEvent event) {
+				switch (event.getAction()) {
+				case MotionEvent.ACTION_DOWN:
+					img_about.setImageResource(R.drawable.about_bw_icon);
+					txt_about.setTextColor(Color.BLACK);
+					break;
+				case MotionEvent.ACTION_UP:
+					img_about.setImageResource(R.drawable.about);
+					txt_about.setTextColor(Color.WHITE);
+					break;
+				default:
+					
+				}
+				return false;
+			}
+		});
     }
     
     @Override
@@ -169,6 +284,7 @@ public class LauncherActivity extends Activity implements OnClickListener {
 		case R.id.img_about:
 		case R.id.txtLauncherAbout:
 			
+			Log.d(TAG, "clicked");
 			LauncherActivity.this.startActivity(new Intent(LauncherActivity.this, AboutActivity.class));
 			overridePendingTransition(R.anim.fadein, R.anim.fadeout);
 		}
