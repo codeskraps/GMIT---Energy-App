@@ -32,7 +32,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Button;
+import android.widget.ImageView;
 
 public class HeatPumpActivity extends Activity implements OnClickListener {
 	private static final String YOUTUBEVIDEO = "http://www.youtube.com/watch?v=g9U1xtW-TEo&playnext=1&list=PL4F286D120FAD18B1";
@@ -40,9 +40,9 @@ public class HeatPumpActivity extends Activity implements OnClickListener {
 	private EnergyData energyData = null;
 	private boolean activityPaused;
 	
-	private Button btnHeatOne = null;
-	private Button btnHeatTwo = null;
-	private Button btnHeatThree = null;
+	private ImageView btnHeatOne = null;
+	private ImageView btnHeatTwo = null;
+	private ImageView btnHeatThree = null;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -57,14 +57,14 @@ public class HeatPumpActivity extends Activity implements OnClickListener {
 		}
 	    
 		requestWindowFeature(Window.FEATURE_LEFT_ICON);
-		setContentView(R.layout.heatpump);
+		setContentView(R.layout.heatpump_side_buttons);
 		setFeatureDrawableResource(Window.FEATURE_LEFT_ICON, R.drawable.icon);
 		
 		activityPaused = false;
 		
-		btnHeatOne = (Button) findViewById(R.id.btnHeatOne);
-		btnHeatTwo = (Button) findViewById(R.id.btnHeatTwo);
-		btnHeatThree = (Button) findViewById(R.id.btnHeatThree);
+		btnHeatOne = (ImageView) findViewById(R.id.btnHeatOne);
+		btnHeatTwo = (ImageView) findViewById(R.id.btnHeatTwo);
+		btnHeatThree = (ImageView) findViewById(R.id.btnHeatThree);
 		
 		btnHeatOne.setOnClickListener(this);
 		btnHeatTwo.setOnClickListener(this);
@@ -107,10 +107,15 @@ public class HeatPumpActivity extends Activity implements OnClickListener {
 	        energyData.setYouTubeVideo(YOUTUBEVIDEO);
 			
 	        HeatPumpActivity.this.startActivity(new Intent(HeatPumpActivity.this, YouTubeActivity.class));
+	        overridePendingTransition(R.anim.fadein, R.anim.fadeout);
 	        
 			break;
 			
 		case R.id.btnHeatTwo:
+			
+			HeatPumpActivity.this.startActivity(new Intent(HeatPumpActivity.this, HeatPumpOverviewActivity.class));
+	        overridePendingTransition(R.anim.fadein, R.anim.fadeout);
+	        
 			break;
 		case R.id.btnHeatThree:
 			break;

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- 
+		GMIT - Energy app
+		Copyright (C) Carles Sentis 2011 <carlesentis@gmail.com>
+		
+		GMIT - Energy app is free software: you can
+		redistribute it and/or modify it under the terms
+		of the GNU General Public License as published by
+		the Free Software Foundation, either version 3 of
+		the License, or (at your option) any later
+		version.
+		
+		GMIT - Energy app is distributed in the hope that it
+		will be useful, but WITHOUT ANY WARRANTY; without
+		even the implied warranty of MERCHANTABILITY or
+		FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+		General Public License for more details.
+		
+		You should have received a copy of the GNU
+		General Public License along with this program.
+		If not, see <http://www.gnu.org/licenses/>.
+-->
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" 
+	android:layout_height="fill_parent"
+	android:orientation="horizontal" >
+	
+	<ScrollView
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="fill_parent" 
+		android:layout_height="fill_parent"
+		android:orientation="vertical"
+		android:layout_weight="0.2" >
+	    
+	    <LinearLayout 
+	    	android:orientation="vertical" 
+	    	android:layout_height="fill_parent" 
+	    	android:layout_width="fill_parent">
+	         
+	       	<ImageView 
+	       		android:src="@drawable/solar_panels_lvl_2"
+	       		style="@style/ImageMain" />
+	       		
+	      	<TextView 
+	      		android:text="@string/solarLevel2Text"
+	      		style="@style/TextMain" />
+	        
+	 	</LinearLayout>
+	 	
+	</ScrollView>
+	
+	<LinearLayout 
+   		android:gravity="center_horizontal"
+   		android:orientation="vertical" 
+   		android:layout_width="fill_parent" 
+   		android:layout_height="fill_parent"
+   		android:layout_weight="1"
+   		android:background="@drawable/background" >
+<!--    		
+      	<Button
+      		android:text="@string/btnSolarOne"
+      		android:id="@+id/btnSolarOne" 
+      		android:layout_width="fill_parent" 
+      		android:layout_weight="1" 
+      		android:layout_height="fill_parent" 
+      		android:layout_marginBottom="5dp" 
+      		android:layout_marginLeft="10dp" 
+      		android:layout_marginRight="10dp" 
+      		android:layout_marginTop="10dp"/>
+      		
+      	<Button 
+      		android:text="@string/btnSolarTwo" 
+      		android:id="@+id/btnSolarTwo" 
+      		android:layout_width="fill_parent" 
+      		android:layout_weight="1" 
+      		android:layout_height="fill_parent" 
+      		android:layout_marginBottom="10dp" 
+      		android:layout_marginLeft="10dp" 
+			android:layout_marginRight="10dp"
+			android:layout_marginTop="5dp" />
+ -->	
+ 	
+ 	<ImageView
+ 		android:src="@drawable/streaming"
+   		android:id="@+id/btnSolarOne" 
+   		android:layout_width="wrap_content" 
+   		android:layout_height="wrap_content" 
+   		android:layout_marginBottom="5dp" 
+   		android:layout_marginLeft="20dp" 
+   		android:layout_marginRight="10dp" 
+   		android:layout_marginTop="10dp"/>
+   		
+   	<ImageView 
+   		android:src="@drawable/overview"
+   		android:id="@+id/btnSolarTwo" 
+   		android:layout_width="wrap_content" 
+   		android:layout_height="wrap_content" 
+   		android:layout_marginBottom="10dp" 
+   		android:layout_marginLeft="20dp" 
+		android:layout_marginRight="10dp"
+		android:layout_marginTop="5dp" />
+				
+	</LinearLayout>
+	
+</LinearLayout>

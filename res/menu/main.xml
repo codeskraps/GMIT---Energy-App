@@ -43,11 +43,11 @@
     	android:id="@+id/itemHeatTransfer" 
     	android:title="@string/menuHeatTransfer"
     	android:icon="@drawable/heat_transfer_bw" />
-    <item 
+<!--  <item 
     	android:id="@+id/itemHome" 
     	android:title="@string/menuHome"
     	android:icon="@android:drawable/ic_menu_close_clear_cancel" />
-    	
+ -->      	
    	<item
    		android:id="@+id/itemAbout"
    		android:title="@string/menuAbout"/>

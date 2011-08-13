@@ -112,11 +112,11 @@ public class LauncherActivity extends Activity implements OnClickListener {
 				switch (event.getAction()) {
 				case MotionEvent.ACTION_DOWN:
 					img_solar.setImageResource(R.drawable.solar_bw_icon);
-					txt_solar.setTextColor(Color.BLACK);
+					txt_solar.setTextColor(Color.WHITE);
 					break;
 				case MotionEvent.ACTION_UP:
 					img_solar.setImageResource(R.drawable.solar);
-					txt_solar.setTextColor(Color.WHITE);
+					txt_solar.setTextColor(Color.BLACK);
 					break;
 				}
 				return false;
@@ -130,11 +130,11 @@ public class LauncherActivity extends Activity implements OnClickListener {
 				switch (event.getAction()) {
 				case MotionEvent.ACTION_DOWN:
 					img_heatpump.setImageResource(R.drawable.heatpump_bw_icon);
-					txt_heatpump.setTextColor(Color.BLACK);
+					txt_heatpump.setTextColor(Color.WHITE);
 					break;
 				case MotionEvent.ACTION_UP:
 					img_heatpump.setImageResource(R.drawable.heatpump);
-					txt_heatpump.setTextColor(Color.WHITE);
+					txt_heatpump.setTextColor(Color.BLACK);
 					break;
 				}
 				return false;
@@ -148,11 +148,11 @@ public class LauncherActivity extends Activity implements OnClickListener {
 				switch (event.getAction()) {
 				case MotionEvent.ACTION_DOWN:
 					img_biomass.setImageResource(R.drawable.biomassboiler_bw_icon);
-					txt_biomass.setTextColor(Color.BLACK);
+					txt_biomass.setTextColor(Color.WHITE);
 					break;
 				case MotionEvent.ACTION_UP:
 					img_biomass.setImageResource(R.drawable.biomassboiler);
-					txt_biomass.setTextColor(Color.WHITE);
+					txt_biomass.setTextColor(Color.BLACK);
 					break;
 				}
 				return false;
@@ -166,11 +166,11 @@ public class LauncherActivity extends Activity implements OnClickListener {
 				switch (event.getAction()) {
 				case MotionEvent.ACTION_DOWN:
 					img_gasboiler.setImageResource(R.drawable.gas_boiler_bw_icon);
-					txt_gasboiler.setTextColor(Color.BLACK);
+					txt_gasboiler.setTextColor(Color.WHITE);
 					break;
 				case MotionEvent.ACTION_UP:
 					img_gasboiler.setImageResource(R.drawable.gas_boiler);
-					txt_gasboiler.setTextColor(Color.WHITE);
+					txt_gasboiler.setTextColor(Color.BLACK);
 					break;
 				}
 				return false;
@@ -184,11 +184,11 @@ public class LauncherActivity extends Activity implements OnClickListener {
 				switch (event.getAction()) {
 				case MotionEvent.ACTION_DOWN:
 					img_heattransfer.setImageResource(R.drawable.heat_transfer_bw_icon);
-					txt_heattransfer.setTextColor(Color.BLACK);
+					txt_heattransfer.setTextColor(Color.WHITE);
 					break;
 				case MotionEvent.ACTION_UP:
 					img_heattransfer.setImageResource(R.drawable.heat_transfer);
-					txt_heattransfer.setTextColor(Color.WHITE);
+					txt_heattransfer.setTextColor(Color.BLACK);
 					break;
 				}
 				return false;
@@ -202,11 +202,11 @@ public class LauncherActivity extends Activity implements OnClickListener {
 				switch (event.getAction()) {
 				case MotionEvent.ACTION_DOWN:
 					img_about.setImageResource(R.drawable.about_bw_icon);
-					txt_about.setTextColor(Color.BLACK);
+					txt_about.setTextColor(Color.WHITE);
 					break;
 				case MotionEvent.ACTION_UP:
 					img_about.setImageResource(R.drawable.about);
-					txt_about.setTextColor(Color.WHITE);
+					txt_about.setTextColor(Color.BLACK);
 					break;
 				default:
 					

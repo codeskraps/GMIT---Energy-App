@@ -73,6 +73,11 @@
        			  android:label="@string/heatpump_activity"
        			  android:theme="@android:style/Theme.Light"
        			  android:screenOrientation="landscape" />
+       			  
+      	<activity android:name=".HeatPumpOverviewActivity"
+       			  android:label="@string/heatpumpoverview_activity"
+       			  android:theme="@android:style/Theme.Light"
+       			  android:screenOrientation="landscape" />
       	
       	<activity android:name=".BiomassActivity"
        			  android:label="@string/biomass_activity"
@@ -101,6 +106,16 @@
        			  
       	<activity android:name=".HeatTransferActivity"
        			  android:label="@string/heattransfer_activity"
+       			  android:theme="@android:style/Theme.Light"
+       			  android:screenOrientation="landscape" />
+       			  
+      	<activity android:name=".RadiatorSystemOverviewActivity"
+       			  android:label="@string/radiatorsystem_activity"
+       			  android:theme="@android:style/Theme.Light"
+       			  android:screenOrientation="landscape" />
+       			  
+       	<activity android:name=".UnderfloorHeatingActivity"
+       			  android:label="@string/underfloor_activity"
        			  android:theme="@android:style/Theme.Light"
        			  android:screenOrientation="landscape" />
       	

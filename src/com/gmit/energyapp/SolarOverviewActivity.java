@@ -69,6 +69,7 @@ public class SolarOverviewActivity extends Activity {
 
 		webView = (WebView) findViewById(R.id.webview);
 		webView.getSettings().setUseWideViewPort(true);
+		webView.getSettings().setBuiltInZoomControls(true);
 		webView.setWebViewClient(new WebViewActivityClient());
 		
 		webView.setWebChromeClient(new WebChromeClient() {
@@ -82,9 +83,9 @@ public class SolarOverviewActivity extends Activity {
 		});
 		
 		if (energyData.isChkShowOverviewPins()) 
-			webView.loadUrl("file:///android_asset/solar/solar_panels_system_overview_pins.html");
+			webView.loadUrl("file:///android_asset/solar/solar_panels_system_overview_lvl_3_pins.html");
 		
-		else webView.loadUrl("file:///android_asset/solar/solar_panels_system_overview.html");
+		else webView.loadUrl("file:///android_asset/solar/solar_panels_system_overview_lvl_3.html");
 		
 		activityPaused = false;
 		showToast = true;

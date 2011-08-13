@@ -28,13 +28,18 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ImageView;
 
-public class AboutActivity extends Activity {
+public class AboutActivity extends Activity implements OnClickListener {
 	
 	private EnergyData energyData = null;
 	private boolean activityPaused;
+	
+	private ImageView btnHomeOne = null;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -49,10 +54,13 @@ public class AboutActivity extends Activity {
 		}
 	    
 		requestWindowFeature(Window.FEATURE_LEFT_ICON);
-		setContentView(R.layout.about);
+		setContentView(R.layout.about_side_buttons);
 		setFeatureDrawableResource(Window.FEATURE_LEFT_ICON, R.drawable.icon);
 		
 		activityPaused = false;
+		
+		btnHomeOne = (ImageView) findViewById(R.id.btnHomeOne);
+		btnHomeOne.setOnClickListener(this);
 	}
 	
 	@Override
@@ -111,5 +119,15 @@ public class AboutActivity extends Activity {
 		}
 		
 		return super.onOptionsItemSelected(item);
+	}
+
+	@Override
+	public void onClick(View v) {
+		switch (v.getId()){
+		case R.id.btnHomeOne:
+			AboutActivity.this.startActivity(new Intent(AboutActivity.this, WebViewActivity.class));
+			overridePendingTransition(R.anim.fadein, R.anim.fadeout);
+			break;
+		}
 	}
 }

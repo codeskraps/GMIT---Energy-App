@@ -56,7 +56,7 @@ public class HomeActivity extends Activity implements OnClickListener {
 		}
 	    
 		requestWindowFeature(Window.FEATURE_LEFT_ICON);
-		setContentView(R.layout.home);
+		setContentView(R.layout.home_side_buttons);
 		setFeatureDrawableResource(Window.FEATURE_LEFT_ICON, R.drawable.icon);
 		
 		activityPaused = false;
@@ -115,13 +115,13 @@ public class HomeActivity extends Activity implements OnClickListener {
 		return true;
 	}
 	
-	@Override
-	public boolean onPrepareOptionsMenu(Menu menu) {
-    	
-    	menu.findItem(R.id.itemHome).setEnabled(false);
-
-		return super.onPrepareOptionsMenu(menu);
-	}
+//	@Override
+//	public boolean onPrepareOptionsMenu(Menu menu) {
+//    	
+//    	menu.findItem(R.id.itemHome).setEnabled(false);
+//
+//		return super.onPrepareOptionsMenu(menu);
+//	}
 
     @Override
 	public boolean onOptionsItemSelected(MenuItem item) {

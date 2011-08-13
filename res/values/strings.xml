@@ -30,12 +30,15 @@
     <string name="solar_activity">GMIT - Solar Panels</string>
     <string name="solar_overview_activity">GMIT - Solar Panels Overview</string>
     <string name="heatpump_activity">GMIT - Heat Pump</string>
+    <string name="heatpumpoverview_activity">GMIT - Heat Pump Overview</string>
     <string name="biomass_activity">GMIT - Biomass Boiler</string>
-    <string name="Woodgasification_activity">GMIT - Wood Gasification</string>
-    <string name="Woodpellet_activity">GMIT - Wood Pellet</string>
+    <string name="Woodgasification_activity">GMIT - Wood Gasification Overview</string>
+    <string name="Woodpellet_activity">GMIT - Wood Pellet Overview</string>
     <string name="gasboiler_activity">GMIT - Condensing Gas Boiler</string>
     <string name="gasboiler_overveiw_activity">GMIT - Gas Boiler Overview</string>
     <string name="heattransfer_activity">GMIT - Heat Transfer</string>
+    <string name="radiatorsystem_activity">GMIT - Radiator Systems Overview</string>
+    <string name="underfloor_activity">GMIT - Underfloor Heating Systems Overview</string>
     <string name="about_activity">About the GMIT Energy lab</string>
     <string name="preference_activity">GMIT - Preferences</string>
     <string name="webview_activity">GMIT - The Department of Mechanical &amp; Industrial Engineering</string>
@@ -217,9 +220,55 @@
     
     <!-- Heat Transfer -->
     <string name="heattransferLevel2Text">The radiator system and the underfloor heating systems represent an excellent example of heat transfer. Heat transfer can occur through conduction, convection and radiation. All three systems are represented in the GMIT Energy lab. Heat transfer only occurs when there is a temperature gradient, i.e. heat energy flows from a high temperature region to a low temperature region.</string>
-    <string name="btnHeatTransferOne">See video of heat transfer through underfloor heating</string>
+    <string name="btnHeatTransferOne">See video of heat transfer</string>
     <string name="btnHeatTransferTwo">Radiator system</string>
     <string name="btnHeatTransferThree">Underfloor heating system</string>
+    
+    <!-- Radiator System Overview -->
+    <string name="radiatorsystemTitlePin1">Multi-energy tank</string>
+    <string name="radiatorsystemTitlePin2">Circulation pump</string>
+    <string name="radiatorsystemTitlePin3">Radiator supply manifold</string>
+    <string name="radiatorsystemTitlePin4">Manifold flow valves</string>
+    <string name="radiatorsystemTitlePin5">Flow indicators</string>
+    <string name="radiatorsystemTitlePin6">Radiator return manifold</string>
+    <string name="radiatorsystemTitlePin7">Fan assisted radiator</string>
+    <string name="radiatorsystemTitlePin8">Steel radiator</string>
+    <string name="radiatorsystemTitlePin9">Aluminium radiator</string>
+    
+    <string name="radiotorsystemMessagePin1">The basic solar thermal system incorporates a dual coil cylinder as the storage tank. A dual coil cylinder basically has two coils: a coil for the solar thermal system and a coil for the auxiliary heating system. The circulating pump circulates the heat transfer fluid through the lower coil. In turn, the heat from the solar collector is transferred into the tank, ready for use. On a day of low incoming solar radiation, the second coil is used to heat the tank, via an auxiliary heating system, typically an oil, gas or biomass fuelled boiler.</string>
+    <string name="radiotorsystemMessagePin2">The circulation pump circulates water through the manifolds to the individual radiators. The pump has three speed settings.</string>
+    <string name="radiotorsystemMessagePin3">Makes it possible to control the hot water flow to individual radiators and to set the temperature in any room so as to automatically control each circuit using a thermostat.</string>
+    <string name="radiotorsystemMessagePin4">Electrically operated flow valves to allow the user to activate each radiator using the control system. These solenoid-operated valves are used to control zones in a domestic installation where a temperature controller (room stat) activates the solenoid.</string>
+    <string name="radiotorsystemMessagePin5">Flow control valves and visual flow meters on the return manifold to balance the flow to each circuit.</string>
+    <string name="radiotorsystemMessagePin6">Makes it possible to control the cold water flow from individual radiators.</string>
+    <string name="radiotorsystemMessagePin7">The Energy Lab has three different types of radiator attached to the heat pump, to compare performance. This one is an electronic fan assisted radiator.</string>
+    <string name="radiotorsystemMessagePin8">Steel natural convection radiator.  The Energy Lab has three different types of radiator attached to the heat pump, to compare performance.</string>
+    <string name="radiotorsystemMessagePin9">The Energy Lab has three different types of radiator attached to the heat pump, to compare performance. This one is an aluminium natural convection radiator.</string>
+    
+    <!-- Underfloor Heating Systems Overview -->
+    <string name="underfloorTitlePin1">Multi-energy tank</string>
+    <string name="underfloorTitlePin2">Mixing valve</string>
+    <string name="underfloorTitlePin3">Circulation pump</string>
+    <string name="underfloorTitlePin4">Manifold flow valves</string>
+    <string name="underfloorTitlePin5">Underfloor supply manifold</string>
+    <string name="underfloorTitlePin6">Flow indicators</string>
+    <string name="underfloorTitlePin7">Underfloor return manifold</string>
+    <string name="underfloorTitlePin8">Timber floor</string>
+    <string name="underfloorTitlePin9">Concrete no insulation</string>
+    <string name="underfloorTitlePin10">Concrete 80mm insulation</string>
+    <string name="underfloorTitlePin11">Concrete 250mm insulation</string>
+    
+    <string name="underfloorMessagePin1">The basic solar thermal system incorporates a dual-coil cylinder as the storage tank. A dual coil cylinder basically has two coils: a coil for the solar thermal system and a coil for the auxiliary heating system. The circulating pump circulates the heat transfer fluid through the lower coil. In turn, the heat from the solar collector is transferred into the tank, ready for use. On a day of low incoming solar radiation, the second coil is used to heat the tank, via an auxiliary heating system, typically an oil, gas or biomass fuelled boiler.</string>
+    <string name="underfloorMessagePin2">Temperature-controlled 3-port mixing valve. The temperature needed for underfloor heating in standard domestic installations is 35-40C. Water returns to the bottom of the multi-energy tank only when the temperature drops below this value (pre-set). Alternately, the water circulates to the supply manifold.</string>
+    <string name="underfloorMessagePin3">The circulation pump circulates water through the manifolds to the individual underfloor heating system. The pump has three speed settings.</string>
+    <string name="underfloorMessagePin4">Electrically (solenoid) operated flow valves to allow the user to activate each underfloor loop using the control system. These solenoid-operated valves would be used to control zones in a domestic installation where a temperature controller (room stat) would activate the solenoid.</string>
+    <string name="underfloorMessagePin5">Supply manifold for four-zone underfloor heating system.</string>
+    <string name="underfloorMessagePin6">Flow control valves and visual flow meters on the return manifold to balance the flow to each circuit (underfloor loop).</string>
+    <string name="underfloorMessagePin7">Return manifold for four-zone underfloor heating system.</string>
+    <string name="underfloorMessagePin8">The Energy Lab has four different floor types, to compare performance of the underfloor heating system. This one is timber floor construction with underfloor heating panel.</string>
+    <string name="underfloorMessagePin9">Concrete floor with no insulation. This is one of four different floor types in the Energy Lab, so we can compare how the underfloor heating works with different floors.</string>
+    <string name="underfloorMessagePin10">Concrete floor with 80mm polyurethane foam with double foil layered insulation laid under the underfloor heating pipe. One of four different floor types in the Energy Lab to allow comparison of underfloor heating  system performance for different floor types.</string>
+    <string name="underfloorMessagePin11">Concrete floor with 250mm polyurethane foam with double foil layered insulation laid under the underfloor heating pipe. One of four different floor types in the Energy Lab to allow comparison of underfloor heating  system performance for different floor types.</string>
     
     <!-- About -->
     <string name="aboutLevel2Text">The Energy Lab in GMIT is equipped with state-of-the-art sustainable energy technologies: solar, biomass, heat pumps, and wind.  Sensors monitor and track the performance of all these systems. Students can view the technologies and analyse their performance on the Energy lab website.</string>
@@ -238,7 +287,7 @@
     <string name="GmitEnergySummary">License GPL v3 - 2011 - Carles Sentis</string>
     
     <!-- Toast -->
-    <string name="Zoom">Double tap to zoom in/out</string>
+    <string name="Zoom">Double tap to zoom in/out\n\tor pinch/zoom</string>
     
     <!-- Other -->
     <string name="ok">Ok</string>

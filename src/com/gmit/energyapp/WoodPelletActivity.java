@@ -73,6 +73,7 @@ public class WoodPelletActivity extends Activity {
 		
 		webView = (WebView) findViewById(R.id.webview);
 		webView.getSettings().setUseWideViewPort(true);
+		webView.getSettings().setBuiltInZoomControls(true);
 		webView.setWebViewClient(new WebViewActivityClient());
 		
 		webView.setWebChromeClient(new WebChromeClient() {
@@ -86,9 +87,9 @@ public class WoodPelletActivity extends Activity {
 		});
 		
 		if (energyData.isChkShowOverviewPins()) 
-			webView.loadUrl("file:///android_asset/biomass/wood_pellet/wood_pellet_pin.html");
+			webView.loadUrl("file:///android_asset/biomass/biomass_boiler_wood_pelet_lvl_3_pins.html");
 		
-		else webView.loadUrl("file:///android_asset/biomass/wood_pellet/wood_pellet.html");
+		else webView.loadUrl("file:///android_asset/biomass/biomass_boiler_wood_pelet_lvl_3.html");
 
 		activityPaused = false;
 		showToast = true;
@@ -171,22 +172,22 @@ public class WoodPelletActivity extends Activity {
 	    public boolean shouldOverrideUrlLoading(WebView view, String url) {
 	    	Log.d(TAG, "url: " + url);
 	    	
-	    	if (url.equals("file:///android_asset/biomass/wood_pellet/1")) showDialog(1);
-	    	else if (url.equals("file:///android_asset/biomass/wood_pellet/2")) showDialog(2);
-	    	else if (url.equals("file:///android_asset/biomass/wood_pellet/3")) showDialog(3);
-	    	else if (url.equals("file:///android_asset/biomass/wood_pellet/4")) showDialog(4);
-	    	else if (url.equals("file:///android_asset/biomass/wood_pellet/5")) showDialog(5);
-	    	else if (url.equals("file:///android_asset/biomass/wood_pellet/6")) showDialog(6);
-	    	else if (url.equals("file:///android_asset/biomass/wood_pellet/7")) showDialog(7);
-	    	else if (url.equals("file:///android_asset/biomass/wood_pellet/8")) showDialog(8);
-	    	else if (url.equals("file:///android_asset/biomass/wood_pellet/9")) showDialog(9);
-	    	else if (url.equals("file:///android_asset/biomass/wood_pellet/10")) showDialog(10);
-	    	else if (url.equals("file:///android_asset/biomass/wood_pellet/11")) showDialog(11);
-	    	else if (url.equals("file:///android_asset/biomass/wood_pellet/12")) showDialog(12);
-	    	else if (url.equals("file:///android_asset/biomass/wood_pellet/13")) showDialog(13);
-	    	else if (url.equals("file:///android_asset/biomass/wood_pellet/14")) showDialog(14);
-	    	else if (url.equals("file:///android_asset/biomass/wood_pellet/15")) showDialog(15);
-	    	else if (url.equals("file:///android_asset/biomass/wood_pellet/16")) showDialog(16);
+	    	if (url.equals("file:///android_asset/biomass/1")) showDialog(1);
+	    	else if (url.equals("file:///android_asset/biomass/2")) showDialog(2);
+	    	else if (url.equals("file:///android_asset/biomass/3")) showDialog(3);
+	    	else if (url.equals("file:///android_asset/biomass/4")) showDialog(4);
+	    	else if (url.equals("file:///android_asset/biomass/5")) showDialog(5);
+	    	else if (url.equals("file:///android_asset/biomass/6")) showDialog(6);
+	    	else if (url.equals("file:///android_asset/biomass/7")) showDialog(7);
+	    	else if (url.equals("file:///android_asset/biomass/8")) showDialog(8);
+	    	else if (url.equals("file:///android_asset/biomass/9")) showDialog(9);
+	    	else if (url.equals("file:///android_asset/biomass/10")) showDialog(10);
+	    	else if (url.equals("file:///android_asset/biomass/11")) showDialog(11);
+	    	else if (url.equals("file:///android_asset/biomass/12")) showDialog(12);
+	    	else if (url.equals("file:///android_asset/biomass/13")) showDialog(13);
+	    	else if (url.equals("file:///android_asset/biomass/14")) showDialog(14);
+	    	else if (url.equals("file:///android_asset/biomass/15")) showDialog(15);
+	    	else if (url.equals("file:///android_asset/biomass/16")) showDialog(16);
 	    		
 	        return true;
 	    }

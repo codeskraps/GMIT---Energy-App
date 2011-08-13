@@ -56,7 +56,7 @@ public class SplashActivity extends Activity {
 
 				if (energyData.isChkShowWelcome()) {
 					
-					SplashActivity.this.startActivity(new Intent(SplashActivity.this, HomeActivity.class));
+					SplashActivity.this.startActivity(new Intent(SplashActivity.this, LauncherActivity.class));
 					
 				} else {
 					

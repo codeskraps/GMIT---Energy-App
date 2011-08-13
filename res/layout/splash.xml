@@ -41,7 +41,7 @@
    		
    		<ImageView
  			android:scaleType="fitCenter"
- 			android:src="@drawable/gmit"
+ 			android:src="@drawable/logo"
  			android:layout_height="wrap_content" 
  			android:layout_gravity="center" 
  			android:layout_width="fill_parent"/>

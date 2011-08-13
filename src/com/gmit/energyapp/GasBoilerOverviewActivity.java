@@ -67,6 +67,7 @@ public class GasBoilerOverviewActivity extends Activity {
 
 		webView = (WebView) findViewById(R.id.webview);
 		webView.getSettings().setUseWideViewPort(true);
+		webView.getSettings().setBuiltInZoomControls(true);
 		webView.setWebViewClient(new WebViewActivityClient());
 		
 		webView.setWebChromeClient(new WebChromeClient() {
@@ -81,9 +82,9 @@ public class GasBoilerOverviewActivity extends Activity {
 		
 		if (energyData.isChkShowOverviewPins()) 
 			
-			webView.loadUrl("file:///android_asset/gasboiler/gas_boiler_pin.html");
+			webView.loadUrl("file:///android_asset/gasboiler/condensing_gas_boiler_lvl_3_pins.html");
 		
-		else webView.loadUrl("file:///android_asset/gasboiler/gas_boiler.html");
+		else webView.loadUrl("file:///android_asset/gasboiler/condensing_gas_boiler_lvl_3.html");
 		
 		activityPaused = false;
 		showToast = true;

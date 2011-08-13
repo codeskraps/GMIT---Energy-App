@@ -41,7 +41,7 @@ public class WebViewActivity extends Activity {
 	private static final String URL = "http://www.gmit.ie/engineering/mechanical-industrial/index.html";
 
 	private EnergyData energyData = null;
-	private WebView webview = null;
+	private WebView webView = null;
 	private boolean activityPaused;
 	
 	@Override
@@ -67,13 +67,13 @@ public class WebViewActivity extends Activity {
 
 		try {
 			
-			webview = (WebView) findViewById(R.id.webview);
-			webview.getSettings().setJavaScriptEnabled(true);
-			webview.getSettings().setBuiltInZoomControls(true);
-			webview.getSettings().setUseWideViewPort(true);
-			webview.setWebViewClient(new WebViewActivityClient());
+			webView = (WebView) findViewById(R.id.webview);
+			webView.getSettings().setJavaScriptEnabled(true);
+			webView.getSettings().setBuiltInZoomControls(true);
+			webView.getSettings().setUseWideViewPort(true);
+			webView.setWebViewClient(new WebViewActivityClient());
 			
-			webview.setWebChromeClient(new WebChromeClient() {
+			webView.setWebChromeClient(new WebChromeClient() {
 				public void onProgressChanged(WebView view, int progress) {
 					setProgress(progress * 100);
 					if(progress == 100) {
@@ -82,7 +82,7 @@ public class WebViewActivity extends Activity {
 					}
 				}
 			});
-			webview.loadUrl(URL);
+			webView.loadUrl(URL);
 			//setTitle(webview.getTitle());
 			setTitle("GMIT Galway-Mayo Institute of Technology - Your Place - Your Future");
 
@@ -122,9 +122,9 @@ public class WebViewActivity extends Activity {
 		
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
-		if ((keyCode == KeyEvent.KEYCODE_BACK) && webview.canGoBack()) {
-			webview.goBack();
-			setTitle(webview.getTitle());
+		if ((keyCode == KeyEvent.KEYCODE_BACK) && webView.canGoBack()) {
+			webView.goBack();
+			setTitle(webView.getTitle());
 			return true;
 		}
 		return super.onKeyDown(keyCode, event);

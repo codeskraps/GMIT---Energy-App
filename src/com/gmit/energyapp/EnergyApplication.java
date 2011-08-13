@@ -64,7 +64,7 @@ public class EnergyApplication extends Application {
 			case R.id.itemBiomass:		return new Intent(context, BiomassActivity.class);
 			case R.id.itemGasBoiler:	return new Intent(context, GasBoilerActivity.class);
 			case R.id.itemHeatTransfer:	return new Intent(context, HeatTransferActivity.class);
-			case R.id.itemHome:			return new Intent(context, HomeActivity.class);
+//			case R.id.itemHome:			return new Intent(context, HomeActivity.class);
 			case R.id.itemAbout:		return new Intent(context, AboutActivity.class);
 			case R.id.itemPreference:	return new Intent(context, PreferenceActivity.class);
 		}

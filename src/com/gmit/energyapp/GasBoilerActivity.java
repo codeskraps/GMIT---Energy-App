@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Button;
+import android.widget.ImageView;
 
 public class GasBoilerActivity extends Activity implements OnClickListener {
 	private static final String YOUTUBEVIDEO = "http://www.youtube.com/watch?v=MFzYIpXEjDU";
@@ -18,8 +18,8 @@ public class GasBoilerActivity extends Activity implements OnClickListener {
 	private EnergyData energyData = null;
 	private boolean activityPaused;
 
-	private Button btnGasBoilerOne = null;
-	private Button btnGasBoilerTwo = null;
+	private ImageView btnGasBoilerOne = null;
+	private ImageView btnGasBoilerTwo = null;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -33,13 +33,13 @@ public class GasBoilerActivity extends Activity implements OnClickListener {
 		}
 	    
 		requestWindowFeature(Window.FEATURE_LEFT_ICON);
-		setContentView(R.layout.gasboiler);
+		setContentView(R.layout.gasboiler_side_buttons);
 		setFeatureDrawableResource(Window.FEATURE_LEFT_ICON, R.drawable.icon);
 		
 		activityPaused = false;
 		
-		btnGasBoilerOne = (Button) findViewById(R.id.btnGasBoilerOne);
-		btnGasBoilerTwo = (Button) findViewById(R.id.btnGasBoilerTwo);
+		btnGasBoilerOne = (ImageView) findViewById(R.id.btnGasBoilerOne);
+		btnGasBoilerTwo = (ImageView) findViewById(R.id.btnGasBoilerTwo);
 		
 		btnGasBoilerOne.setOnClickListener(this);
 		btnGasBoilerTwo.setOnClickListener(this);

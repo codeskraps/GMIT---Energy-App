@@ -32,7 +32,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Button;
+import android.widget.ImageView;
 
 public class HeatTransferActivity extends Activity implements OnClickListener {
 	private static final String YOUTUBEVIDEO = "http://www.youtube.com/watch?v=2AzgljdNNN4&feature=related";
@@ -41,9 +41,9 @@ public class HeatTransferActivity extends Activity implements OnClickListener {
 	
 	private boolean activityPaused;
 	
-	private Button btnHeatOne = null;
-	private Button btnHeatTwo = null;
-	private Button btnHeatThree = null;
+	private ImageView btnHeatOne = null;
+	private ImageView btnHeatTwo = null;
+	private ImageView btnHeatThree = null;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -58,14 +58,14 @@ public class HeatTransferActivity extends Activity implements OnClickListener {
 		}
 	    
 		requestWindowFeature(Window.FEATURE_LEFT_ICON);
-		setContentView(R.layout.heattransfer);
+		setContentView(R.layout.heattransfer_side_buttons);
 		setFeatureDrawableResource(Window.FEATURE_LEFT_ICON, R.drawable.icon);
 		
 		activityPaused = false;
 		
-		btnHeatOne = (Button) findViewById(R.id.btnHeatTransferOne);
-		btnHeatTwo = (Button) findViewById(R.id.btnHeatTransferTwo);
-		btnHeatThree = (Button) findViewById(R.id.btnHeatTransferThree);
+		btnHeatOne = (ImageView) findViewById(R.id.btnHeatTransferOne);
+		btnHeatTwo = (ImageView) findViewById(R.id.btnHeatTransferTwo);
+		btnHeatThree = (ImageView) findViewById(R.id.btnHeatTransferThree);
 		
 		btnHeatOne.setOnClickListener(this);
 		btnHeatTwo.setOnClickListener(this);
@@ -108,12 +108,22 @@ public class HeatTransferActivity extends Activity implements OnClickListener {
 	        energyData.setYouTubeVideo(YOUTUBEVIDEO);
 			
 	        HeatTransferActivity.this.startActivity(new Intent(HeatTransferActivity.this, YouTubeActivity.class));
+	        overridePendingTransition(R.anim.fadein, R.anim.fadeout);
 	        
 			break;
 			
 		case R.id.btnHeatTransferTwo:
+			
+			HeatTransferActivity.this.startActivity(new Intent(HeatTransferActivity.this, RadiatorSystemOverviewActivity.class));
+	        overridePendingTransition(R.anim.fadein, R.anim.fadeout);
+	        
 			break;
+			
 		case R.id.btnHeatTransferThree:
+			
+			HeatTransferActivity.this.startActivity(new Intent(HeatTransferActivity.this, UnderfloorHeatingActivity.class));
+	        overridePendingTransition(R.anim.fadein, R.anim.fadeout);
+	        
 			break;
 		}
 	}

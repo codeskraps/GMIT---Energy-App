@@ -33,7 +33,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Button;
+import android.widget.ImageView;
 
 public class SolarActivity extends Activity implements OnClickListener{
 	private static final String TAG = SolarActivity.class.getSimpleName();
@@ -42,8 +42,8 @@ public class SolarActivity extends Activity implements OnClickListener{
 	private EnergyData energyData = null;
 	private boolean activityPaused;
 	
-	private Button btnSolarOne = null;
-	private Button btnSolarTwo = null;
+	private ImageView btnSolarOne = null;
+	private ImageView btnSolarTwo = null;
 		
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -60,13 +60,13 @@ public class SolarActivity extends Activity implements OnClickListener{
 		}
 	    
 		requestWindowFeature(Window.FEATURE_LEFT_ICON);
-		setContentView(R.layout.solar);
+		setContentView(R.layout.solar_side_buttons);
 		setFeatureDrawableResource(Window.FEATURE_LEFT_ICON, R.drawable.icon);
 		
 		activityPaused = false;
 		
-		btnSolarOne = (Button) findViewById(R.id.btnSolarOne);
-		btnSolarTwo = (Button) findViewById(R.id.btnSolarTwo);
+		btnSolarOne = (ImageView) findViewById(R.id.btnSolarOne);
+		btnSolarTwo = (ImageView) findViewById(R.id.btnSolarTwo);
 		
 		btnSolarOne.setOnClickListener(this);
 		btnSolarTwo.setOnClickListener(this);

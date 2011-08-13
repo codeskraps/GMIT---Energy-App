@@ -32,7 +32,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Button;
+import android.widget.ImageView;
 
 public class BiomassActivity extends Activity implements OnClickListener {
 	private static final String YOUTUBEVIDEO = "http://www.youtube.com/watch?v=B-pmbUSZsK4&feature=related";
@@ -40,9 +40,9 @@ public class BiomassActivity extends Activity implements OnClickListener {
 	private EnergyData energyData = null;	
 	private boolean activityPaused;
 	
-	private Button btnBiomassOne = null;
-	private Button btnBiomassTwo = null;
-	private Button btnBiomassThree = null;
+	private ImageView btnBiomassOne = null;
+	private ImageView btnBiomassTwo = null;
+	private ImageView btnBiomassThree = null;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -57,14 +57,14 @@ public class BiomassActivity extends Activity implements OnClickListener {
 		}
 	    
 		requestWindowFeature(Window.FEATURE_LEFT_ICON);
-		setContentView(R.layout.biomass);
+		setContentView(R.layout.biomass_side_buttons);
 		setFeatureDrawableResource(Window.FEATURE_LEFT_ICON, R.drawable.icon);
 		
 		activityPaused = false;
 		
-		btnBiomassOne = (Button) findViewById(R.id.btnBiomassOne);
-		btnBiomassTwo = (Button) findViewById(R.id.btnBiomassTwo);
-		btnBiomassThree = (Button) findViewById(R.id.btnBiomassThree);
+		btnBiomassOne = (ImageView) findViewById(R.id.btnBiomassOne);
+		btnBiomassTwo = (ImageView) findViewById(R.id.btnBiomassTwo);
+		btnBiomassThree = (ImageView) findViewById(R.id.btnBiomassThree);
 		
 		btnBiomassOne.setOnClickListener(this);
 		btnBiomassTwo.setOnClickListener(this);
