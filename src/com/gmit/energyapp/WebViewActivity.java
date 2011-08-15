@@ -22,6 +22,8 @@
 
 package com.gmit.energyapp;
 
+import java.util.Stack;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -30,27 +32,47 @@ import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.Window;
 import android.view.WindowManager;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.ImageView;
+import android.widget.ScrollView;
 import android.widget.Toast;
 
-public class WebViewActivity extends Activity {
+public class WebViewActivity extends Activity implements OnClickListener {
+	private static final String TAG = WebViewActivity.class.getSimpleName();
 	private static final String URL = "http://www.gmit.ie/engineering/mechanical-industrial/index.html";
+	private static final String SEARCH = "http://www.google.com";
 
 	private EnergyData energyData = null;
-	private WebView webView = null;
 	private boolean activityPaused;
+	private boolean webLoading;
+	private Stack<String> webHistoryBack = null;
+	private Stack<String> webHistoryForward = null;
+	
+	private WebView webView = null;
+	private ScrollView scrlView = null;
+	private ImageView btnHome = null;
+	private ImageView btnLeft = null;
+	private ImageView btnRight = null;
+	private ImageView btnRefresh = null;
+	private ImageView btnSearch = null;
+	private ImageView btnBack = null;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
-		EnergyApplication energyApp = (EnergyApplication) getApplication();
-        energyData = energyApp.getEnergyData();
-        
+		energyData = ((EnergyApplication) getApplication()).getEnergyData();
+		activityPaused = false;
+		webLoading = false;
+		webHistoryBack = new Stack<String>();
+		webHistoryForward = new Stack<String>();
+		
 		if (energyData.isChkFullscreen()) {
         	
 	        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -69,6 +91,7 @@ public class WebViewActivity extends Activity {
 			
 			webView = (WebView) findViewById(R.id.webview);
 			webView.getSettings().setJavaScriptEnabled(true);
+			webView.getSettings().setPluginsEnabled(true);
 			webView.getSettings().setBuiltInZoomControls(true);
 			webView.getSettings().setUseWideViewPort(true);
 			webView.setWebViewClient(new WebViewActivityClient());
@@ -76,22 +99,40 @@ public class WebViewActivity extends Activity {
 			webView.setWebChromeClient(new WebChromeClient() {
 				public void onProgressChanged(WebView view, int progress) {
 					setProgress(progress * 100);
+					setTitle("Loading...");
+					webLoading = true;
 					if(progress == 100) {
 						setProgressBarIndeterminateVisibility(false);
 						setProgressBarVisibility(false);
+						setTitle(view.getTitle());
+						btnRefresh.setImageResource(R.drawable.webview_refresh);
+						webLoading = false;
 					}
 				}
 			});
 			webView.loadUrl(URL);
-			//setTitle(webview.getTitle());
-			setTitle("GMIT Galway-Mayo Institute of Technology - Your Place - Your Future");
-
+			
 		} catch (Exception e) {
 	        Log.e(getClass().getSimpleName(), "Browser: " + e.getMessage());
 	        Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG).show();
 	    } 
+	
+		scrlView = (ScrollView) findViewById(R.id.scrlView);
+		scrlView.setVerticalScrollBarEnabled(false);
+
+		btnHome = (ImageView) findViewById(R.id.btnHome);
+		btnLeft = (ImageView) findViewById(R.id.btnLeft);
+		btnRight = (ImageView) findViewById(R.id.btnRight);
+		btnRefresh = (ImageView) findViewById(R.id.btnRefresh);
+		btnSearch = (ImageView) findViewById(R.id.btnSearch);
+		btnBack = (ImageView) findViewById(R.id.btnBack);
 		
-		activityPaused = false;
+		btnHome.setOnClickListener(this);
+		btnLeft.setOnClickListener(this);
+		btnRight.setOnClickListener(this);
+		btnRefresh.setOnClickListener(this);
+		btnSearch.setOnClickListener(this);
+		btnBack.setOnClickListener(this);
 	}
 	
 	@Override
@@ -124,7 +165,10 @@ public class WebViewActivity extends Activity {
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		if ((keyCode == KeyEvent.KEYCODE_BACK) && webView.canGoBack()) {
 			webView.goBack();
-			setTitle(webView.getTitle());
+			btnRefresh.setImageResource(R.drawable.webview_stop);
+			if (!webHistoryBack.empty()) webHistoryForward.push(webHistoryBack.pop());
+			btnRight.setImageResource(R.drawable.webview_right);
+			if (webHistoryBack.empty()) btnLeft.setImageResource(R.drawable.webview_left_bw);
 			return true;
 		}
 		return super.onKeyDown(keyCode, event);
@@ -158,8 +202,69 @@ public class WebViewActivity extends Activity {
 	    @Override
 	    public boolean shouldOverrideUrlLoading(WebView view, String url) {
 	        view.loadUrl(url);
-	        setTitle(view.getTitle());
+	        btnRefresh.setImageResource(R.drawable.webview_stop);
+	        webHistoryBack.push(url);
+	        Log.d(TAG, url);
+	        btnLeft.setImageResource(R.drawable.webview_left);
+	        webHistoryForward.clear();
+			btnRight.setImageResource(R.drawable.webview_right_bw);
 	        return true;
 	    }
+	}
+
+	@Override
+	public void onClick(View v) {
+		switch(v.getId()){
+		case R.id.btnHome:
+			webView.loadUrl(URL);
+			btnRefresh.setImageResource(R.drawable.webview_stop);
+			webHistoryBack.push(URL);
+			webHistoryForward.clear();
+			btnRight.setImageResource(R.drawable.webview_right_bw);
+			break;
+		
+		case R.id.btnLeft:
+			if (!webHistoryBack.empty()) {
+				Log.d(TAG, "webLweft");
+				webView.goBack();
+				btnRefresh.setImageResource(R.drawable.webview_stop);
+				webHistoryForward.push(webHistoryBack.pop());
+				btnRight.setImageResource(R.drawable.webview_right);
+				if (webHistoryBack.empty()) btnLeft.setImageResource(R.drawable.webview_left_bw);
+			}
+			break;
+		
+		case R.id.btnRight:
+			if (!webHistoryForward.empty()) {
+				webView.loadUrl(webHistoryForward.peek());
+				btnRefresh.setImageResource(R.drawable.webview_stop);
+				webHistoryBack.push(webHistoryForward.pop());
+				btnLeft.setImageResource(R.drawable.webview_left);
+				if (webHistoryForward.empty()) btnRight.setImageResource(R.drawable.webview_right_bw);
+			}
+			break;
+		
+		case R.id.btnRefresh:
+			if (!webLoading) {
+				webView.reload();
+				btnRefresh.setImageResource(R.drawable.webview_stop);
+			} else {
+				webView.stopLoading();
+			}
+			break;
+		
+		case R.id.btnSearch:
+			webView.loadUrl(SEARCH);
+			btnRefresh.setImageResource(R.drawable.webview_stop);
+			webHistoryBack.push(SEARCH);
+			webHistoryForward.clear();
+			btnRight.setImageResource(R.drawable.webview_right_bw);
+			break;
+			
+		case R.id.btnBack:
+			this.finish();
+			overridePendingTransition(R.anim.fadein, R.anim.fadeout);
+			break;
+		}
 	}
 }

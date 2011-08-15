@@ -22,8 +22,108 @@
 		If not, see <http://www.gnu.org/licenses/>.
 -->
 
-<WebView  xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/webview"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-/>
+<LinearLayout 
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent" 
+	android:orientation="horizontal" >
+	
+	<WebView  
+	    android:id="@+id/webview"
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    android:layout_weight="1" />
+   		
+  		<LinearLayout 
+	   		android:gravity="center_horizontal"
+	   		android:layout_width="150dp" 
+	    	android:layout_height="fill_parent"
+			android:orientation="vertical"
+			android:layout_weight="1"
+	   		android:background="@drawable/background">
+	   		
+	   		<ScrollView 
+	   			android:id="@+id/scrlView"
+	   			android:orientation="vertical"
+	   			android:layout_width="fill_parent"
+		    	android:layout_height="fill_parent">
+		    	
+		    	<LinearLayout 
+			   		android:gravity="center_horizontal"
+			   		android:layout_width="fill_parent" 
+			    	android:layout_height="fill_parent"
+					android:orientation="vertical" >
+			   		
+					<ImageView
+				 		android:src="@drawable/webview_left_bw"
+				   		android:id="@+id/btnLeft" 
+				   		android:layout_width="wrap_content" 
+				   		android:layout_height="wrap_content" 
+				   		android:layout_marginBottom="5dp" 
+				   		android:layout_marginLeft="15dp" 
+				   		android:layout_marginRight="10dp" 
+				   		android:layout_marginTop="10dp"/>
+				   		
+				   	<ImageView 
+				   		android:src="@drawable/webview_right_bw"
+				   		android:id="@+id/btnRight" 
+				   		android:layout_width="wrap_content" 
+				   		android:layout_height="wrap_content" 
+				   		android:layout_marginBottom="10dp" 
+				   		android:layout_marginLeft="15dp" 
+						android:layout_marginRight="10dp"
+						android:layout_marginTop="5dp" />
+						
+					<ImageView 
+				   		android:src="@drawable/webview_home"
+				   		android:id="@+id/btnHome" 
+				   		android:layout_width="wrap_content" 
+				   		android:layout_height="wrap_content" 
+				   		android:layout_marginBottom="10dp" 
+				   		android:layout_marginLeft="15dp" 
+						android:layout_marginRight="10dp"
+						android:layout_marginTop="5dp" />
+						
+					<ImageView 
+				   		android:src="@drawable/webview_stop"
+				   		android:id="@+id/btnRefresh" 
+				   		android:layout_width="wrap_content" 
+				   		android:layout_height="wrap_content" 
+				   		android:layout_marginBottom="10dp" 
+				   		android:layout_marginLeft="15dp" 
+						android:layout_marginRight="10dp"
+						android:layout_marginTop="5dp" />
+						
+					<ImageView 
+				   		android:src="@drawable/webview_search"
+				   		android:id="@+id/btnSearch" 
+				   		android:layout_width="wrap_content" 
+				   		android:layout_height="wrap_content" 
+				   		android:layout_marginBottom="10dp" 
+				   		android:layout_marginLeft="15dp" 
+						android:layout_marginRight="10dp"
+						android:layout_marginTop="5dp" />
+					
+					<ImageView 
+				   		android:src="@drawable/line_separator"
+				   		android:layout_width="wrap_content" 
+				   		android:layout_height="wrap_content" 
+				   		android:layout_marginBottom="10dp" 
+				   		android:layout_marginLeft="15dp" 
+						android:layout_marginRight="10dp"
+						android:layout_marginTop="5dp" />
+					
+					<ImageView 
+				   		android:src="@drawable/webview_back"
+				   		android:id="@+id/btnBack" 
+				   		android:layout_width="wrap_content" 
+				   		android:layout_height="wrap_content" 
+				   		android:layout_marginBottom="10dp" 
+				   		android:layout_marginLeft="15dp" 
+						android:layout_marginRight="10dp"
+						android:layout_marginTop="5dp" />
+						
+				</LinearLayout>
+			</ScrollView>
+	</LinearLayout>
+</LinearLayout>

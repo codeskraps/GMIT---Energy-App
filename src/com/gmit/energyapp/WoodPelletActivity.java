@@ -35,6 +35,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
@@ -45,7 +46,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class WoodPelletActivity extends Activity {
+public class WoodPelletActivity extends Activity implements OnClickListener {
 	private static final String TAG = WoodPelletActivity.class.getSimpleName();
 	
 	private EnergyData energyData = null;
@@ -53,6 +54,8 @@ public class WoodPelletActivity extends Activity {
 	private boolean showToast;
 	
 	private WebView webView = null;
+	private ImageView btnMinus = null;
+	private ImageView btnPlus = null;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -68,12 +71,12 @@ public class WoodPelletActivity extends Activity {
 		}
 		
 		requestWindowFeature(Window.FEATURE_LEFT_ICON);
-		setContentView(R.layout.webview);
+		setContentView(R.layout.webview_overview);
 		setFeatureDrawableResource(Window.FEATURE_LEFT_ICON, R.drawable.icon);
 		
 		webView = (WebView) findViewById(R.id.webview);
 		webView.getSettings().setUseWideViewPort(true);
-		webView.getSettings().setBuiltInZoomControls(true);
+		//webView.getSettings().setBuiltInZoomControls(true);
 		webView.setWebViewClient(new WebViewActivityClient());
 		
 		webView.setWebChromeClient(new WebChromeClient() {
@@ -93,6 +96,12 @@ public class WoodPelletActivity extends Activity {
 
 		activityPaused = false;
 		showToast = true;
+		
+		btnMinus = (ImageView) findViewById(R.id.btnMinus);
+		btnPlus = (ImageView) findViewById(R.id.btnPlus);
+		
+		btnMinus.setOnClickListener(this);
+		btnPlus.setOnClickListener(this);
 	}
 	
 	@Override
@@ -431,5 +440,27 @@ public class WoodPelletActivity extends Activity {
        	default:
        		return null;
        	}    	
+	}
+
+	@Override
+	public void onClick(View v) {
+		float scale;
+		
+		switch(v.getId()){
+		case R.id.btnMinus:
+			scale = webView.getScale();
+			webView.zoomOut();
+			if (scale == webView.getScale()) btnMinus.setImageResource(R.drawable.minus_bw);
+			btnPlus.setImageResource(R.drawable.plus);
+			Log.d(TAG, "Scale: " + webView.getScale());
+			break;
+		case R.id.btnPlus:
+			scale = webView.getScale();
+			webView.zoomIn();
+			if (scale == webView.getScale()) btnPlus.setImageResource(R.drawable.plus_bw);
+			btnMinus.setImageResource(R.drawable.minus);
+			Log.d(TAG, "Scale: " + webView.getScale());
+			break;
+		}
 	}
 }
