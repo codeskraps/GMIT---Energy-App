@@ -72,6 +72,7 @@ public class HeatPumpOverviewActivity extends Activity implements OnClickListene
 
 		webView = (WebView) findViewById(R.id.webview);
 		webView.getSettings().setUseWideViewPort(true);
+		webView.getSettings().setJavaScriptEnabled(true);
 		//webView.getSettings().setBuiltInZoomControls(true);
 		//webView.setInitialScale(100);
 		webView.setWebViewClient(new WebViewActivityClient());
@@ -90,7 +91,7 @@ public class HeatPumpOverviewActivity extends Activity implements OnClickListene
 			
 			webView.loadUrl("file:///android_asset/heatpump/heat_pump_lvl_3_pins.html");
 		
-		else webView.loadUrl("file:///android_asset/heatpump/heat_pump_lvl_3.html");
+		else webView.loadUrl("file:///android_asset/heatpump/heat_pump_lvl_3_arrows.html");
 		
 		activityPaused = false;
 		showToast = true;
