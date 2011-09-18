@@ -31,6 +31,7 @@
     <string name="solar_overview_activity">GMIT - Solar Panels Overview</string>
     <string name="heatpump_activity">GMIT - Heat Pump</string>
     <string name="heatpumpoverview_activity">GMIT - Heat Pump Overview</string>
+    <string name="heatpump_costefficiency_acitivy">GMIT - Heat Pump Cost Efficiency</string>
     <string name="biomass_activity">GMIT - Biomass Boiler</string>
     <string name="Woodgasification_activity">GMIT - Wood Gasification Overview</string>
     <string name="Woodpellet_activity">GMIT - Wood Pellet Overview</string>
@@ -125,6 +126,9 @@
     <string name="heatpumpMessagePin10">Thermal store (water storage tank).</string>
     
     <!-- HeatPump Cost Efficiency -->
+    <string name="cost_Inputs">Inputs:</string>
+    <string name="cost_Results">Resutls:</string>
+    
     <string name="cost_House_surface">House surface:</string>
     <string name="cost_Heat_load">Heat load (heating only):</string>
     <string name="cost_Heat_load_2">Heat load (domestic hot water):</string>
@@ -134,6 +138,16 @@
     <string name="cost_Electricity_night">Electricity night rate:</string>
     <string name="cost_Oil">Oil energy cost:</string>
     <string name="cost_life_span">Life span:</string>
+    
+    <string name="cost_House_surface_hint">200</string>
+    <string name="cost_Heat_load_hint">50</string>
+     <string name="cost_Heat_load_2_hint">10000</string>
+    <string name="cost_Heat_pump_hint">9000</string>
+    <string name="cost_Boiler_hint">8000</string>
+    <string name="cost_Electricity_day_hint">0.15</string>
+    <string name="cost_Electricity_night_hint">0.08</string>
+    <string name="cost_Oil_hint">0.07</string>
+    <string name="cost_life_span_hint">20</string>
     
     <string name="cost_m2">m2</string>
     <string name="cost_watt">Watt/m2</string>

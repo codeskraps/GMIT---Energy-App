@@ -70,8 +70,6 @@ public class SolarActivity extends Activity implements OnClickListener{
 		
 		btnSolarOne.setOnClickListener(this);
 		btnSolarTwo.setOnClickListener(this);
-		
-		activityPaused = false;
 	}
 
 	@Override

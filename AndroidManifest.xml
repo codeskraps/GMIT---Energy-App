@@ -80,7 +80,7 @@
        			  android:screenOrientation="landscape" />
        			  
       	<activity android:name=".CostEfficiencyActivity"
-      			  android:label="@string/heatpump_activity"
+      			  android:label="@string/heatpump_costefficiency_acitivy"
       			  android:theme="@android:style/Theme.Light"
        			  android:screenOrientation="landscape" />
       	

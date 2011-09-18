@@ -1,141 +1,262 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView 
-	xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent" 
-    android:layout_height="fill_parent">
-    
-    <LinearLayout 
-		android:orientation="horizontal" 
-	    android:layout_width="fill_parent" 
-	    android:layout_height="fill_parent">
-		    
-		<LinearLayout 
-			android:orientation="vertical" 
-		    android:layout_width="wrap_content" 
-		    android:layout_height="fill_parent">
-			    
-		    <TextView 
-		    	style="@style/TextCost"
-		    	android:text="@string/cost_House_surface"/>
-		    
-		    <TextView 
-		    	style="@style/TextCost"
-		    	android:text="@string/cost_Heat_load"/>
-		    	
-		   	<TextView 
-		   		style="@style/TextCost"
-		    	android:text="@string/cost_Heat_load_2"/>
-		    	
-		   	<TextView 
-		    	style="@style/TextCost"
-		    	android:text="@string/cost_Heat_pump"/>
-		    	
-	    	<TextView 
-		   		style="@style/TextCost"
-		    	android:text="@string/cost_Boiler"/>
-		    	
-		   	<TextView 
-		   		style="@style/TextCost"
-		    	android:text="@string/cost_Electricity_day"/>
-		    	
-		   	<TextView 
-		   		style="@style/TextCost"
-		    	android:text="@string/cost_Electricity_night"/>
-		    	
-		   	<TextView 
-		   		style="@style/TextCost"
-		    	android:text="@string/cost_Oil"/>
-		    	
-		    <TextView 
-		    	style="@style/TextCost"
-		    	android:text="@string/cost_life_span" />
-		    	
-	   	</LinearLayout>
-	   	
-	   	<LinearLayout 
-			android:orientation="vertical" 
-		    android:layout_width="wrap_content" 
-		    android:layout_height="fill_parent"
-		    android:layout_weight="1">
-			    	
-		    <EditText 
-		    	android:layout_width="fill_parent" 
-		    	android:layout_height="wrap_content" />
-		    	
-		    <EditText 
-		    	android:layout_width="fill_parent" 
-		    	android:layout_height="wrap_content" />
-		    	
-		    <EditText 
-		    	android:layout_width="fill_parent" 
-		    	android:layout_height="wrap_content" />
-		    	
-		    <EditText 
-		    	android:layout_width="fill_parent" 
-		    	android:layout_height="wrap_content" />
-		    	
-		    <EditText 
-		    	android:layout_width="fill_parent" 
-		    	android:layout_height="wrap_content" />
-		    	
-		    <EditText 
-		    	android:layout_width="fill_parent" 
-		    	android:layout_height="wrap_content" />
-		    	
-		    <EditText 
-		    	android:layout_width="fill_parent" 
-		    	android:layout_height="wrap_content" />
-		    
-		    <EditText 
-		    	android:layout_width="fill_parent" 
-		    	android:layout_height="wrap_content" />
-		    
-		    <EditText 
-		    	android:layout_width="fill_parent" 
-		    	android:layout_height="wrap_content" />
-		</LinearLayout>
+
+<!-- 
+		GMIT - Energy app
+		Copyright (C) Carles Sentis 2011 <carlesentis@gmail.com>
 		
-		<LinearLayout 
+		GMIT - Energy app is free software: you can
+		redistribute it and/or modify it under the terms
+		of the GNU General Public License as published by
+		the Free Software Foundation, either version 3 of
+		the License, or (at your option) any later
+		version.
+		
+		GMIT - Energy app is distributed in the hope that it
+		will be useful, but WITHOUT ANY WARRANTY; without
+		even the implied warranty of MERCHANTABILITY or
+		FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+		General Public License for more details.
+		
+		You should have received a copy of the GNU
+		General Public License along with this program.
+		If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" 
+	android:layout_height="fill_parent"
+	android:orientation="horizontal" >
+	
+	<ScrollView 
+		android:layout_width="fill_parent" 
+	    android:layout_height="fill_parent"
+	    android:layout_weight="1" >
+	    
+	    <LinearLayout 
 			android:orientation="vertical" 
-		    android:layout_width="wrap_content" 
-		    android:layout_height="fill_parent">
-		    
-		    <TextView 
-		    	style="@style/TextCost"
-		    	android:text="@string/cost_m2"/>
-			    	
-			 <TextView 
-		    	style="@style/TextCost"
-		    	android:text="@string/cost_watt"/>
+		    android:layout_width="fill_parent" 
+		    android:layout_height="fill_parent"
+		    android:padding="10dp" >
 			
-			 <TextView 
-		    	style="@style/TextCost"
-		    	android:text="@string/cost_kWh"/>
-		    	
-		     <TextView 
-		    	style="@style/TextCost"
-		    	android:text="@string/cost_euro"/>
-		    	
-		     <TextView 
-		    	style="@style/TextCost"
-		    	android:text="@string/cost_euro"/>
-		    	
-		     <TextView 
-		    	style="@style/TextCost"
-		    	android:text="@string/cost_euro_kwh"/>
-		    	
-		     <TextView 
-		    	style="@style/TextCost"
-		    	android:text="@string/cost_euro_kwh"/>
-		    	
-		     <TextView 
-		    	style="@style/TextCost"
-		    	android:text="@string/cost_euro_kwh"/>
-		    	
-		    <TextView 
-		    	style="@style/TextCost"
-		    	android:text="@string/cost_years"/>
-		    	
+			<TextView 
+		    	android:layout_width="wrap_content" 
+		    	android:layout_height="wrap_content"
+		    	android:layout_marginBottom="10sp"
+		    	android:textSize="30sp"
+		    	android:text="@string/cost_Inputs"/>
+		    
+		    <LinearLayout 
+				android:orientation="horizontal" 
+			    android:layout_width="fill_parent" 
+			    android:layout_height="fill_parent" >
+			    
+				<LinearLayout 
+					android:orientation="vertical" 
+				    android:layout_width="wrap_content" 
+				    android:layout_height="fill_parent">
+				    	
+				    <TextView 
+				    	style="@style/TextCost"
+				    	android:text="@string/cost_House_surface"/>
+				    
+				    <TextView 
+				    	style="@style/TextCost"
+				    	android:text="@string/cost_Heat_load"/>
+				    	
+				   	<TextView 
+				   		style="@style/TextCost"
+				    	android:text="@string/cost_Heat_load_2"/>
+				    	
+				   	<TextView 
+				    	style="@style/TextCost"
+				    	android:text="@string/cost_Heat_pump"/>
+				    	
+			    	<TextView 
+				   		style="@style/TextCost"
+				    	android:text="@string/cost_Boiler"/>
+				    	
+				   	<TextView 
+				   		style="@style/TextCost"
+				    	android:text="@string/cost_Electricity_day"/>
+				    	
+				   	<TextView 
+				   		style="@style/TextCost"
+				    	android:text="@string/cost_Electricity_night"/>
+				    	
+				   	<TextView 
+				   		style="@style/TextCost"
+				    	android:text="@string/cost_Oil"/>
+				    	
+				    <TextView 
+				    	style="@style/TextCost"
+				    	android:text="@string/cost_life_span" />
+				    	
+			   	</LinearLayout>
+			   	
+			   	<LinearLayout 
+					android:orientation="vertical" 
+				    android:layout_width="wrap_content" 
+				    android:layout_height="fill_parent"
+				    android:layout_weight="1">
+					    	
+				    <EditText 
+				    	android:id="@+id/etxt_cost_surface"
+				    	android:hint="@string/cost_House_surface_hint"
+				    	android:inputType="number"
+				    	android:layout_width="fill_parent" 
+				    	android:layout_height="wrap_content" />
+				    	
+				    <EditText 
+				    	android:id="@+id/etxt_cost_heating"
+				    	android:hint="@string/cost_Heat_load_hint"
+				    	android:inputType="number"
+				    	android:layout_width="fill_parent" 
+				    	android:layout_height="wrap_content" />
+				    	
+				    <EditText 
+				    	android:id="@+id/etxt_cost_hotwater"
+				    	android:hint="@string/cost_Heat_load_2_hint"
+				    	android:inputType="number"
+				    	android:layout_width="fill_parent" 
+				    	android:layout_height="wrap_content" />
+				    	
+				    <EditText 
+				    	android:id="@+id/etxt_cost_heatpump"
+				    	android:hint="@string/cost_Heat_pump_hint"
+				    	android:inputType="number"
+				    	android:layout_width="fill_parent" 
+				    	android:layout_height="wrap_content" />
+				    	
+				    <EditText 
+				    	android:id="@+id/etxt_cost_boiler"
+				    	android:hint="@string/cost_Boiler_hint"
+				    	android:inputType="number"
+				    	android:layout_width="fill_parent" 
+				    	android:layout_height="wrap_content" />
+				    	
+				    <EditText 
+				    	android:id="@+id/etxt_cost_dayrate"
+				    	android:hint="@string/cost_Electricity_day_hint"
+				    	android:inputType="number"
+				    	android:layout_width="fill_parent" 
+				    	android:layout_height="wrap_content" />
+				    	
+				    <EditText 
+				    	android:id="@+id/etxt_cost_nightrate"
+				    	android:hint="@string/cost_Electricity_night_hint"
+				    	android:inputType="number"
+				    	android:layout_width="fill_parent" 
+				    	android:layout_height="wrap_content" />
+				    
+				    <EditText 
+				    	android:id="@+id/etxt_cost_oilcost"
+				    	android:hint="@string/cost_Oil_hint"
+				    	android:inputType="number"
+				    	android:layout_width="fill_parent" 
+				    	android:layout_height="wrap_content" />
+				    
+				    <EditText 
+				    	android:id="@+id/etxt_cost_lifespan"
+				    	android:hint="@string/cost_life_span_hint"
+				    	android:inputType="number"
+				    	android:layout_width="fill_parent" 
+				    	android:layout_height="wrap_content" />
+				    	
+				</LinearLayout>
+				
+				<LinearLayout 
+					android:orientation="vertical" 
+				    android:layout_width="wrap_content" 
+				    android:layout_height="fill_parent">
+				    
+				    <TextView 
+				    	style="@style/TextCost"
+				    	android:text="@string/cost_m2"/>
+					    	
+					 <TextView 
+				    	style="@style/TextCost"
+				    	android:text="@string/cost_watt"/>
+					
+					 <TextView 
+				    	style="@style/TextCost"
+				    	android:text="@string/cost_kWh"/>
+				    	
+				     <TextView 
+				    	style="@style/TextCost"
+				    	android:text="@string/cost_euro"/>
+				    	
+				     <TextView 
+				    	style="@style/TextCost"
+				    	android:text="@string/cost_euro"/>
+				    	
+				     <TextView 
+				    	style="@style/TextCost"
+				    	android:text="@string/cost_euro_kwh"/>
+				    	
+				     <TextView 
+				    	style="@style/TextCost"
+				    	android:text="@string/cost_euro_kwh"/>
+				    	
+				     <TextView 
+				    	style="@style/TextCost"
+				    	android:text="@string/cost_euro_kwh"/>
+				    	
+				    <TextView 
+				    	style="@style/TextCost"
+				    	android:text="@string/cost_years"/>
+				    	
+				</LinearLayout>
+			</LinearLayout>
 		</LinearLayout>
+	</ScrollView>
+	
+	<LinearLayout 
+   		android:gravity="center_horizontal"
+   		android:orientation="vertical" 
+   		android:layout_width="150dp" 
+   		android:layout_height="fill_parent"
+   		android:layout_weight="1"
+   		android:background="@drawable/background" >
+      	
+ 		<ImageView
+ 			android:src="@drawable/fill"
+      		android:id="@+id/btnCostFill" 
+      		android:layout_width="wrap_content" 
+      		android:layout_height="wrap_content" 
+      		android:layout_marginBottom="5dp" 
+      		android:layout_marginLeft="15dp" 
+      		android:layout_marginRight="10dp" 
+      		android:layout_marginTop="10dp" />
+		
+		<ImageView
+			android:src="@drawable/empty"
+      		android:id="@+id/btnCostEmpty" 
+      		android:layout_width="wrap_content" 
+      		android:layout_height="wrap_content" 
+      		android:layout_marginBottom="10dp" 
+      		android:layout_marginLeft="15dp" 
+      		android:layout_marginRight="10dp" 
+      		android:layout_marginTop="5dp" />
+      	
+      	<ImageView 
+	   		android:src="@drawable/line_separator"
+	   		android:layout_width="wrap_content" 
+	   		android:layout_height="wrap_content" 
+	   		android:layout_marginBottom="10dp" 
+	   		android:layout_marginLeft="15dp" 
+			android:layout_marginRight="10dp"
+			android:layout_marginTop="5dp" />
+			
+      	<ImageView
+			android:src="@drawable/calculate2"
+      		android:id="@+id/btnCostCalcualte" 
+      		android:layout_width="wrap_content" 
+      		android:layout_height="wrap_content" 
+      		android:layout_marginBottom="10dp" 
+      		android:layout_marginLeft="15dp" 
+      		android:layout_marginRight="10dp" 
+      		android:layout_marginTop="5dp" />
+      			
 	</LinearLayout>
-</ScrollView>
+</LinearLayout>
