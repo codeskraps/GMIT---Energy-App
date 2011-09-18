@@ -118,6 +118,10 @@ public class HeatPumpActivity extends Activity implements OnClickListener {
 	        
 			break;
 		case R.id.btnHeatThree:
+			
+			HeatPumpActivity.this.startActivity(new Intent(HeatPumpActivity.this, CostEfficiencyActivity.class));
+	        overridePendingTransition(R.anim.fadein, R.anim.fadeout);
+	        
 			break;
 		}
 	}

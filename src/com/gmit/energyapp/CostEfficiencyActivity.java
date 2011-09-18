@@ -23,14 +23,18 @@
 package com.gmit.energyapp;
 
 import android.app.Activity;
+import android.app.LocalActivityManager;
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.TabHost;
 
 public class CostEfficiencyActivity extends Activity {
-
+	
+	
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		
-	}
-
+    public void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.cost_efficiency);
+           
+    }
 }

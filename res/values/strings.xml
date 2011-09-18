@@ -124,6 +124,24 @@
     <string name="heatpumpMessagePin9">Cold water return from the multi-energy tank.</string>
     <string name="heatpumpMessagePin10">Thermal store (water storage tank).</string>
     
+    <!-- HeatPump Cost Efficiency -->
+    <string name="cost_House_surface">House surface:</string>
+    <string name="cost_Heat_load">Heat load (heating only):</string>
+    <string name="cost_Heat_load_2">Heat load (domestic hot water):</string>
+    <string name="cost_Heat_pump">Heat pump initial investment:</string>
+    <string name="cost_Boiler">Boiler initial investment:</string>
+    <string name="cost_Electricity_day">Electricity day rate:</string>
+    <string name="cost_Electricity_night">Electricity night rate:</string>
+    <string name="cost_Oil">Oil energy cost:</string>
+    <string name="cost_life_span">Life span:</string>
+    
+    <string name="cost_m2">m2</string>
+    <string name="cost_watt">Watt/m2</string>
+    <string name="cost_kWh">kWh</string>
+    <string name="cost_euro">€</string>
+    <string name="cost_euro_kwh">€/kWh</string>
+    <string name="cost_years">years</string>
+    
     <!-- Biomass -->
     <string name="biomassLevel2Text">Biomass is a term used to identify fuels used in the renewable energy sector. These fuels include agricultural residues, energy crops and wood based crops.\n\nA wood pellet boiler (see left image from the GMIT Energy Lab) is fired on biological material (wood pellets) and is used to heat water. A gasification boiler (see right image from the GMIT Energy Lab) uses a syngas which is generated through the chemical reaction of burning wood and is also used to heat water.</string>
     <string name="btnBiomassOne">See video of biomass boiler</string>

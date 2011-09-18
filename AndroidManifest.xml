@@ -78,6 +78,11 @@
        			  android:label="@string/heatpumpoverview_activity"
        			  android:theme="@android:style/Theme.Light"
        			  android:screenOrientation="landscape" />
+       			  
+      	<activity android:name=".CostEfficiencyActivity"
+      			  android:label="@string/heatpump_activity"
+      			  android:theme="@android:style/Theme.Light"
+       			  android:screenOrientation="landscape" />
       	
       	<activity android:name=".BiomassActivity"
        			  android:label="@string/biomass_activity"
