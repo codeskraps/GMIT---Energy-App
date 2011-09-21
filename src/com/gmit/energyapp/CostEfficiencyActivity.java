@@ -22,10 +22,16 @@
 
 package com.gmit.energyapp;
 
+import java.text.DecimalFormat;
+
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -35,11 +41,19 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ScrollView;
 
 public class CostEfficiencyActivity extends Activity implements OnClickListener {
+	private static final String TAG = CostEfficiencyActivity.class.getSimpleName();
 	
 	private EnergyData energyData = null;
 	private boolean activityPaused;
+	
+	int iLifeCycleHeatPump;
+	int iLifeCyleOilBoiler;
+	double iPayBack;
+	
+	private ScrollView scrollView = null;
 	
 	private EditText etxtHouseSurface = null;
 	private EditText etxtHeating =  null;
@@ -50,6 +64,10 @@ public class CostEfficiencyActivity extends Activity implements OnClickListener 
 	private EditText etxtNightRate = null;
 	private EditText etxtOil = null;
 	private EditText etxtLifeSpan = null;
+	
+	private EditText etxtLifeCycleHeatPump = null;
+	private EditText etxtLifeCycleBoiler = null;
+	private EditText etxtPayBack = null;
 	
 	private ImageView btnFill = null;
 	private ImageView btnEmpty = null;
@@ -72,6 +90,8 @@ public class CostEfficiencyActivity extends Activity implements OnClickListener 
             setFeatureDrawableResource(Window.FEATURE_LEFT_ICON, R.drawable.icon);
             
     		activityPaused = false;
+    		
+    		scrollView = (ScrollView) findViewById(R.id.costScrollView);
     
             etxtHouseSurface = (EditText) findViewById(R.id.etxt_cost_surface);
             etxtHeating = (EditText) findViewById(R.id.etxt_cost_heating);
@@ -82,6 +102,10 @@ public class CostEfficiencyActivity extends Activity implements OnClickListener 
             etxtNightRate = (EditText) findViewById(R.id.etxt_cost_nightrate);
             etxtOil = (EditText) findViewById(R.id.etxt_cost_oilcost);
             etxtLifeSpan = (EditText) findViewById(R.id.etxt_cost_lifespan);
+            
+            etxtLifeCycleHeatPump = (EditText) findViewById(R.id.etxt_cost_life_cycle_heat_pump);
+            etxtLifeCycleBoiler = (EditText) findViewById(R.id.etxt_cost_life_cycle_oil_boiler);
+            etxtPayBack = (EditText) findViewById(R.id.etxt_cost_payback_period);
             
             btnFill = (ImageView) findViewById(R.id.btnCostFill);
             btnEmpty = (ImageView) findViewById(R.id.btnCostEmpty);
@@ -122,34 +146,197 @@ public class CostEfficiencyActivity extends Activity implements OnClickListener 
 	public void onClick(View arg0) {
 		switch(arg0.getId()){
 		case R.id.btnCostFill:
-			Resources res = getResources();
-			etxtHouseSurface.setText(res.getString(R.string.cost_House_surface_hint));
-            etxtHeating.setText(res.getString(R.string.cost_Heat_load_hint));
-            etxtHotWater.setText(res.getString(R.string.cost_Heat_load_2_hint));
-            etxtHeatPump.setText(res.getString(R.string.cost_Heat_pump_hint));
-            etxtBoiler.setText(res.getString(R.string.cost_Boiler_hint));
-            etxtDayRate.setText(res.getString(R.string.cost_Electricity_day_hint));
-            etxtNightRate.setText(res.getString(R.string.cost_Electricity_night_hint));
-            etxtOil.setText(res.getString(R.string.cost_Oil_hint));
-            etxtLifeSpan.setText(res.getString(R.string.cost_life_span_hint));
+			
+            showDialog(1);
+            
 			break;
 			
 		case R.id.btnCostEmpty:
-			etxtHouseSurface.setText("");
-            etxtHeating.setText("");
-            etxtHotWater.setText("");
-            etxtHeatPump.setText("");
-            etxtBoiler.setText("");
-            etxtDayRate.setText("");
-            etxtNightRate.setText("");
-            etxtOil.setText("");
-            etxtLifeSpan.setText("");
+			
+			showDialog(2);
+            
 			break;
 			
 		case R.id.btnCostCalcualte:
+			if (calculateCost()) {
+				
+				Log.d(TAG, "heat pump, oilboiler, payback: " + iLifeCycleHeatPump + ", " + iLifeCyleOilBoiler + ", " + iPayBack);
+				
+				etxtLifeCycleHeatPump.setText(String.valueOf(iLifeCycleHeatPump));
+	            etxtLifeCycleBoiler.setText(String.valueOf(iLifeCyleOilBoiler));
+	            etxtPayBack.setText(strPre(iPayBack));
+	            
+	            scrollView.post(new Runnable() { 
+	                public void run() { 
+	                    scrollView.fullScroll(ScrollView.FOCUS_DOWN); 
+	                } 
+	            });
+	            
+			} else {
+				Log.d(TAG, "Something wrong !!!");
+				
+				showDialog(3);
+			}
 			break;
 		}
 	}
+	
+	private String strPre (double inValue) {
+		DecimalFormat threeDec = new DecimalFormat("0.0");
+		threeDec.setGroupingUsed(false);
+		return threeDec.format(inValue);
+	}
+	
+	private boolean calculateCost () {
+		
+		int iHouseSurface, iHeating, iHotWater, iHeatPump, iBoiler, iLifeSpan;
+		float fDayRate, fNightRate, fOil;
+		
+		iHouseSurface = iHeating = iHotWater = iHeatPump = iBoiler = iLifeSpan = 0;
+		fDayRate = fNightRate = fOil = 0;
+				
+		try {
+			iHouseSurface = Integer.parseInt(etxtHouseSurface.getText().toString());
+			iHeating = Integer.parseInt(etxtHeating.getText().toString());
+			iHotWater = Integer.parseInt(etxtHotWater.getText().toString());
+			iHeatPump = Integer.parseInt(etxtHeatPump.getText().toString());
+			iBoiler = Integer.parseInt(etxtBoiler.getText().toString());
+			fDayRate = Float.parseFloat(etxtDayRate.getText().toString());
+			fNightRate = Float.parseFloat(etxtNightRate.getText().toString());
+			fOil = Float.parseFloat(etxtOil.getText().toString());
+			iLifeSpan = Integer.parseInt(etxtLifeSpan.getText().toString());
+		
+		} catch (NumberFormatException e) {
+			e.printStackTrace();
+			return false;
+		}
+		
+		/*
+		 * Calculations
+		 */
+		int iHeatLoadHouse = (iHouseSurface * iHeating) / 1000;
+		int iHeatLoadYear = iHeatLoadHouse * 10 * 7 * 32;
+		int iTotalHeatLoadYear = iHeatLoadYear + iHotWater;
+		Log.d(TAG, "iHeatLoadHouse: " + iHeatLoadHouse + ", iHeatLoadYear: " + iHeatLoadYear + ", iTotalHeatLoadYear: " + iTotalHeatLoadYear);
+		
+		// HeatPump
+		double iElectricityHeating = iHeatLoadYear / 3.5;
+		int iElectricityHotWater = iHotWater / 2;
+		double iTotalElectricity = iElectricityHeating + iElectricityHotWater;
+		double iHeatPumpYearly = iTotalElectricity / 2 * fDayRate + iTotalElectricity / 2 * fNightRate;
+		Log.d(TAG, "iElectricityHeating: " + iElectricityHeating + ", iElectricityHotWater: " + iElectricityHotWater + ", iTotalElectricity: " + iTotalElectricity
+				+ ", iHeatPumpYearly: " + iHeatPumpYearly);
+		
+		// OilBoiler
+		double iEnergyHeating = iHeatLoadYear / 0.9;
+		double iEnergyHotWater = iHotWater / 0.9;
+		double iTotalEnergy = iEnergyHeating + iEnergyHotWater;
+		double iOilBoilerYearly = iTotalEnergy * fOil;
+		Log.d(TAG, "iEnergyHeating: " + iEnergyHeating + ", iEnergyHotWater: " + iEnergyHotWater + ", iTotalEnergy: " + iTotalEnergy
+				+ ", iOilBoilerYearly: " + iOilBoilerYearly);
+		
+		/*
+		 * Results
+		 */
+		iLifeCycleHeatPump = (int) (iHeatPump + iLifeSpan * iHeatPumpYearly);
+		iLifeCyleOilBoiler = (int) (iBoiler + iLifeSpan * iOilBoilerYearly);
+		
+		iPayBack = iHeatPump / (iOilBoilerYearly - iHeatPumpYearly);
+		
+		Log.d(TAG, "heat pump, oilboiler, payback: " + iLifeCycleHeatPump + ", " + iLifeCyleOilBoiler + ", " + iPayBack);
+		
+		return true;
+	}
+	
+	@Override
+    protected Dialog onCreateDialog(int id) {
+       	Log.d(TAG, "onCreateDialog 1");
+       	
+       	//Resources res = getResources();
+       	//BitmapDrawable icon = new BitmapDrawable(res, myProduct.getUri().toString());
+       	       	
+       	switch (id) {
+       	case 1:
+       		return new AlertDialog.Builder(CostEfficiencyActivity.this)
+            //.setIcon(R.drawable.solar_bw)
+       		.setTitle(getString(R.string.cost_dialog_title_fill))
+            .setMessage(getString(R.string.cost_dialog_summary))
+            .setPositiveButton(getString(R.string.ok), new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int whichButton) {
+
+                	Resources res = getResources();
+        			etxtHouseSurface.setText(res.getString(R.string.cost_House_surface_hint));
+                    etxtHeating.setText(res.getString(R.string.cost_Heat_load_hint));
+                    etxtHotWater.setText(res.getString(R.string.cost_Heat_load_2_hint));
+                    etxtHeatPump.setText(res.getString(R.string.cost_Heat_pump_hint));
+                    etxtBoiler.setText(res.getString(R.string.cost_Boiler_hint));
+                    etxtDayRate.setText(res.getString(R.string.cost_Electricity_day_hint));
+                    etxtNightRate.setText(res.getString(R.string.cost_Electricity_night_hint));
+                    etxtOil.setText(res.getString(R.string.cost_Oil_hint));
+                    etxtLifeSpan.setText(res.getString(R.string.cost_life_span_hint));
+                    
+                    etxtLifeCycleHeatPump.setText("");
+                    etxtLifeCycleBoiler.setText("");
+                    etxtPayBack.setText("");
+                }
+            })
+            .setNegativeButton(getString(R.string.cancel), new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int whichButton) {
+
+                    /* User clicked Cancel so do some stuff */
+                }
+            })
+            .create();
+       		
+       	case 2:
+       		return new AlertDialog.Builder(CostEfficiencyActivity.this)
+            //.setIcon(R.drawable.solar_bw)
+       		.setTitle(getString(R.string.cost_dialog_title_empty))
+            .setMessage(getString(R.string.cost_dialog_summary))
+            .setPositiveButton(getString(R.string.ok), new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int whichButton) {
+
+                	etxtHouseSurface.setText("");
+                    etxtHeating.setText("");
+                    etxtHotWater.setText("");
+                    etxtHeatPump.setText("");
+                    etxtBoiler.setText("");
+                    etxtDayRate.setText("");
+                    etxtNightRate.setText("");
+                    etxtOil.setText("");
+                    etxtLifeSpan.setText("");
+                    
+                    etxtLifeCycleHeatPump.setText("");
+                    etxtLifeCycleBoiler.setText("");
+                    etxtPayBack.setText("");
+                }
+            })
+            .setNegativeButton(getString(R.string.cancel), new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int whichButton) {
+
+                    /* User clicked Cancel so do some stuff */
+                }
+            })
+            .create();
+       		
+       	case 3:
+       		return new AlertDialog.Builder(CostEfficiencyActivity.this)
+            //.setIcon(R.drawable.solar_bw)
+       		.setTitle(getString(R.string.cost_dialog_title_error))
+            .setMessage(getString(R.string.cost_dialog_summary_error))
+            .setPositiveButton(getString(R.string.ok), new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int whichButton) {
+
+                	/* User clicked Ok so do some stuff */
+                }
+            })
+            .create();
+       		
+       	default:
+       		return null;
+       	}
+       		
+    }
 	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

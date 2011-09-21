@@ -29,6 +29,7 @@
 	android:orientation="horizontal" >
 	
 	<ScrollView 
+		android:id="@+id/costScrollView"
 		android:layout_width="fill_parent" 
 	    android:layout_height="fill_parent"
 	    android:layout_weight="1" >
@@ -208,6 +209,91 @@
 				    	
 				</LinearLayout>
 			</LinearLayout>
+			
+			<TextView 
+		    	android:layout_width="wrap_content" 
+		    	android:layout_height="wrap_content"
+		    	android:layout_marginBottom="10sp"
+		    	android:textSize="30sp"
+		    	android:text="@string/cost_Results"/>
+		    	
+		    <LinearLayout 
+				android:orientation="horizontal" 
+			    android:layout_width="fill_parent" 
+			    android:layout_height="fill_parent"
+			    android:padding="5dp"
+			    android:background="#80F2DCDB" >
+			    
+				<LinearLayout 
+					android:orientation="vertical" 
+				    android:layout_width="wrap_content" 
+				    android:layout_height="fill_parent">
+				    	
+				    <TextView 
+				    	style="@style/TextCost"
+				    	android:text="@string/cost_life_cycle_heat_pump"/>
+				    	
+				   	<TextView 
+				    	style="@style/TextCost"
+				    	android:text="@string/cost_life_cycle_oil_boiler"/>
+				    	
+				   	<TextView 
+				    	style="@style/TextCost"
+				    	android:layout_marginTop="15dp" 
+				    	android:text="@string/cost_payback_period"/>
+				    	
+				</LinearLayout>
+			   	
+			   	<LinearLayout 
+					android:orientation="vertical" 
+				    android:layout_width="wrap_content" 
+				    android:layout_height="fill_parent"
+				    android:layout_weight="1">
+					    	
+				    <EditText 
+				    	android:id="@+id/etxt_cost_life_cycle_heat_pump"
+				    	android:inputType="number"
+				    	android:enabled="false"
+				    	android:layout_width="fill_parent" 
+				    	android:layout_height="wrap_content" />
+				    	
+				   	<EditText 
+				    	android:id="@+id/etxt_cost_life_cycle_oil_boiler"
+				    	android:inputType="number"
+				    	android:enabled="false"
+				    	android:layout_width="fill_parent" 
+				    	android:layout_height="wrap_content" />
+				    	
+				  	<EditText 
+				    	android:id="@+id/etxt_cost_payback_period"
+				    	android:inputType="number"
+				    	android:enabled="false"
+				    	android:layout_marginTop="15dp" 
+				    	android:layout_width="fill_parent" 
+				    	android:layout_height="wrap_content" />
+				    
+				</LinearLayout>
+				
+				<LinearLayout 
+					android:orientation="vertical"
+					android:layout_width="wrap_content" 
+				    android:layout_height="fill_parent">
+				    
+				    <TextView 
+				    	style="@style/TextCost"
+				    	android:text="@string/cost_euro"/>
+				    	
+				   	<TextView 
+				    	style="@style/TextCost"
+				    	android:text="@string/cost_euro"/>
+				    	
+				  	<TextView 
+				    	style="@style/TextCost"
+				    	android:layout_marginTop="15dp" 
+				    	android:text="@string/cost_years"/>
+				    	
+				</LinearLayout>
+		    </LinearLayout>
 		</LinearLayout>
 	</ScrollView>
 	
