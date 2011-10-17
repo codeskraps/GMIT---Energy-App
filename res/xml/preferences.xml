@@ -48,6 +48,17 @@
   	</PreferenceCategory>
   	
   	<PreferenceCategory
+  		android:title="@string/HeatPump_category">
+  		
+  		<CheckBoxPreference 
+  			android:title="@string/AdvanceCalculations_title"
+            android:summary="@string/AdvanceCalculations_summary"
+            android:defaultValue="false"
+            android:key="ckbadvancecalculations" />
+            
+ 	</PreferenceCategory>
+  	
+  	<PreferenceCategory
   		android:title="@string/GmitEnergy">
   		
   		<Preference 

@@ -40,6 +40,7 @@
 		    android:layout_height="fill_parent"
 		    android:padding="10dp" >
 			
+			<!-- Inputs -->
 			<TextView 
 		    	android:layout_width="wrap_content" 
 		    	android:layout_height="wrap_content"
@@ -101,68 +102,57 @@
 				    android:layout_height="fill_parent"
 				    android:layout_weight="1">
 					    	
+					<!-- Dummy item to prevent AutoCompleteTextView from receiving focus -->
+					<LinearLayout
+					    android:focusable="true" 
+					    android:focusableInTouchMode="true"
+					    android:layout_width="0px" 
+					    android:layout_height="0px"/>
+					    
 				    <EditText 
 				    	android:id="@+id/etxt_cost_surface"
 				    	android:hint="@string/cost_House_surface_hint"
-				    	android:inputType="number"
-				    	android:layout_width="fill_parent" 
-				    	android:layout_height="wrap_content" />
-				    	
+				    	style="@style/EditCost" />
+				    					    	
 				    <EditText 
 				    	android:id="@+id/etxt_cost_heating"
 				    	android:hint="@string/cost_Heat_load_hint"
-				    	android:inputType="number"
-				    	android:layout_width="fill_parent" 
-				    	android:layout_height="wrap_content" />
+				    	style="@style/EditCost" />
 				    	
 				    <EditText 
 				    	android:id="@+id/etxt_cost_hotwater"
 				    	android:hint="@string/cost_Heat_load_2_hint"
-				    	android:inputType="number"
-				    	android:layout_width="fill_parent" 
-				    	android:layout_height="wrap_content" />
+				    	style="@style/EditCost" />
 				    	
 				    <EditText 
 				    	android:id="@+id/etxt_cost_heatpump"
 				    	android:hint="@string/cost_Heat_pump_hint"
-				    	android:inputType="number"
-				    	android:layout_width="fill_parent" 
-				    	android:layout_height="wrap_content" />
+				    	style="@style/EditCost" />
 				    	
 				    <EditText 
 				    	android:id="@+id/etxt_cost_boiler"
 				    	android:hint="@string/cost_Boiler_hint"
-				    	android:inputType="number"
-				    	android:layout_width="fill_parent" 
-				    	android:layout_height="wrap_content" />
+				    	style="@style/EditCost" />
 				    	
 				    <EditText 
 				    	android:id="@+id/etxt_cost_dayrate"
 				    	android:hint="@string/cost_Electricity_day_hint"
-				    	android:inputType="number"
-				    	android:layout_width="fill_parent" 
-				    	android:layout_height="wrap_content" />
+				    	style="@style/EditCost" />
 				    	
 				    <EditText 
 				    	android:id="@+id/etxt_cost_nightrate"
 				    	android:hint="@string/cost_Electricity_night_hint"
-				    	android:inputType="number"
-				    	android:layout_width="fill_parent" 
-				    	android:layout_height="wrap_content" />
+				    	style="@style/EditCost" />
 				    
 				    <EditText 
 				    	android:id="@+id/etxt_cost_oilcost"
 				    	android:hint="@string/cost_Oil_hint"
-				    	android:inputType="number"
-				    	android:layout_width="fill_parent" 
-				    	android:layout_height="wrap_content" />
+				    	style="@style/EditCost" />
 				    
 				    <EditText 
 				    	android:id="@+id/etxt_cost_lifespan"
 				    	android:hint="@string/cost_life_span_hint"
-				    	android:inputType="number"
-				    	android:layout_width="fill_parent" 
-				    	android:layout_height="wrap_content" />
+				    	style="@style/EditCost" />
 				    	
 				</LinearLayout>
 				
@@ -210,9 +200,280 @@
 				</LinearLayout>
 			</LinearLayout>
 			
+			<!-- Calculatiions -->
+			<TextView 
+				android:id="@+id/txtCalculations"
+		    	android:layout_width="wrap_content" 
+		    	android:layout_height="wrap_content"
+		    	android:layout_marginTop="10sp"
+		    	android:layout_marginBottom="10sp"
+		    	android:textSize="30sp"
+		    	android:text="@string/cost_cal_1"/>
+		    	
+		    <LinearLayout 
+		    	android:id="@+id/llCalculations"
+				android:orientation="vertical" 
+			    android:layout_width="fill_parent" 
+			    android:layout_height="fill_parent"
+			    android:padding="5dp"
+			    android:background="#80D2DBE5">
+		    
+			    <LinearLayout 
+					android:orientation="horizontal" 
+				    android:layout_width="fill_parent" 
+				    android:layout_height="fill_parent" >
+				    
+					<LinearLayout 
+						android:orientation="vertical" 
+					    android:layout_width="wrap_content" 
+					    android:layout_height="fill_parent">
+					    	
+					    <TextView 
+					    	style="@style/TextCost"
+					    	android:text="@string/cost_cal_2"/>
+					    
+					    <TextView 
+					    	style="@style/TextCost"
+					    	android:text="@string/cost_cal_3"/>
+					    	
+					   	<TextView 
+					   		style="@style/TextCost"
+					    	android:text="@string/cost_cal_4"/>
+					    	
+				   	</LinearLayout>
+				   	
+				   	<LinearLayout 
+						android:orientation="vertical" 
+					    android:layout_width="wrap_content" 
+					    android:layout_height="fill_parent"
+					    android:layout_weight="1">
+						    
+					    <EditText 
+					    	android:id="@+id/etxt_cost_cal_1"
+					    	android:enabled="false"
+					    	style="@style/EditCost" />
+					    	
+					    <EditText 
+					    	android:id="@+id/etxt_cost_cal_2"
+					    	android:enabled="false"
+					    	style="@style/EditCost" />
+					    	
+					    <EditText 
+					    	android:id="@+id/etxt_cost_cal_3"
+					    	android:enabled="false"
+					    	style="@style/EditCost" />
+					    	
+					</LinearLayout>
+					
+					<LinearLayout 
+						android:orientation="vertical" 
+					    android:layout_width="wrap_content" 
+					    android:layout_height="fill_parent">
+					    
+					    <TextView 
+					    	style="@style/TextCost"
+					    	android:text="@string/cost_kWh"/>
+						    	
+						 <TextView 
+					    	style="@style/TextCost"
+					    	android:text="@string/cost_kWh"/>
+						
+						 <TextView 
+					    	style="@style/TextCost"
+					    	android:text="@string/cost_kWh"/>
+				    
+				    </LinearLayout>	
+				</LinearLayout>
+			
+				<!-- Calculations Heat Pump -->
+				<TextView 
+			    	android:layout_width="wrap_content" 
+			    	android:layout_height="wrap_content"
+			    	android:layout_marginTop="10sp"
+			    	android:layout_marginBottom="10sp"
+			    	android:textSize="20sp"
+			    	android:text="@string/cost_cal_5"/>
+			    
+			    <LinearLayout 
+					android:orientation="horizontal" 
+				    android:layout_width="fill_parent" 
+				    android:layout_height="fill_parent"
+				    android:paddingLeft="10dp"
+				    android:background="#80D2DBE5" >
+				    
+					<LinearLayout 
+						android:orientation="vertical" 
+					    android:layout_width="wrap_content" 
+					    android:layout_height="fill_parent">
+					    	
+					    <TextView 
+					    	style="@style/TextCost"
+					    	android:text="@string/cost_cal_6"/>
+					    
+					    <TextView 
+					    	style="@style/TextCost"
+					    	android:text="@string/cost_cal_7"/>
+					    	
+					   	<TextView 
+					   		style="@style/TextCost"
+					    	android:text="@string/cost_cal_8"/>
+					    	
+					    <TextView 
+					   		style="@style/TextCost"
+					    	android:text="@string/cost_cal_9"/>
+					    	
+				   	</LinearLayout>
+				   	
+				   	<LinearLayout 
+						android:orientation="vertical" 
+					    android:layout_width="wrap_content" 
+					    android:layout_height="fill_parent"
+					    android:layout_weight="1">
+						    
+					    <EditText 
+					    	android:id="@+id/etxt_cost_cal_4"
+					    	android:enabled="false"
+					    	style="@style/EditCost" />
+					    	
+					    <EditText 
+					    	android:id="@+id/etxt_cost_cal_5"
+					    	android:enabled="false"
+					    	style="@style/EditCost" />
+					    	
+					    <EditText 
+					    	android:id="@+id/etxt_cost_cal_6"
+					    	android:enabled="false"
+					    	style="@style/EditCost" />
+					    	
+					    <EditText 
+					    	android:id="@+id/etxt_cost_cal_7"
+					    	android:enabled="false"
+					    	style="@style/EditCost" />
+					    	
+					</LinearLayout>
+					
+					<LinearLayout 
+						android:orientation="vertical" 
+					    android:layout_width="wrap_content" 
+					    android:layout_height="fill_parent">
+					    
+					    <TextView 
+					    	style="@style/TextCost"
+					    	android:text="@string/cost_kWh"/>
+						    	
+						 <TextView 
+					    	style="@style/TextCost"
+					    	android:text="@string/cost_kWh"/>
+						
+						 <TextView 
+					    	style="@style/TextCost"
+					    	android:text="@string/cost_kWh"/>
+					    	
+					    <TextView 
+					    	style="@style/TextCost"
+					    	android:text="@string/cost_euro"/>
+					    	
+					</LinearLayout>
+				</LinearLayout>
+			
+				<!-- Calculations Oil boiler -->
+				<TextView 
+			    	android:layout_width="wrap_content" 
+			    	android:layout_height="wrap_content"
+			    	android:layout_marginTop="10sp"
+			    	android:layout_marginBottom="10sp"
+			    	android:textSize="20sp"
+			    	android:text="@string/cost_cal_10"/>
+			    
+			    <LinearLayout 
+					android:orientation="horizontal" 
+				    android:layout_width="fill_parent" 
+				    android:layout_height="fill_parent"
+				    android:paddingLeft="10dp"
+				    android:background="#80D2DBE5" >
+				    
+					<LinearLayout 
+						android:orientation="vertical" 
+					    android:layout_width="wrap_content" 
+					    android:layout_height="fill_parent">
+					    	
+					    <TextView 
+					    	style="@style/TextCost"
+					    	android:text="@string/cost_cal_11"/>
+					    
+					    <TextView 
+					    	style="@style/TextCost"
+					    	android:text="@string/cost_cal_12"/>
+					    	
+					   	<TextView 
+					   		style="@style/TextCost"
+					    	android:text="@string/cost_cal_13"/>
+					    	
+					    <TextView 
+					   		style="@style/TextCost"
+					    	android:text="@string/cost_cal_14"/>
+					    	
+				   	</LinearLayout>
+				   	
+				   	<LinearLayout 
+						android:orientation="vertical" 
+					    android:layout_width="wrap_content" 
+					    android:layout_height="fill_parent"
+					    android:layout_weight="1">
+						    
+					    <EditText 
+					    	android:id="@+id/etxt_cost_cal_8"
+					    	android:enabled="false"
+					    	style="@style/EditCost" />
+					    	
+					    <EditText 
+					    	android:id="@+id/etxt_cost_cal_9"
+					    	android:enabled="false"
+					    	style="@style/EditCost" />
+					    	
+					    <EditText 
+					    	android:id="@+id/etxt_cost_cal_10"
+					    	android:enabled="false"
+					    	style="@style/EditCost" />
+					    	
+					    <EditText 
+					    	android:id="@+id/etxt_cost_cal_11"
+					    	android:enabled="false"
+					    	style="@style/EditCost" />
+					    	
+					</LinearLayout>
+					
+					<LinearLayout 
+						android:orientation="vertical" 
+					    android:layout_width="wrap_content" 
+					    android:layout_height="fill_parent">
+					    
+					    <TextView 
+					    	style="@style/TextCost"
+					    	android:text="@string/cost_kWh"/>
+						    	
+						 <TextView 
+					    	style="@style/TextCost"
+					    	android:text="@string/cost_kWh"/>
+						
+						 <TextView 
+					    	style="@style/TextCost"
+					    	android:text="@string/cost_kWh"/>
+					    	
+					    <TextView 
+					    	style="@style/TextCost"
+					    	android:text="@string/cost_euro"/>
+					    	
+					</LinearLayout>
+				</LinearLayout>
+			
+			</LinearLayout>
+			
+			<!-- Results -->
 			<TextView 
 		    	android:layout_width="wrap_content" 
 		    	android:layout_height="wrap_content"
+		    	android:layout_marginTop="10sp"
 		    	android:layout_marginBottom="10sp"
 		    	android:textSize="30sp"
 		    	android:text="@string/cost_Results"/>
@@ -249,28 +510,22 @@
 				    android:layout_width="wrap_content" 
 				    android:layout_height="fill_parent"
 				    android:layout_weight="1">
-					    	
+				        	
 				    <EditText 
 				    	android:id="@+id/etxt_cost_life_cycle_heat_pump"
-				    	android:inputType="number"
 				    	android:enabled="false"
-				    	android:layout_width="fill_parent" 
-				    	android:layout_height="wrap_content" />
+				    	style="@style/EditCost" />
 				    	
 				   	<EditText 
 				    	android:id="@+id/etxt_cost_life_cycle_oil_boiler"
-				    	android:inputType="number"
 				    	android:enabled="false"
-				    	android:layout_width="fill_parent" 
-				    	android:layout_height="wrap_content" />
+				    	style="@style/EditCost" />
 				    	
 				  	<EditText 
 				    	android:id="@+id/etxt_cost_payback_period"
-				    	android:inputType="number"
 				    	android:enabled="false"
 				    	android:layout_marginTop="15dp" 
-				    	android:layout_width="fill_parent" 
-				    	android:layout_height="wrap_content" />
+				    	style="@style/EditCost" />
 				    
 				</LinearLayout>
 				

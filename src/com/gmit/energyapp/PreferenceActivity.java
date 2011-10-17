@@ -32,9 +32,10 @@ import android.view.WindowManager;
 
 public class PreferenceActivity extends android.preference.PreferenceActivity implements OnSharedPreferenceChangeListener {
 	private static final String TAG = PreferenceActivity.class.getSimpleName();
-	private static final String CHKFULLSCREEN ="ckbfullscreen";
+	private static final String CHKFULLSCREEN = "ckbfullscreen";
 	private static final String CHKSHOWWELCOME = "chkshowwelcome";
-	private static final String CHKOVERVIEWPINS ="chkshowoverviewpins";
+	private static final String CHKOVERVIEWPINS = "chkshowoverviewpins";
+	private static final String CHKADVANCECALCULATIONS = "ckbadvancecalculations";
 	
 	private EnergyData energyData = null;
 	private SharedPreferences prefs = null;
@@ -45,8 +46,7 @@ public class PreferenceActivity extends android.preference.PreferenceActivity im
 		
 		Log.d(TAG, "Prefs onCreate");
 		
-		EnergyApplication energyApp = (EnergyApplication) getApplication();
-        energyData = energyApp.getEnergyData();
+		energyData = ((EnergyApplication) getApplication()).getEnergyData();
         
 		if (energyData.isChkFullscreen()) {
         	
@@ -101,6 +101,12 @@ public class PreferenceActivity extends android.preference.PreferenceActivity im
 			
 			boolean chkShowOverviewPins = prefs.getBoolean(CHKOVERVIEWPINS, true);
 			energyData.setChkShowOverviewPins(chkShowOverviewPins);
+			energyData.setInvalidate(true);
+		
+		} else if (key.equals(CHKADVANCECALCULATIONS)) {
+			
+			boolean chkAdvanceCalculations = prefs.getBoolean(CHKADVANCECALCULATIONS, false);
+			energyData.setChkAdvanceCalculations(chkAdvanceCalculations);
 			energyData.setInvalidate(true);
 		}
 	}

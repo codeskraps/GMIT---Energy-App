@@ -32,6 +32,7 @@ public class EnergyData {
 	private boolean chkFullscreen;
 	private boolean chkShowWelcome;
 	private boolean chkShowOverviewPins;
+	private boolean chkAdvanceCalculations;
 	
 	public EnergyData(Context context) {
 		setContext(context);
@@ -40,6 +41,7 @@ public class EnergyData {
 		setChkFullscreen(true);
 		setChkShowWelcome(true);
 		setChkShowOverviewPins(true);
+		setChkAdvanceCalculations(false);
 	}
 
 	public Context getContext() {
@@ -88,5 +90,13 @@ public class EnergyData {
 
 	public void setChkShowOverviewPins(boolean chkShowOverviewPins) {
 		this.chkShowOverviewPins = chkShowOverviewPins;
+	}
+
+	public boolean isChkAdvanceCalculations() {
+		return chkAdvanceCalculations;
+	}
+
+	public void setChkAdvanceCalculations(boolean chkAdvanceCalculations) {
+		this.chkAdvanceCalculations = chkAdvanceCalculations;
 	}
 }

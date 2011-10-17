@@ -127,6 +127,7 @@
     
     <!-- HeatPump Cost Efficiency -->
     <string name="cost_Inputs">Inputs:</string>
+    <string name="cost_Calculations">Calculations:</string>
     <string name="cost_Results">Results:</string>
     
     <string name="cost_House_surface">House surface:</string>
@@ -156,6 +157,20 @@
     <string name="cost_euro_kwh">€/kWh</string>
     <string name="cost_years">years</string>
     
+    <string name="cost_cal_1_Heat_Load_house">Heat load for the house (heating only):</string>
+    <string name="cost_cal_2_Heat_Load_year">Heat load for a year (heating only):</string>
+    <string name="cost_cal_3_Heat_Load_total">Total heat load for a year:</string>
+    <string name="cost_cal_4_Heat_pump">Heat pump</string>
+    <string name="cost_cal_5_Electricity_heating">Electricity for heating (3.5 COP):</string>
+    <string name="cost_cal_6_Electricity_water">Electricity for hot water (2 COP):</string>
+    <string name="cost_cal_7_Electricity_Total">Total electricity:</string>
+    <string name="cost_cal_8_Year_cost">Yearly running cost(1/2 consumed during the day, 1/2 at night):</string>
+    <string name="cost_cal_9_Oil_boiler">Oil boiler</string>
+    <string name="cost_cal_10_Energy_heating">Energy for heating (90% efficiency):</string>
+    <string name="cost_cal_11_Energy_water">Energy for hot water (90% efficiency):</string>
+    <string name="cost_cal_12_Energy_total">Total energy:</string>
+    <string name="cost_cal_13_Year_scost">Yearly running cost:</string>
+    
     <string name="cost_life_cycle_heat_pump">Life cycle cost heat pump:</string>
     <string name="cost_life_cycle_oil_boiler">Life cycle cost oil boiler:</string>
     <string name="cost_payback_period">Payback period heat pump:</string>
@@ -166,6 +181,21 @@
     
     <string name="cost_dialog_title_error">Error!!!</string>
     <string name="cost_dialog_summary_error">One of your inputs is not valid...</string>
+    
+    <string name="cost_cal_1">Calculations:</string>
+    <string name="cost_cal_2">Heat load the house:\n(heating only)</string>
+	<string name="cost_cal_3">Heat load for a year:\n(heating only)</string>
+	<string name="cost_cal_4">Total heat load for a year:</string>
+	<string name="cost_cal_5">Heat pump</string>
+	<string name="cost_cal_6">Electricity for heating:\n(3.5 COP)</string>
+	<string name="cost_cal_7">Electricity for hot water:\n(2 COP)</string>
+	<string name="cost_cal_8">Total electricity:</string>
+	<string name="cost_cal_9">Yearly running cost:\n(1/2 during the day, 1/2 at night)</string>
+	<string name="cost_cal_10">Oil boiler</string>
+	<string name="cost_cal_11">Energy for heating:\n(90% efficiency)</string>
+	<string name="cost_cal_12">Energy for hot water:\n(90% efficiency)</string>
+	<string name="cost_cal_13">Total energy:</string>
+	<string name="cost_cal_14">Yearly running cost:</string>
     
     <!-- Biomass -->
     <string name="biomassLevel2Text">Biomass is a term used to identify fuels used in the renewable energy sector. These fuels include agricultural residues, energy crops and wood based crops.\n\nA wood pellet boiler (see left image from the GMIT Energy Lab) is fired on biological material (wood pellets) and is used to heat water. A gasification boiler (see right image from the GMIT Energy Lab) uses a syngas which is generated through the chemical reaction of burning wood and is also used to heat water.</string>
@@ -323,11 +353,14 @@
     <string name="Fullscreen_summary">Hides the notification bar from view</string>
     <string name="showWelcomescreen">Show welcome screen</string>
     <string name="showWelcomescreen_summary">Always show the welcome screen on start</string>
-    <string name="showOverviewPins">Show pins in overviews</string>
+    <string name="showOverviewPins">Pin overviews</string>
     <string name="showOverviewPins_summary">Always show the push pins in the overview screen</string>
     <string name="GmitEnergy">Information</string>
     <string name="GmitEnergyTitle">GMIT Energy Lab v1.0</string>
     <string name="GmitEnergySummary">License GPL v3 - 2011 - Carles Sentis</string>
+    <string name="HeatPump_category">Heat Pump Cost efficiency"</string>
+    <string name="AdvanceCalculations_title">Advance Calculations</string>
+    <string name="AdvanceCalculations_summary">Show full specifications of calculations</string>
     
     <!-- Toast -->
     <string name="Zoom">Double tap to zoom in/out</string>

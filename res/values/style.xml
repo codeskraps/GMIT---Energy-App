@@ -76,4 +76,10 @@
 		<item name="android:gravity">center_vertical</item>
 <!-- 		<item name="android:inputType">textMultiLine</item> -->
 	</style>
+	
+	<style name="EditCost">
+		<item name="android:inputType">number</item>
+		<item name="android:layout_width">fill_parent</item>
+		<item name="android:layout_height">wrap_content</item>
+	</style>
 </resources>

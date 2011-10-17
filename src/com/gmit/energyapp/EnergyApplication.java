@@ -35,6 +35,7 @@ public class EnergyApplication extends Application {
 	private static final String CHKFULLSCREEN = "ckbfullscreen";
 	private static final String CHKSHOWWELCOME = "chkshowwelcome";
 	private static final String CHKOVERVIEWPINS ="chkshowoverviewpins";
+	private static final String CHKADVANCECALCULATIONS = "ckbadvancecalculations";
 	
 	private EnergyData energyData = null;
 	
@@ -50,9 +51,11 @@ public class EnergyApplication extends Application {
 		boolean chkFullscreen = prefs.getBoolean(CHKFULLSCREEN, true);
 		boolean chkShowWelcome = prefs.getBoolean(CHKSHOWWELCOME, true);
 		boolean chkShowOverviewPins = prefs.getBoolean(CHKOVERVIEWPINS, true);
+		boolean chkAdvanceCalculations = prefs.getBoolean(CHKADVANCECALCULATIONS, false);
 		energyData.setChkFullscreen(chkFullscreen);
 		energyData.setChkShowWelcome(chkShowWelcome);
 		energyData.setChkShowOverviewPins(chkShowOverviewPins);
+		energyData.setChkAdvanceCalculations(chkAdvanceCalculations);
 	}
 	
 	public Intent getMenuIntent(MenuItem item, Context context) {

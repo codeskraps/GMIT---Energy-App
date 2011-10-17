@@ -41,7 +41,9 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ScrollView;
+import android.widget.TextView;
 
 public class CostEfficiencyActivity extends Activity implements OnClickListener {
 	private static final String TAG = CostEfficiencyActivity.class.getSimpleName();
@@ -51,10 +53,12 @@ public class CostEfficiencyActivity extends Activity implements OnClickListener 
 	
 	int iLifeCycleHeatPump;
 	int iLifeCyleOilBoiler;
+	
 	double iPayBack;
 	
 	private ScrollView scrollView = null;
 	
+	// Input
 	private EditText etxtHouseSurface = null;
 	private EditText etxtHeating =  null;
 	private EditText etxtHotWater =  null;
@@ -65,6 +69,23 @@ public class CostEfficiencyActivity extends Activity implements OnClickListener 
 	private EditText etxtOil = null;
 	private EditText etxtLifeSpan = null;
 	
+	// Calculations
+	private TextView txtCalculations = null;
+	private LinearLayout llCalculations = null;
+	
+	private EditText etxtCal1 = null;
+	private EditText etxtCal2 = null;
+	private EditText etxtCal3 = null;
+	private EditText etxtCal4 = null;
+	private EditText etxtCal5 = null;
+	private EditText etxtCal6 = null;
+	private EditText etxtCal7 = null;
+	private EditText etxtCal8 = null;
+	private EditText etxtCal9 = null;
+	private EditText etxtCal10 = null;
+	private EditText etxtCal11 = null;
+	
+	// Results
 	private EditText etxtLifeCycleHeatPump = null;
 	private EditText etxtLifeCycleBoiler = null;
 	private EditText etxtPayBack = null;
@@ -93,6 +114,7 @@ public class CostEfficiencyActivity extends Activity implements OnClickListener 
     		
     		scrollView = (ScrollView) findViewById(R.id.costScrollView);
     
+    		// Input
             etxtHouseSurface = (EditText) findViewById(R.id.etxt_cost_surface);
             etxtHeating = (EditText) findViewById(R.id.etxt_cost_heating);
             etxtHotWater = (EditText) findViewById(R.id.etxt_cost_hotwater);
@@ -103,6 +125,29 @@ public class CostEfficiencyActivity extends Activity implements OnClickListener 
             etxtOil = (EditText) findViewById(R.id.etxt_cost_oilcost);
             etxtLifeSpan = (EditText) findViewById(R.id.etxt_cost_lifespan);
             
+            // Calculations
+            txtCalculations = (TextView) findViewById(R.id.txtCalculations);
+            llCalculations = (LinearLayout) findViewById(R.id.llCalculations);
+            
+            etxtCal1 = (EditText) findViewById(R.id.etxt_cost_cal_1);
+            etxtCal2 = (EditText) findViewById(R.id.etxt_cost_cal_2);
+            etxtCal3 = (EditText) findViewById(R.id.etxt_cost_cal_3);
+            etxtCal4 = (EditText) findViewById(R.id.etxt_cost_cal_4);
+            etxtCal5 = (EditText) findViewById(R.id.etxt_cost_cal_5);
+            etxtCal6 = (EditText) findViewById(R.id.etxt_cost_cal_6);
+            etxtCal7 = (EditText) findViewById(R.id.etxt_cost_cal_7);
+            etxtCal8 = (EditText) findViewById(R.id.etxt_cost_cal_8);
+            etxtCal9 = (EditText) findViewById(R.id.etxt_cost_cal_9);
+            etxtCal10 = (EditText) findViewById(R.id.etxt_cost_cal_10);
+            etxtCal11 = (EditText) findViewById(R.id.etxt_cost_cal_11);
+            
+            if (!energyData.isChkAdvanceCalculations()) {
+            	
+    	        txtCalculations.setVisibility(View.GONE);
+    	        llCalculations.setVisibility(View.GONE);
+    		}
+            
+            // Results
             etxtLifeCycleHeatPump = (EditText) findViewById(R.id.etxt_cost_life_cycle_heat_pump);
             etxtLifeCycleBoiler = (EditText) findViewById(R.id.etxt_cost_life_cycle_oil_boiler);
             etxtPayBack = (EditText) findViewById(R.id.etxt_cost_payback_period);
@@ -218,6 +263,9 @@ public class CostEfficiencyActivity extends Activity implements OnClickListener 
 		int iHeatLoadYear = iHeatLoadHouse * 10 * 7 * 32;
 		int iTotalHeatLoadYear = iHeatLoadYear + iHotWater;
 		Log.d(TAG, "iHeatLoadHouse: " + iHeatLoadHouse + ", iHeatLoadYear: " + iHeatLoadYear + ", iTotalHeatLoadYear: " + iTotalHeatLoadYear);
+		etxtCal1.setText(String.valueOf((int) iHeatLoadHouse));
+		etxtCal2.setText(String.valueOf((int) iHeatLoadYear));
+		etxtCal3.setText(String.valueOf((int) iTotalHeatLoadYear));
 		
 		// HeatPump
 		double iElectricityHeating = iHeatLoadYear / 3.5;
@@ -226,6 +274,10 @@ public class CostEfficiencyActivity extends Activity implements OnClickListener 
 		double iHeatPumpYearly = iTotalElectricity / 2 * fDayRate + iTotalElectricity / 2 * fNightRate;
 		Log.d(TAG, "iElectricityHeating: " + iElectricityHeating + ", iElectricityHotWater: " + iElectricityHotWater + ", iTotalElectricity: " + iTotalElectricity
 				+ ", iHeatPumpYearly: " + iHeatPumpYearly);
+		etxtCal4.setText(String.valueOf((int) iElectricityHeating));
+		etxtCal5.setText(String.valueOf((int) iElectricityHotWater));
+		etxtCal6.setText(String.valueOf((int) iTotalElectricity));
+		etxtCal7.setText(String.valueOf((int) iHeatPumpYearly));
 		
 		// OilBoiler
 		double iEnergyHeating = iHeatLoadYear / 0.9;
@@ -234,6 +286,10 @@ public class CostEfficiencyActivity extends Activity implements OnClickListener 
 		double iOilBoilerYearly = iTotalEnergy * fOil;
 		Log.d(TAG, "iEnergyHeating: " + iEnergyHeating + ", iEnergyHotWater: " + iEnergyHotWater + ", iTotalEnergy: " + iTotalEnergy
 				+ ", iOilBoilerYearly: " + iOilBoilerYearly);
+		etxtCal8.setText(String.valueOf((int) iEnergyHeating));
+		etxtCal9.setText(String.valueOf((int) iEnergyHotWater));
+		etxtCal10.setText(String.valueOf((int) iTotalEnergy));
+		etxtCal11.setText(String.valueOf((int) iOilBoilerYearly));
 		
 		/*
 		 * Results
@@ -275,6 +331,18 @@ public class CostEfficiencyActivity extends Activity implements OnClickListener 
                     etxtOil.setText(res.getString(R.string.cost_Oil_hint));
                     etxtLifeSpan.setText(res.getString(R.string.cost_life_span_hint));
                     
+                    etxtCal1.setText("");
+                    etxtCal2.setText("");
+                    etxtCal3.setText("");
+                    etxtCal4.setText("");
+                    etxtCal5.setText("");
+                    etxtCal6.setText("");
+                    etxtCal7.setText("");
+                    etxtCal8.setText("");
+                    etxtCal9.setText("");
+                    etxtCal10.setText("");
+                    etxtCal11.setText("");
+                    
                     etxtLifeCycleHeatPump.setText("");
                     etxtLifeCycleBoiler.setText("");
                     etxtPayBack.setText("");
@@ -305,6 +373,18 @@ public class CostEfficiencyActivity extends Activity implements OnClickListener 
                     etxtNightRate.setText("");
                     etxtOil.setText("");
                     etxtLifeSpan.setText("");
+                    
+                    etxtCal1.setText("");
+                    etxtCal2.setText("");
+                    etxtCal3.setText("");
+                    etxtCal4.setText("");
+                    etxtCal5.setText("");
+                    etxtCal6.setText("");
+                    etxtCal7.setText("");
+                    etxtCal8.setText("");
+                    etxtCal9.setText("");
+                    etxtCal10.setText("");
+                    etxtCal11.setText("");
                     
                     etxtLifeCycleHeatPump.setText("");
                     etxtLifeCycleBoiler.setText("");
